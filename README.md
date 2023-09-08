@@ -1,4 +1,4 @@
-# PHẦN MỀM TÌM KIẾM VIỆC LÀM
+  #                           PHẦN MỀM TÌM KIẾM VIỆC LÀM
   - Thành viên:
       + Phạm Trần Tấn Đạt  - 2001200771
       + Nguyễn Trung Thịnh - 2001202257
@@ -10,5 +10,4 @@
       + Đăng ký tài khoản
       + Đăng tin tuyển dụng
       + Gửi đơn ứng tuyển,...
-  - AI:
-  - 
+  - AI: Gợi ý việc làm phù hợp dựa vào lịch sử tìm kiếm
