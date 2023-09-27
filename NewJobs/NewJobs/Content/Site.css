@@ -236,10 +236,109 @@ mb-3{
     color: #E0E0E1;
 }
 
-.line-h3{
-    line-height: 3;
+.line-h26{
+    line-height: 2.6;
+}
+
+.line-h34{
+    line-height: 3.4;
 }
 
 .text-smx2{
     font-size: 0.65rem;
+}
+
+.justify-between{
+    justify-content:space-between;
+}
+
+.bg-header{
+    background-color:#451DA0;
+}
+
+.h-28{
+    height:4rem;
+}
+
+.justify-start{
+    justify-content:flex-start;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.w-auto {
+    width: auto;
+}
+
+.border-l {
+    border-left-width: 1px;
+    border: 1px solid #5C27D6;
+}
+
+.pr-5 {
+    padding-right: 1.25rem;
+}
+
+.pl-7 {
+    padding-left: 1.75rem;
+}
+
+.py-2 {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.items-center {
+    align-items: center;
+}
+
+.whitespace-nowrap {
+    white-space: nowrap;
+}
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.items-center a{
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.btn-hov:hover{
+    background-color: #341678;
+}
+
+.leading-4 {
+    line-height: 1rem;
+}
+.font-medium {
+    font-weight: 500;
+}
+
+.px-2 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.rounded-lg {
+    border-radius: 0.5rem;
+}
+
+.bg-new{
+    background-color:#FC5434;
+}
+
+.fs-10{
+    font-size: 10px;
+}
+
+.icon-new{
+    margin:auto 2px auto 5px;
+    height: 50%;
 }
