@@ -27,6 +27,7 @@ namespace GUI
             if(timeLine.Width >= 686)
             {
                 timerLoading.Stop();
+                this.Close();
             }
         }
     }
