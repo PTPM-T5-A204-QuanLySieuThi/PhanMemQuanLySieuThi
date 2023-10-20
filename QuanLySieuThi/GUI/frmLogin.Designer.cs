@@ -28,158 +28,238 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtUserName = new MetroFramework.Controls.MetroTextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
+            this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
+            this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.btnLogin = new ReaLTaiizor.Controls.Button();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.moonLabel1 = new ReaLTaiizor.Controls.MoonLabel();
+            this.moonLabel2 = new ReaLTaiizor.Controls.MoonLabel();
+            this.txtPS = new ReaLTaiizor.Controls.DungeonTextBox();
+            this.btnShowPS = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
+            this.cboRole = new ReaLTaiizor.Controls.DungeonComboBox();
+            this.chkRememberPS = new ReaLTaiizor.Controls.AloneCheckBox();
+            this.metroPanel1.SuspendLayout();
+            this.metroPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // metroPanel1
             // 
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Location = new System.Drawing.Point(0, 6);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(500, 500);
-            this.panel1.TabIndex = 0;
+            this.metroPanel1.Controls.Add(this.pictureBox1);
+            this.metroPanel1.HorizontalScrollbarBarColor = true;
+            this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 7);
+            this.metroPanel1.Margin = new System.Windows.Forms.Padding(0);
+            this.metroPanel1.Name = "metroPanel1";
+            this.metroPanel1.Size = new System.Drawing.Size(498, 498);
+            this.metroPanel1.TabIndex = 0;
+            this.metroPanel1.VerticalScrollbarBarColor = true;
+            this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel1.VerticalScrollbarSize = 10;
             // 
-            // label1
+            // metroPanel2
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Ravie", 34.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Location = new System.Drawing.Point(31, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(420, 77);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "WELCOME";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.metroPanel2.Controls.Add(this.chkRememberPS);
+            this.metroPanel2.Controls.Add(this.cboRole);
+            this.metroPanel2.Controls.Add(this.btnShowPS);
+            this.metroPanel2.Controls.Add(this.txtPS);
+            this.metroPanel2.Controls.Add(this.moonLabel2);
+            this.metroPanel2.Controls.Add(this.moonLabel1);
+            this.metroPanel2.Controls.Add(this.bigLabel1);
+            this.metroPanel2.Controls.Add(this.btnLogin);
+            this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.metroPanel2.HorizontalScrollbarBarColor = true;
+            this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(498, 60);
+            this.metroPanel2.Margin = new System.Windows.Forms.Padding(0);
+            this.metroPanel2.Name = "metroPanel2";
+            this.metroPanel2.Size = new System.Drawing.Size(502, 445);
+            this.metroPanel2.TabIndex = 2;
+            this.metroPanel2.VerticalScrollbarBarColor = true;
+            this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
+            this.metroPanel2.VerticalScrollbarSize = 10;
             // 
-            // txtUserName
+            // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnLogin.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLogin.EnteredBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.EnteredColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLogin.Font = new System.Drawing.Font("Consolas", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLogin.Image = null;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLogin.InactiveColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnLogin.Location = new System.Drawing.Point(123, 340);
+            this.btnLogin.Name = "btnLogin";
+            this.btnLogin.PressedBorderColor = System.Drawing.Color.Transparent;
+            this.btnLogin.PressedColor = System.Drawing.Color.DeepSkyBlue;
+            this.btnLogin.Size = new System.Drawing.Size(263, 66);
+            this.btnLogin.TabIndex = 2;
+            this.btnLogin.Text = "ĐĂNG NHẬP";
+            this.btnLogin.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
+            // bigLabel1
             // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bigLabel1.Location = new System.Drawing.Point(32, 19);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(432, 93);
+            this.bigLabel1.TabIndex = 3;
+            this.bigLabel1.Text = "WELCOME";
             // 
-            this.txtUserName.CustomButton.Image = null;
-            this.txtUserName.CustomButton.Location = new System.Drawing.Point(427, 2);
-            this.txtUserName.CustomButton.Name = "";
-            this.txtUserName.CustomButton.Size = new System.Drawing.Size(45, 45);
-            this.txtUserName.CustomButton.Style = MetroFramework.MetroColorStyle.Blue;
-            this.txtUserName.CustomButton.TabIndex = 1;
-            this.txtUserName.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUserName.CustomButton.UseSelectable = true;
-            this.txtUserName.CustomButton.Visible = false;
-            this.txtUserName.FontSize = MetroFramework.MetroTextBoxSize.Medium;
-            this.txtUserName.FontWeight = MetroFramework.MetroTextBoxWeight.Bold;
-            this.txtUserName.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.txtUserName.Lines = new string[0];
-            this.txtUserName.Location = new System.Drawing.Point(68, 7);
-            this.txtUserName.MaxLength = 32767;
-            this.txtUserName.Name = "txtUserName";
-            this.txtUserName.PasswordChar = '\0';
-            this.txtUserName.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtUserName.SelectedText = "";
-            this.txtUserName.SelectionLength = 0;
-            this.txtUserName.SelectionStart = 0;
-            this.txtUserName.ShortcutsEnabled = true;
-            this.txtUserName.Size = new System.Drawing.Size(383, 35);
-            this.txtUserName.TabIndex = 2;
-            this.txtUserName.Theme = MetroFramework.MetroThemeStyle.Light;
-            this.txtUserName.UseSelectable = true;
-            this.txtUserName.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
-            this.txtUserName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            // moonLabel1
             // 
-            // panel2
+            this.moonLabel1.AutoSize = true;
+            this.moonLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.moonLabel1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moonLabel1.ForeColor = System.Drawing.Color.DimGray;
+            this.moonLabel1.Location = new System.Drawing.Point(63, 146);
+            this.moonLabel1.Name = "moonLabel1";
+            this.moonLabel1.Size = new System.Drawing.Size(87, 23);
+            this.moonLabel1.TabIndex = 4;
+            this.moonLabel1.Text = "BẠN LÀ:";
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Location = new System.Drawing.Point(499, 6);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(474, 500);
-            this.panel2.TabIndex = 4;
+            // moonLabel2
             // 
-            // panel3
+            this.moonLabel2.AutoSize = true;
+            this.moonLabel2.BackColor = System.Drawing.Color.Transparent;
+            this.moonLabel2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.moonLabel2.ForeColor = System.Drawing.Color.DimGray;
+            this.moonLabel2.Location = new System.Drawing.Point(63, 222);
+            this.moonLabel2.Name = "moonLabel2";
+            this.moonLabel2.Size = new System.Drawing.Size(109, 23);
+            this.moonLabel2.TabIndex = 4;
+            this.moonLabel2.Text = "MẬT KHẨU:";
             // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(241)))), ((int)(((byte)(239)))), ((int)(((byte)(241)))));
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(499, 5);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(474, 97);
-            this.panel3.TabIndex = 5;
+            // txtPS
+            // 
+            this.txtPS.BackColor = System.Drawing.Color.Transparent;
+            this.txtPS.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.txtPS.EdgeColor = System.Drawing.Color.White;
+            this.txtPS.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPS.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPS.Location = new System.Drawing.Point(193, 218);
+            this.txtPS.MaxLength = 32767;
+            this.txtPS.Multiline = false;
+            this.txtPS.Name = "txtPS";
+            this.txtPS.ReadOnly = false;
+            this.txtPS.Size = new System.Drawing.Size(242, 34);
+            this.txtPS.TabIndex = 7;
+            this.txtPS.TextAlignment = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPS.UseSystemPasswordChar = true;
+            // 
+            // btnShowPS
+            // 
+            this.btnShowPS.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowPS.ColorLeft = System.Drawing.Color.Transparent;
+            this.btnShowPS.ColorRight = System.Drawing.Color.Transparent;
+            this.btnShowPS.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.btnShowPS.FilterAlpha = 200;
+            this.btnShowPS.FilterEnabled = true;
+            this.btnShowPS.Image = global::GUI.Properties.Resources.open_eyes_32;
+            this.btnShowPS.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.btnShowPS.IsElipse = false;
+            this.btnShowPS.IsParallax = false;
+            this.btnShowPS.Location = new System.Drawing.Point(402, 220);
+            this.btnShowPS.Name = "btnShowPS";
+            this.btnShowPS.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.btnShowPS.Size = new System.Drawing.Size(30, 30);
+            this.btnShowPS.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.btnShowPS.TabIndex = 10;
+            this.btnShowPS.Text = "parrotPictureBox1";
+            this.btnShowPS.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pictureBox1.Image = global::GUI.Properties.Resources.wallpaper_login;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(500, 500);
+            this.pictureBox1.Size = new System.Drawing.Size(498, 498);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
             // 
-            // pictureBox2
+            // cboRole
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox2.Image = global::GUI.Properties.Resources.user1;
-            this.pictureBox2.Location = new System.Drawing.Point(27, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(35, 35);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.cboRole.BackColor = System.Drawing.Color.White;
+            this.cboRole.ColorA = System.Drawing.Color.FromArgb(((int)(((byte)(246)))), ((int)(((byte)(132)))), ((int)(((byte)(85)))));
+            this.cboRole.ColorB = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(108)))), ((int)(((byte)(57)))));
+            this.cboRole.ColorC = System.Drawing.Color.White;
+            this.cboRole.ColorD = System.Drawing.Color.White;
+            this.cboRole.ColorE = System.Drawing.Color.White;
+            this.cboRole.ColorF = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.cboRole.ColorG = System.Drawing.Color.FromArgb(((int)(((byte)(180)))), ((int)(((byte)(180)))), ((int)(((byte)(180)))));
+            this.cboRole.ColorH = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(222)))), ((int)(((byte)(220)))));
+            this.cboRole.ColorI = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(249)))), ((int)(((byte)(249)))));
+            this.cboRole.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboRole.DropDownHeight = 100;
+            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRole.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRole.ForeColor = System.Drawing.Color.DimGray;
+            this.cboRole.FormattingEnabled = true;
+            this.cboRole.HoverSelectionColor = System.Drawing.Color.Empty;
+            this.cboRole.IntegralHeight = false;
+            this.cboRole.ItemHeight = 20;
+            this.cboRole.Location = new System.Drawing.Point(193, 143);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.Size = new System.Drawing.Size(242, 26);
+            this.cboRole.StartIndex = 0;
+            this.cboRole.TabIndex = 12;
             // 
-            // panel4
+            // chkRememberPS
             // 
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.Controls.Add(this.txtUserName);
-            this.panel4.Controls.Add(this.pictureBox2);
-            this.panel4.Location = new System.Drawing.Point(0, 212);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(475, 50);
-            this.panel4.TabIndex = 5;
+            this.chkRememberPS.BackColor = System.Drawing.Color.White;
+            this.chkRememberPS.Checked = false;
+            this.chkRememberPS.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.chkRememberPS.EnabledCalc = true;
+            this.chkRememberPS.ForeColor = System.Drawing.Color.DimGray;
+            this.chkRememberPS.Location = new System.Drawing.Point(285, 288);
+            this.chkRememberPS.Name = "chkRememberPS";
+            this.chkRememberPS.Size = new System.Drawing.Size(161, 18);
+            this.chkRememberPS.TabIndex = 13;
+            this.chkRememberPS.Text = "NHỚ MẬT KHẨU";
             // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(973, 505);
-            this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
+            this.ClientSize = new System.Drawing.Size(1000, 505);
+            this.Controls.Add(this.metroPanel2);
+            this.Controls.Add(this.metroPanel1);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
+            this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.Text = "                  ";
+            this.metroPanel1.ResumeLayout(false);
+            this.metroPanel2.ResumeLayout(false);
+            this.metroPanel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private MetroFramework.Controls.MetroPanel metroPanel1;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private MetroFramework.Controls.MetroTextBox txtUserName;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Panel panel4;
+        private MetroFramework.Controls.MetroPanel metroPanel2;
+        private ReaLTaiizor.Controls.Button btnLogin;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private ReaLTaiizor.Controls.MoonLabel moonLabel2;
+        private ReaLTaiizor.Controls.MoonLabel moonLabel1;
+        private ReaLTaiizor.Controls.DungeonTextBox txtPS;
+        private ReaLTaiizor.Controls.ParrotPictureBox btnShowPS;
+        private ReaLTaiizor.Controls.DungeonComboBox cboRole;
+        private ReaLTaiizor.Controls.AloneCheckBox chkRememberPS;
     }
 }
 

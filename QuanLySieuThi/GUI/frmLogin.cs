@@ -15,6 +15,14 @@ namespace GUI
         public frmLogin()
         {
             InitializeComponent();
+            btnLogin.Click += BtnLogin_Click;
+        }
+
+        private void BtnLogin_Click(object sender, EventArgs e)
+        {
+            frmLoading fLoading = new frmLoading();
+            fLoading.Show();
+            this.Hide();
         }
     }
 }
