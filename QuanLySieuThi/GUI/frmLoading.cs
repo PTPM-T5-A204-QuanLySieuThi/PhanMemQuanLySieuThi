@@ -27,6 +27,8 @@ namespace GUI
             if(timeLine.Width >= 686)
             {
                 timerLoading.Stop();
+                frmHomeSalesStaff fHomeSalesStaff = new frmHomeSalesStaff();
+                fHomeSalesStaff.Show();
                 this.Close();
             }
         }

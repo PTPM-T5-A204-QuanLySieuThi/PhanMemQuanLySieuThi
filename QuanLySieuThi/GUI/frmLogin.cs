@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DAL;
+using BLL;
 
 namespace GUI
 {
     public partial class frmLogin : MetroFramework.Forms.MetroForm
     {
-        QuyenTruyCapDAL qtc_dal = new QuyenTruyCapDAL();
-        TaiKhoanDAL tk_dal = new TaiKhoanDAL();
+        QuyenTruyCapBLL qtc_bll = new QuyenTruyCapBLL();
+        TaiKhoanBLL tk_bll = new TaiKhoanBLL();
 
         public frmLogin()
         {
@@ -27,6 +27,7 @@ namespace GUI
         private void FrmLogin_Load(object sender, EventArgs e)
         {
             loadCboRole();
+            txtPS.UseSystemPasswordChar = true;
             cboRole.SelectedIndex = Properties.Settings.Default.role;
             txtPS.Text = Properties.Settings.Default.password;
             chkRememberPS.Checked = Properties.Settings.Default.isRemember;
@@ -57,7 +58,7 @@ namespace GUI
             int pRole = cboRole.SelectedIndex;
             string pPassword = txtPS.Text;
             string pRoleValue = cboRole.SelectedValue.ToString();
-            if(tk_dal.isSuccessLogin(pRoleValue, pPassword))
+            if(tk_bll.isSuccessLogin(pRoleValue, pPassword))
             {
                 rememberPS(pRole, pPassword);
                 frmLoading fLoading = new frmLoading();
@@ -93,7 +94,7 @@ namespace GUI
         public void loadCboRole()
         {
             List<string> lst_tqtc = new List<string>();
-            lst_tqtc = qtc_dal.getDataTenQuyenTruyCap();
+            lst_tqtc = qtc_bll.getListTenQuyenTruyCap();
             lst_tqtc.Add("---- CHỌN VAI TRÒ ----");
             lst_tqtc.Sort();
             cboRole.DataSource = lst_tqtc;
