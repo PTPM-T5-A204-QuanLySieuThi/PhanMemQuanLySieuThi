@@ -83,16 +83,6 @@
       <Association Name="KHUYENMAI_CHITIETKHUYENMAI" Member="CHITIETKHUYENMAIs" ThisKey="MAKM" OtherKey="MAKM" Type="CHITIETKHUYENMAI" />
     </Type>
   </Table>
-  <Table Name="dbo.LOAINHANVIEN" Member="LOAINHANVIENs">
-    <Type Name="LOAINHANVIEN">
-      <Column Name="MALNV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="TENLNV" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
-      <Column Name="MAQTC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Association Name="LOAINHANVIEN_NHANVIEN" Member="NHANVIENs" ThisKey="MALNV" OtherKey="MALNV" Type="NHANVIEN" />
-      <Association Name="QUYENTRUYCAP_LOAINHANVIEN" Member="QUYENTRUYCAP" ThisKey="MAQTC" OtherKey="MAQTC" Type="QUYENTRUYCAP" IsForeignKey="true" />
-    </Type>
-  </Table>
   <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">
     <Type Name="NHACUNGCAP">
       <Column Name="MANCC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -112,9 +102,9 @@
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Column Name="SODIENTHOAI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
-      <Column Name="MALNV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MATK" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
       <Association Name="NHANVIEN_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MANV" OtherKey="MANV" Type="CHITIETHOADON" />
-      <Association Name="LOAINHANVIEN_NHANVIEN" Member="LOAINHANVIEN" ThisKey="MALNV" OtherKey="MALNV" Type="LOAINHANVIEN" IsForeignKey="true" />
+      <Association Name="TAIKHOAN_NHANVIEN" Member="TAIKHOAN" ThisKey="MATK" OtherKey="MATK" Type="TAIKHOAN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.NHASANXUAT" Member="NHASANXUATs">
@@ -128,9 +118,9 @@
   </Table>
   <Table Name="dbo.QUYENTRUYCAP" Member="QUYENTRUYCAPs">
     <Type Name="QUYENTRUYCAP">
-      <Column Name="MAQTC" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAQTC" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="TENQTC" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Association Name="QUYENTRUYCAP_LOAINHANVIEN" Member="LOAINHANVIENs" ThisKey="MAQTC" OtherKey="MAQTC" Type="LOAINHANVIEN" />
+      <Association Name="QUYENTRUYCAP_TAIKHOAN" Member="TAIKHOANs" ThisKey="MAQTC" OtherKey="MAQTC" Type="TAIKHOAN" />
     </Type>
   </Table>
   <Table Name="dbo.SANPHAM" Member="SANPHAMs">
@@ -152,6 +142,16 @@
       <Association Name="DONVITINH_SANPHAM" Member="DONVITINH" ThisKey="MADVT" OtherKey="MADVT" Type="DONVITINH" IsForeignKey="true" />
       <Association Name="NHACUNGCAP_SANPHAM" Member="NHACUNGCAP" ThisKey="MANCC" OtherKey="MANCC" Type="NHACUNGCAP" IsForeignKey="true" />
       <Association Name="NHASANXUAT_SANPHAM" Member="NHASANXUAT" ThisKey="MANSX" OtherKey="MANSX" Type="NHASANXUAT" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TAIKHOAN" Member="TAIKHOANs">
+    <Type Name="TAIKHOAN">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="MATK" Type="System.String" DbType="VarChar(5) NOT NULL" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" UpdateCheck="Never" />
+      <Column Name="MATKHAU" Type="System.String" DbType="NVarChar(6)" CanBeNull="true" />
+      <Column Name="MAQTC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TAIKHOAN_NHANVIEN" Member="NHANVIENs" ThisKey="MATK" OtherKey="MATK" Type="NHANVIEN" />
+      <Association Name="QUYENTRUYCAP_TAIKHOAN" Member="QUYENTRUYCAP" ThisKey="MAQTC" OtherKey="MAQTC" Type="QUYENTRUYCAP" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

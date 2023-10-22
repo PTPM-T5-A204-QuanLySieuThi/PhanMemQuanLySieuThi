@@ -8,19 +8,19 @@ GO
 --------------------- BẢNG QUYỀN TRUY CẬP
 CREATE TABLE QUYENTRUYCAP
 (
-	MAQTC			VARCHAR(10) NOT NULL,
+	MAQTC			INT NOT NULL IDENTITY(1, 1),
 	TENQTC			NVARCHAR(50),
 	CONSTRAINT PK_QUYENTRUYCAP PRIMARY KEY(MAQTC)
 );
 
---------------------- BẢNG LOẠI NHÂN VIÊN
-CREATE TABLE LOAINHANVIEN
+--------------------- BẢNG TÀI KHOẢN
+CREATE TABLE TAIKHOAN
 (
-	MALNV			VARCHAR(10) NOT NULL,
-	TENLNV			NVARCHAR(50),
+	ID				INT IDENTITY(1,1) NOT NULL,
+    MATK			AS 'TK' + RIGHT('000' + CAST(ID AS VARCHAR(3)), 3) PERSISTED NOT NULL,
 	MATKHAU			NVARCHAR(6),
-	MAQTC			VARCHAR(10) NOT NULL,
-	CONSTRAINT PK_LOAINHANVIEN PRIMARY KEY(MALNV)
+	MAQTC			INT NOT NULL,
+	CONSTRAINT PK_TAIKHOAN PRIMARY KEY(MATK)
 );
 
 --------------------- BẢNG NHÂN VIÊN
@@ -34,7 +34,7 @@ CREATE TABLE NHANVIEN
 	DIACHI			NVARCHAR(100),
 	SODIENTHOAI		VARCHAR(10),
 	EMAIL			VARCHAR(30),
-	MALNV			VARCHAR(10) NOT NULL,
+	MATK			VARCHAR(5) NOT NULL,
 	CONSTRAINT PK_NHANVIEN PRIMARY KEY(MANV)
 );
 
@@ -167,13 +167,13 @@ CREATE TABLE CHITIETHOADON
 --------------------------------------------------- [ RÀNG BUỘC ] ---------------------------------------------------
 
 --------------------------------------------------------- KHÓA NGOẠI
---------------------- BẢNG LOẠI NHÂN VIÊN
-ALTER TABLE LOAINHANVIEN 
-ADD CONSTRAINT FK_LOAINHANVIEN_QUYENTRUYCAP FOREIGN KEY(MAQTC) REFERENCES QUYENTRUYCAP(MAQTC)
+--------------------- BẢNG TÀI KHOẢN
+ALTER TABLE TAIKHOAN 
+ADD CONSTRAINT FK_TAIKHOAN_QUYENTRUYCAP FOREIGN KEY(MAQTC) REFERENCES QUYENTRUYCAP(MAQTC)
 
 --------------------- BẢNG NHÂN VIÊN
 ALTER TABLE NHANVIEN 
-ADD CONSTRAINT FK_NHANVIEN_LOAINHANVIEN FOREIGN KEY(MALNV) REFERENCES LOAINHANVIEN(MALNV)
+ADD CONSTRAINT FK_NHANVIEN_TAIKHOAN FOREIGN KEY(MATK) REFERENCES TAIKHOAN(MATK)
 
 --------------------- BẢNG SẢN PHẨM
 ALTER TABLE SANPHAM
@@ -207,6 +207,7 @@ BEGIN
     UPDATE NHANVIEN
     SET MANV = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
 END
+GO
 
 --------------------- TRIGGER TẠO RANDOM MÃ KHÁCH HÀNG
 CREATE TRIGGER TAONGAUNHIENMAKHACHHANG
@@ -217,3 +218,49 @@ BEGIN
     UPDATE KHACHHANG
     SET MAKH = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
 END
+GO
+
+--------------------- TRIGGER TẠO MÃ TÀI KHOẢN THEO ĐỊNH DẠNG	
+CREATE TRIGGER TAOMATAIKHOANTHEODINHDANG
+ON TAIKHOAN
+INSTEAD OF INSERT
+AS
+BEGIN
+    INSERT INTO TAIKHOAN (MATKHAU, MAQTC)
+    SELECT I.MATKHAU, I.MAQTC
+    FROM inserted I;
+END
+GO
+
+
+--------------------------------------------------- [ KHỞI TẠO CÁC BẢNG DỮ LIỆU ] ---------------------------------------------------
+--------------------- BẢNG QUYỀN TRUY CẬP
+INSERT INTO QUYENTRUYCAP(TENQTC)
+VALUES
+(N'Nhân viên quản lý'),
+(N'Nhân viên bán hàng'),
+(N'Nhân viên kiểm kê và quản lý kho')
+
+SELECT * FROM TAIKHOAN
+
+--------------------- BẢNG TÀI KHOẢN
+INSERT INTO TAIKHOAN( MATKHAU, MAQTC)
+VALUES
+('admin', 1),
+('123', 2),
+('456', 3)
+
+--------------------- BẢNG NHÂN VIÊN
+SET DATEFORMAT DMY
+INSERT INTO NHANVIEN(MANV, HOTEN, ANHDAIDIEN, EMAIL, NGAYSINH, GIOITINH, DIACHI, SODIENTHOAI, MATK)
+VALUES
+('1', N'Phạm Trần Tấn Đạt', '', 'datptt@gmail.com', '22/09/2002', N'Nam', N'F11/27E2 đường Phạm Thị Nghĩ, ấp 6, Xã Vĩnh Lộc A, Huyện Bình Chánh, TP Hồ Chí Minh', '0123456789', 'TK001'),
+('2', N'Trần Bích Phượng', '', 'phuongtb@gmail.com', '12/01/1999', N'Nữ', N' 2/33 đường 147, KP5, Phường Tăng Nhơn Phú B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0987654321', 'TK002'),
+('3', N'Phùng Thanh Độ', '', 'dopt@gmail.com', '28/10/2001', N'Nam', N'223 Hoàng Văn Thụ (K3.28 Cao ốc Kingston Residence), Phường 08, Quận Phú Nhuận, TP Hồ Chí Minh', '0123412345', 'TK002'),
+('4', N'Phan Tấn Trung', '', 'trungpt@gmail.com', '04/04/1996', N'Nam', N'Số 103, đường số 5, Phường Linh Xuân, Thành phố Thủ Đức, TP Hồ Chí Minh', '0234567890', 'TK002'),
+('5', N'Đặng Ngọc Bảo Châu', '', 'chaudnb@gmail.com', '25/12/1998', N'Nữ', N'Tầng 16, tòa nhà E, Town Central, số 11 Đoàn Văn Bơ, phường 13, Quận 4, TP Hồ Chí Minh', '0345678912', 'TK003'),
+('6', N'Nguyễn Trung Thịnh', '', 'thinhnt@gmail.com', '12/07/2000', N'Nam', N'Số 473 Đỗ Xuân Hợp, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0456789123', 'TK003'),
+('7', N'Nguyễn Quốc Bảo', '', 'baonq@gmail.com', '07/12/2000', N'Nam', N'120 Vũ Tông Phan , Khu Phố 5, Phường An Phú, Thành phố Thủ Đức, TP Hồ Chí Minh', '0567891234', 'TK002'),
+('8', N'Trần Quốc Quy', '', 'quytq@gmail.com', '06/11/2001', N'Nam', N'72 Bình Giã, Phường 13, Quận Tân Bình, TP Hồ Chí Minh', '0678912345', 'TK003'),
+('9', N'Lâm Quốc Huy', '', 'huylq@gmail.com', '17/08/1998', N'Nam', N'C10 Rio Vista, 72 Dương Đình Hội, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0789123456', 'TK003'),
+('10', N'Trần Thị Vân Anh', '', 'anhttv@gmail.com', '22/02/1993', N'Nữ', N'K02, Park Riverside, 09 Bưng ông Thoàn, Phường Phú Hữu, Thành phố Thủ Đức, TP Hồ Chí Minh', '0891234567', 'TK002')

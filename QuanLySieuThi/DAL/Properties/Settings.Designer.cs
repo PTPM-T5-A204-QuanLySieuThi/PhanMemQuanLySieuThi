@@ -27,7 +27,7 @@ namespace DAL.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-QP6JP84;Initial Catalog=DB_SIEUTHI;Persist Security Info=True" +
-            ";User ID=sa")]
+            ";User ID=sa;Password=123")]
         public string DB_SIEUTHIConnectionString {
             get {
                 return ((string)(this["DB_SIEUTHIConnectionString"]));
