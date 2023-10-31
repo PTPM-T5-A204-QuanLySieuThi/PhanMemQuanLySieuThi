@@ -32,14 +32,14 @@
             this.metroPanel1 = new MetroFramework.Controls.MetroPanel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.metroPanel2 = new MetroFramework.Controls.MetroPanel();
+            this.btnShowPS = new ReaLTaiizor.Controls.ParrotPictureBox();
+            this.txtPS = new Guna.UI2.WinForms.Guna2TextBox();
+            this.cboRole = new Guna.UI2.WinForms.Guna2ComboBox();
             this.lbError = new ReaLTaiizor.Controls.CrownLabel();
             this.chkRememberPS = new ReaLTaiizor.Controls.AloneCheckBox();
             this.moonLabel2 = new ReaLTaiizor.Controls.MoonLabel();
             this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.btnLogin = new ReaLTaiizor.Controls.Button();
-            this.cboRole = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.txtPS = new Guna.UI2.WinForms.Guna2TextBox();
-            this.btnShowPS = new ReaLTaiizor.Controls.ParrotPictureBox();
             this.metroPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.metroPanel2.SuspendLayout();
@@ -85,14 +85,73 @@
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel2.HorizontalScrollbarSize = 8;
-            this.metroPanel2.Location = new System.Drawing.Point(373, 49);
+            this.metroPanel2.Location = new System.Drawing.Point(373, 60);
             this.metroPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(416, 361);
+            this.metroPanel2.Size = new System.Drawing.Size(416, 350);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
             this.metroPanel2.VerticalScrollbarSize = 8;
+            // 
+            // btnShowPS
+            // 
+            this.btnShowPS.BackColor = System.Drawing.Color.Transparent;
+            this.btnShowPS.ColorLeft = System.Drawing.Color.Transparent;
+            this.btnShowPS.ColorRight = System.Drawing.Color.Transparent;
+            this.btnShowPS.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
+            this.btnShowPS.FilterAlpha = 200;
+            this.btnShowPS.FilterEnabled = true;
+            this.btnShowPS.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPS.Image")));
+            this.btnShowPS.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
+            this.btnShowPS.IsElipse = false;
+            this.btnShowPS.IsParallax = false;
+            this.btnShowPS.Location = new System.Drawing.Point(346, 173);
+            this.btnShowPS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowPS.Name = "btnShowPS";
+            this.btnShowPS.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
+            this.btnShowPS.Size = new System.Drawing.Size(33, 33);
+            this.btnShowPS.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+            this.btnShowPS.TabIndex = 17;
+            this.btnShowPS.Tag = "closePS";
+            this.btnShowPS.Text = "parrotPictureBox1";
+            this.btnShowPS.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            // 
+            // txtPS
+            // 
+            this.txtPS.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtPS.DefaultText = "";
+            this.txtPS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtPS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtPS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtPS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPS.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPS.ForeColor = System.Drawing.Color.DimGray;
+            this.txtPS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtPS.Location = new System.Drawing.Point(151, 171);
+            this.txtPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPS.Name = "txtPS";
+            this.txtPS.PasswordChar = '\0';
+            this.txtPS.PlaceholderText = "";
+            this.txtPS.SelectedText = "";
+            this.txtPS.Size = new System.Drawing.Size(232, 37);
+            this.txtPS.TabIndex = 16;
+            // 
+            // cboRole
+            // 
+            this.cboRole.BackColor = System.Drawing.Color.Transparent;
+            this.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.cboRole.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboRole.ForeColor = System.Drawing.Color.DimGray;
+            this.cboRole.ItemHeight = 30;
+            this.cboRole.Location = new System.Drawing.Point(51, 112);
+            this.cboRole.Name = "cboRole";
+            this.cboRole.Size = new System.Drawing.Size(332, 36);
+            this.cboRole.TabIndex = 15;
             // 
             // lbError
             // 
@@ -112,7 +171,7 @@
             this.chkRememberPS.EnabledCalc = true;
             this.chkRememberPS.ForeColor = System.Drawing.Color.DimGray;
             this.chkRememberPS.Location = new System.Drawing.Point(277, 239);
-            this.chkRememberPS.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.chkRememberPS.Margin = new System.Windows.Forms.Padding(2);
             this.chkRememberPS.Name = "chkRememberPS";
             this.chkRememberPS.Size = new System.Drawing.Size(121, 18);
             this.chkRememberPS.TabIndex = 13;
@@ -156,7 +215,7 @@
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.InactiveColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnLogin.Location = new System.Drawing.Point(121, 276);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.PressedBorderColor = System.Drawing.Color.Transparent;
             this.btnLogin.PressedColor = System.Drawing.Color.DeepSkyBlue;
@@ -165,65 +224,6 @@
             this.btnLogin.Text = "ĐĂNG NHẬP";
             this.btnLogin.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
-            // cboRole
-            // 
-            this.cboRole.BackColor = System.Drawing.Color.Transparent;
-            this.cboRole.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cboRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboRole.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboRole.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cboRole.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cboRole.ForeColor = System.Drawing.Color.DimGray;
-            this.cboRole.ItemHeight = 30;
-            this.cboRole.Location = new System.Drawing.Point(51, 112);
-            this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(332, 36);
-            this.cboRole.TabIndex = 15;
-            // 
-            // txtPS
-            // 
-            this.txtPS.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtPS.DefaultText = "";
-            this.txtPS.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtPS.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtPS.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPS.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtPS.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPS.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.txtPS.ForeColor = System.Drawing.Color.DimGray;
-            this.txtPS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPS.Location = new System.Drawing.Point(151, 171);
-            this.txtPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtPS.Name = "txtPS";
-            this.txtPS.PasswordChar = '\0';
-            this.txtPS.PlaceholderText = "";
-            this.txtPS.SelectedText = "";
-            this.txtPS.Size = new System.Drawing.Size(232, 37);
-            this.txtPS.TabIndex = 16;
-            // 
-            // btnShowPS
-            // 
-            this.btnShowPS.BackColor = System.Drawing.Color.Transparent;
-            this.btnShowPS.ColorLeft = System.Drawing.Color.Transparent;
-            this.btnShowPS.ColorRight = System.Drawing.Color.Transparent;
-            this.btnShowPS.CompositingQualityType = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
-            this.btnShowPS.FilterAlpha = 200;
-            this.btnShowPS.FilterEnabled = true;
-            this.btnShowPS.Image = ((System.Drawing.Image)(resources.GetObject("btnShowPS.Image")));
-            this.btnShowPS.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
-            this.btnShowPS.IsElipse = false;
-            this.btnShowPS.IsParallax = false;
-            this.btnShowPS.Location = new System.Drawing.Point(346, 173);
-            this.btnShowPS.Margin = new System.Windows.Forms.Padding(2);
-            this.btnShowPS.Name = "btnShowPS";
-            this.btnShowPS.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.btnShowPS.Size = new System.Drawing.Size(33, 33);
-            this.btnShowPS.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
-            this.btnShowPS.TabIndex = 17;
-            this.btnShowPS.Tag = "closePS";
-            this.btnShowPS.Text = "parrotPictureBox1";
-            this.btnShowPS.TextRenderingType = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
-            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -231,10 +231,10 @@
             this.ClientSize = new System.Drawing.Size(789, 410);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
-            this.Padding = new System.Windows.Forms.Padding(0, 49, 0, 0);
+            this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
             this.Text = "                  ";
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

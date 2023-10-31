@@ -11,7 +11,12 @@ namespace GUI
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+
+        public static Form currentForm;
+
         [STAThread]
+
         static void Main()
         {
             Application.EnableVisualStyles();

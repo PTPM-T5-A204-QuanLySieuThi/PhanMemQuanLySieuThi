@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using DTO;
 
 namespace BLL
 {
@@ -20,7 +21,7 @@ namespace BLL
         //------------------ KIỂM TRA ĐĂNG NHẬP THÀNH CÔNG
         public bool isSuccessLogin(string pRole, string pPassword)
         {
-            return tk_dal.isSuccessLogin (pRole, pPassword);
+            return tk_dal.isSuccessLogin(pRole, pPassword);
         }
     }
 }
