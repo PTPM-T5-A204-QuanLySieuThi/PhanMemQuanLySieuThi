@@ -50,6 +50,7 @@
     <Compile Include="NhanVienBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuyenTruyCapBLL.cs" />
+    <Compile Include="SanPhamBLL.cs" />
     <Compile Include="TaiKhoanBLL.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

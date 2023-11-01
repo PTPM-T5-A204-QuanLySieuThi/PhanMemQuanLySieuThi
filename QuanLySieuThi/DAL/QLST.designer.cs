@@ -42,6 +42,9 @@ namespace DAL
     partial void InsertCHITIETVOUCHER(CHITIETVOUCHER instance);
     partial void UpdateCHITIETVOUCHER(CHITIETVOUCHER instance);
     partial void DeleteCHITIETVOUCHER(CHITIETVOUCHER instance);
+    partial void InsertCTLOAISANPHAM(CTLOAISANPHAM instance);
+    partial void UpdateCTLOAISANPHAM(CTLOAISANPHAM instance);
+    partial void DeleteCTLOAISANPHAM(CTLOAISANPHAM instance);
     partial void InsertDONVITINH(DONVITINH instance);
     partial void UpdateDONVITINH(DONVITINH instance);
     partial void DeleteDONVITINH(DONVITINH instance);
@@ -54,15 +57,18 @@ namespace DAL
     partial void InsertKHUYENMAI(KHUYENMAI instance);
     partial void UpdateKHUYENMAI(KHUYENMAI instance);
     partial void DeleteKHUYENMAI(KHUYENMAI instance);
+    partial void InsertLOAISANPHAM(LOAISANPHAM instance);
+    partial void UpdateLOAISANPHAM(LOAISANPHAM instance);
+    partial void DeleteLOAISANPHAM(LOAISANPHAM instance);
     partial void InsertNHACUNGCAP(NHACUNGCAP instance);
     partial void UpdateNHACUNGCAP(NHACUNGCAP instance);
     partial void DeleteNHACUNGCAP(NHACUNGCAP instance);
     partial void InsertNHANVIEN(NHANVIEN instance);
     partial void UpdateNHANVIEN(NHANVIEN instance);
     partial void DeleteNHANVIEN(NHANVIEN instance);
-    partial void InsertNHASANXUAT(NHASANXUAT instance);
-    partial void UpdateNHASANXUAT(NHASANXUAT instance);
-    partial void DeleteNHASANXUAT(NHASANXUAT instance);
+    partial void InsertNUOCXUATXU(NUOCXUATXU instance);
+    partial void UpdateNUOCXUATXU(NUOCXUATXU instance);
+    partial void DeleteNUOCXUATXU(NUOCXUATXU instance);
     partial void InsertQUYENTRUYCAP(QUYENTRUYCAP instance);
     partial void UpdateQUYENTRUYCAP(QUYENTRUYCAP instance);
     partial void DeleteQUYENTRUYCAP(QUYENTRUYCAP instance);
@@ -136,6 +142,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<CTLOAISANPHAM> CTLOAISANPHAMs
+		{
+			get
+			{
+				return this.GetTable<CTLOAISANPHAM>();
+			}
+		}
+		
 		public System.Data.Linq.Table<DONVITINH> DONVITINHs
 		{
 			get
@@ -168,6 +182,14 @@ namespace DAL
 			}
 		}
 		
+		public System.Data.Linq.Table<LOAISANPHAM> LOAISANPHAMs
+		{
+			get
+			{
+				return this.GetTable<LOAISANPHAM>();
+			}
+		}
+		
 		public System.Data.Linq.Table<NHACUNGCAP> NHACUNGCAPs
 		{
 			get
@@ -184,11 +206,11 @@ namespace DAL
 			}
 		}
 		
-		public System.Data.Linq.Table<NHASANXUAT> NHASANXUATs
+		public System.Data.Linq.Table<NUOCXUATXU> NUOCXUATXUs
 		{
 			get
 			{
-				return this.GetTable<NHASANXUAT>();
+				return this.GetTable<NUOCXUATXU>();
 			}
 		}
 		
@@ -1017,6 +1039,144 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.CTLOAISANPHAM")]
+	public partial class CTLOAISANPHAM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MACTLSP;
+		
+		private string _TENCTLSP;
+		
+		private string _MALSP;
+		
+		private EntitySet<SANPHAM> _SANPHAMs;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMACTLSPChanging(string value);
+    partial void OnMACTLSPChanged();
+    partial void OnTENCTLSPChanging(string value);
+    partial void OnTENCTLSPChanged();
+    partial void OnMALSPChanging(string value);
+    partial void OnMALSPChanged();
+    #endregion
+		
+		public CTLOAISANPHAM()
+		{
+			this._SANPHAMs = new EntitySet<SANPHAM>(new Action<SANPHAM>(this.attach_SANPHAMs), new Action<SANPHAM>(this.detach_SANPHAMs));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACTLSP", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MACTLSP
+		{
+			get
+			{
+				return this._MACTLSP;
+			}
+			set
+			{
+				if ((this._MACTLSP != value))
+				{
+					this.OnMACTLSPChanging(value);
+					this.SendPropertyChanging();
+					this._MACTLSP = value;
+					this.SendPropertyChanged("MACTLSP");
+					this.OnMACTLSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENCTLSP", DbType="NVarChar(50)")]
+		public string TENCTLSP
+		{
+			get
+			{
+				return this._TENCTLSP;
+			}
+			set
+			{
+				if ((this._TENCTLSP != value))
+				{
+					this.OnTENCTLSPChanging(value);
+					this.SendPropertyChanging();
+					this._TENCTLSP = value;
+					this.SendPropertyChanged("TENCTLSP");
+					this.OnTENCTLSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALSP", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MALSP
+		{
+			get
+			{
+				return this._MALSP;
+			}
+			set
+			{
+				if ((this._MALSP != value))
+				{
+					this.OnMALSPChanging(value);
+					this.SendPropertyChanging();
+					this._MALSP = value;
+					this.SendPropertyChanged("MALSP");
+					this.OnMALSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CTLOAISANPHAM_SANPHAM", Storage="_SANPHAMs", ThisKey="MACTLSP", OtherKey="MACTLSP")]
+		public EntitySet<SANPHAM> SANPHAMs
+		{
+			get
+			{
+				return this._SANPHAMs;
+			}
+			set
+			{
+				this._SANPHAMs.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_SANPHAMs(SANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.CTLOAISANPHAM = this;
+		}
+		
+		private void detach_SANPHAMs(SANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.CTLOAISANPHAM = null;
 		}
 	}
 	
@@ -1888,6 +2048,92 @@ namespace DAL
 		}
 	}
 	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.LOAISANPHAM")]
+	public partial class LOAISANPHAM : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private string _MALSP;
+		
+		private string _TENLSP;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnMALSPChanging(string value);
+    partial void OnMALSPChanged();
+    partial void OnTENLSPChanging(string value);
+    partial void OnTENLSPChanged();
+    #endregion
+		
+		public LOAISANPHAM()
+		{
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MALSP", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MALSP
+		{
+			get
+			{
+				return this._MALSP;
+			}
+			set
+			{
+				if ((this._MALSP != value))
+				{
+					this.OnMALSPChanging(value);
+					this.SendPropertyChanging();
+					this._MALSP = value;
+					this.SendPropertyChanged("MALSP");
+					this.OnMALSPChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENLSP", DbType="NVarChar(50)")]
+		public string TENLSP
+		{
+			get
+			{
+				return this._TENLSP;
+			}
+			set
+			{
+				if ((this._TENLSP != value))
+				{
+					this.OnTENLSPChanging(value);
+					this.SendPropertyChanging();
+					this._TENLSP = value;
+					this.SendPropertyChanged("TENLSP");
+					this.OnTENLSPChanged();
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NHACUNGCAP")]
 	public partial class NHACUNGCAP : INotifyPropertyChanging, INotifyPropertyChanged
 	{
@@ -1964,7 +2210,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
 		public string DIACHI
 		{
 			get
@@ -1984,7 +2230,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(25)")]
 		public string SODIENTHOAI
 		{
 			get
@@ -2209,7 +2455,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(200)")]
 		public string DIACHI
 		{
 			get
@@ -2373,19 +2619,15 @@ namespace DAL
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NHASANXUAT")]
-	public partial class NHASANXUAT : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.NUOCXUATXU")]
+	public partial class NUOCXUATXU : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private string _MANSX;
+		private string _MANXX;
 		
-		private string _TENNXS;
-		
-		private string _DIACHI;
-		
-		private string _SODIENTHOAI;
+		private string _TENNXX;
 		
 		private EntitySet<SANPHAM> _SANPHAMs;
 		
@@ -2393,103 +2635,59 @@ namespace DAL
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnMANSXChanging(string value);
-    partial void OnMANSXChanged();
-    partial void OnTENNXSChanging(string value);
-    partial void OnTENNXSChanged();
-    partial void OnDIACHIChanging(string value);
-    partial void OnDIACHIChanged();
-    partial void OnSODIENTHOAIChanging(string value);
-    partial void OnSODIENTHOAIChanged();
+    partial void OnMANXXChanging(string value);
+    partial void OnMANXXChanged();
+    partial void OnTENNXXChanging(string value);
+    partial void OnTENNXXChanged();
     #endregion
 		
-		public NHASANXUAT()
+		public NUOCXUATXU()
 		{
 			this._SANPHAMs = new EntitySet<SANPHAM>(new Action<SANPHAM>(this.attach_SANPHAMs), new Action<SANPHAM>(this.detach_SANPHAMs));
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANSX", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
-		public string MANSX
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANXX", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		public string MANXX
 		{
 			get
 			{
-				return this._MANSX;
+				return this._MANXX;
 			}
 			set
 			{
-				if ((this._MANSX != value))
+				if ((this._MANXX != value))
 				{
-					this.OnMANSXChanging(value);
+					this.OnMANXXChanging(value);
 					this.SendPropertyChanging();
-					this._MANSX = value;
-					this.SendPropertyChanged("MANSX");
-					this.OnMANSXChanged();
+					this._MANXX = value;
+					this.SendPropertyChanged("MANXX");
+					this.OnMANXXChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENNXS", DbType="NVarChar(50)")]
-		public string TENNXS
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENNXX", DbType="NVarChar(50)")]
+		public string TENNXX
 		{
 			get
 			{
-				return this._TENNXS;
+				return this._TENNXX;
 			}
 			set
 			{
-				if ((this._TENNXS != value))
+				if ((this._TENNXX != value))
 				{
-					this.OnTENNXSChanging(value);
+					this.OnTENNXXChanging(value);
 					this.SendPropertyChanging();
-					this._TENNXS = value;
-					this.SendPropertyChanged("TENNXS");
-					this.OnTENNXSChanged();
+					this._TENNXX = value;
+					this.SendPropertyChanged("TENNXX");
+					this.OnTENNXXChanged();
 				}
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DIACHI", DbType="NVarChar(100)")]
-		public string DIACHI
-		{
-			get
-			{
-				return this._DIACHI;
-			}
-			set
-			{
-				if ((this._DIACHI != value))
-				{
-					this.OnDIACHIChanging(value);
-					this.SendPropertyChanging();
-					this._DIACHI = value;
-					this.SendPropertyChanged("DIACHI");
-					this.OnDIACHIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(10)")]
-		public string SODIENTHOAI
-		{
-			get
-			{
-				return this._SODIENTHOAI;
-			}
-			set
-			{
-				if ((this._SODIENTHOAI != value))
-				{
-					this.OnSODIENTHOAIChanging(value);
-					this.SendPropertyChanging();
-					this._SODIENTHOAI = value;
-					this.SendPropertyChanged("SODIENTHOAI");
-					this.OnSODIENTHOAIChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHASANXUAT_SANPHAM", Storage="_SANPHAMs", ThisKey="MANSX", OtherKey="MANSX")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NUOCXUATXU_SANPHAM", Storage="_SANPHAMs", ThisKey="MANXX", OtherKey="MANXX")]
 		public EntitySet<SANPHAM> SANPHAMs
 		{
 			get
@@ -2525,13 +2723,13 @@ namespace DAL
 		private void attach_SANPHAMs(SANPHAM entity)
 		{
 			this.SendPropertyChanging();
-			entity.NHASANXUAT = this;
+			entity.NUOCXUATXU = this;
 		}
 		
 		private void detach_SANPHAMs(SANPHAM entity)
 		{
 			this.SendPropertyChanging();
-			entity.NHASANXUAT = null;
+			entity.NUOCXUATXU = null;
 		}
 	}
 	
@@ -2657,6 +2855,8 @@ namespace DAL
 		
 		private string _MASP;
 		
+		private string _BARCODE;
+		
 		private string _TENSP;
 		
 		private string _ANHSANPHAM;
@@ -2671,23 +2871,25 @@ namespace DAL
 		
 		private System.Nullable<int> _SLTON;
 		
-		private System.Nullable<bool> _COKM;
-		
-		private string _MANSX;
+		private string _MANXX;
 		
 		private string _MANCC;
 		
 		private string _MADVT;
 		
+		private string _MACTLSP;
+		
 		private EntitySet<CHITIETHOADON> _CHITIETHOADONs;
 		
 		private EntitySet<CHITIETKHUYENMAI> _CHITIETKHUYENMAIs;
+		
+		private EntityRef<CTLOAISANPHAM> _CTLOAISANPHAM;
 		
 		private EntityRef<DONVITINH> _DONVITINH;
 		
 		private EntityRef<NHACUNGCAP> _NHACUNGCAP;
 		
-		private EntityRef<NHASANXUAT> _NHASANXUAT;
+		private EntityRef<NUOCXUATXU> _NUOCXUATXU;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -2695,6 +2897,8 @@ namespace DAL
     partial void OnCreated();
     partial void OnMASPChanging(string value);
     partial void OnMASPChanged();
+    partial void OnBARCODEChanging(string value);
+    partial void OnBARCODEChanged();
     partial void OnTENSPChanging(string value);
     partial void OnTENSPChanged();
     partial void OnANHSANPHAMChanging(string value);
@@ -2709,23 +2913,24 @@ namespace DAL
     partial void OnMOTAChanged();
     partial void OnSLTONChanging(System.Nullable<int> value);
     partial void OnSLTONChanged();
-    partial void OnCOKMChanging(System.Nullable<bool> value);
-    partial void OnCOKMChanged();
-    partial void OnMANSXChanging(string value);
-    partial void OnMANSXChanged();
+    partial void OnMANXXChanging(string value);
+    partial void OnMANXXChanged();
     partial void OnMANCCChanging(string value);
     partial void OnMANCCChanged();
     partial void OnMADVTChanging(string value);
     partial void OnMADVTChanged();
+    partial void OnMACTLSPChanging(string value);
+    partial void OnMACTLSPChanged();
     #endregion
 		
 		public SANPHAM()
 		{
 			this._CHITIETHOADONs = new EntitySet<CHITIETHOADON>(new Action<CHITIETHOADON>(this.attach_CHITIETHOADONs), new Action<CHITIETHOADON>(this.detach_CHITIETHOADONs));
 			this._CHITIETKHUYENMAIs = new EntitySet<CHITIETKHUYENMAI>(new Action<CHITIETKHUYENMAI>(this.attach_CHITIETKHUYENMAIs), new Action<CHITIETKHUYENMAI>(this.detach_CHITIETKHUYENMAIs));
+			this._CTLOAISANPHAM = default(EntityRef<CTLOAISANPHAM>);
 			this._DONVITINH = default(EntityRef<DONVITINH>);
 			this._NHACUNGCAP = default(EntityRef<NHACUNGCAP>);
-			this._NHASANXUAT = default(EntityRef<NHASANXUAT>);
+			this._NUOCXUATXU = default(EntityRef<NUOCXUATXU>);
 			OnCreated();
 		}
 		
@@ -2749,7 +2954,27 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSP", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BARCODE", DbType="VarChar(20)")]
+		public string BARCODE
+		{
+			get
+			{
+				return this._BARCODE;
+			}
+			set
+			{
+				if ((this._BARCODE != value))
+				{
+					this.OnBARCODEChanging(value);
+					this.SendPropertyChanging();
+					this._BARCODE = value;
+					this.SendPropertyChanged("BARCODE");
+					this.OnBARCODEChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TENSP", DbType="NVarChar(150)")]
 		public string TENSP
 		{
 			get
@@ -2849,7 +3074,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(500)")]
 		public string MOTA
 		{
 			get
@@ -2889,46 +3114,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_COKM", DbType="Bit")]
-		public System.Nullable<bool> COKM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANXX", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MANXX
 		{
 			get
 			{
-				return this._COKM;
+				return this._MANXX;
 			}
 			set
 			{
-				if ((this._COKM != value))
+				if ((this._MANXX != value))
 				{
-					this.OnCOKMChanging(value);
-					this.SendPropertyChanging();
-					this._COKM = value;
-					this.SendPropertyChanged("COKM");
-					this.OnCOKMChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MANSX", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MANSX
-		{
-			get
-			{
-				return this._MANSX;
-			}
-			set
-			{
-				if ((this._MANSX != value))
-				{
-					if (this._NHASANXUAT.HasLoadedOrAssignedValue)
+					if (this._NUOCXUATXU.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMANSXChanging(value);
+					this.OnMANXXChanging(value);
 					this.SendPropertyChanging();
-					this._MANSX = value;
-					this.SendPropertyChanged("MANSX");
-					this.OnMANSXChanged();
+					this._MANXX = value;
+					this.SendPropertyChanged("MANXX");
+					this.OnMANXXChanged();
 				}
 			}
 		}
@@ -2981,6 +3186,30 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MACTLSP", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string MACTLSP
+		{
+			get
+			{
+				return this._MACTLSP;
+			}
+			set
+			{
+				if ((this._MACTLSP != value))
+				{
+					if (this._CTLOAISANPHAM.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnMACTLSPChanging(value);
+					this.SendPropertyChanging();
+					this._MACTLSP = value;
+					this.SendPropertyChanged("MACTLSP");
+					this.OnMACTLSPChanged();
+				}
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="SANPHAM_CHITIETHOADON", Storage="_CHITIETHOADONs", ThisKey="MASP", OtherKey="MASP")]
 		public EntitySet<CHITIETHOADON> CHITIETHOADONs
 		{
@@ -3004,6 +3233,40 @@ namespace DAL
 			set
 			{
 				this._CHITIETKHUYENMAIs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="CTLOAISANPHAM_SANPHAM", Storage="_CTLOAISANPHAM", ThisKey="MACTLSP", OtherKey="MACTLSP", IsForeignKey=true)]
+		public CTLOAISANPHAM CTLOAISANPHAM
+		{
+			get
+			{
+				return this._CTLOAISANPHAM.Entity;
+			}
+			set
+			{
+				CTLOAISANPHAM previousValue = this._CTLOAISANPHAM.Entity;
+				if (((previousValue != value) 
+							|| (this._CTLOAISANPHAM.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._CTLOAISANPHAM.Entity = null;
+						previousValue.SANPHAMs.Remove(this);
+					}
+					this._CTLOAISANPHAM.Entity = value;
+					if ((value != null))
+					{
+						value.SANPHAMs.Add(this);
+						this._MACTLSP = value.MACTLSP;
+					}
+					else
+					{
+						this._MACTLSP = default(string);
+					}
+					this.SendPropertyChanged("CTLOAISANPHAM");
+				}
 			}
 		}
 		
@@ -3075,36 +3338,36 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NHASANXUAT_SANPHAM", Storage="_NHASANXUAT", ThisKey="MANSX", OtherKey="MANSX", IsForeignKey=true)]
-		public NHASANXUAT NHASANXUAT
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="NUOCXUATXU_SANPHAM", Storage="_NUOCXUATXU", ThisKey="MANXX", OtherKey="MANXX", IsForeignKey=true)]
+		public NUOCXUATXU NUOCXUATXU
 		{
 			get
 			{
-				return this._NHASANXUAT.Entity;
+				return this._NUOCXUATXU.Entity;
 			}
 			set
 			{
-				NHASANXUAT previousValue = this._NHASANXUAT.Entity;
+				NUOCXUATXU previousValue = this._NUOCXUATXU.Entity;
 				if (((previousValue != value) 
-							|| (this._NHASANXUAT.HasLoadedOrAssignedValue == false)))
+							|| (this._NUOCXUATXU.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._NHASANXUAT.Entity = null;
+						this._NUOCXUATXU.Entity = null;
 						previousValue.SANPHAMs.Remove(this);
 					}
-					this._NHASANXUAT.Entity = value;
+					this._NUOCXUATXU.Entity = value;
 					if ((value != null))
 					{
 						value.SANPHAMs.Add(this);
-						this._MANSX = value.MANSX;
+						this._MANXX = value.MANXX;
 					}
 					else
 					{
-						this._MANSX = default(string);
+						this._MANXX = default(string);
 					}
-					this.SendPropertyChanged("NHASANXUAT");
+					this.SendPropertyChanged("NUOCXUATXU");
 				}
 			}
 		}
