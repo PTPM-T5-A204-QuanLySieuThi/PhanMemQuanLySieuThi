@@ -17,5 +17,17 @@ namespace BLL
         {
             return sanpham_dal.getDataSanPham();
         }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
+        public List<SanPhamDTO> getDataSanPhamDK(string pValue)
+        {
+            return sanpham_dal.getDataSanPhamDK(pValue);
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC THEO LOẠI SẢN PHẨM
+        public List<SanPhamDTO> getDataSanPhamCategory(string pValue)
+        {
+            return sanpham_dal.getDataSanPhamCategory(pValue);
+        }
     }
 }

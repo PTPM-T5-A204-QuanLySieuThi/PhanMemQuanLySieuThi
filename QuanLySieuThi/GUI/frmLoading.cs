@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.SalesGUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,8 @@ namespace GUI
 {
     public partial class frmLoading : MetroFramework.Forms.MetroForm
     {
+        frmMainSales fMainSales = new frmMainSales();
+
         public frmLoading()
         {
             InitializeComponent();
@@ -27,8 +30,7 @@ namespace GUI
             if(timeLine.Width >= 686)
             {
                 timerLoading.Stop();
-                frmHomeSalesStaff fHomeSalesStaff = new frmHomeSalesStaff();
-                fHomeSalesStaff.Show();
+                fMainSales.Show();
                 this.Close();
             }
         }

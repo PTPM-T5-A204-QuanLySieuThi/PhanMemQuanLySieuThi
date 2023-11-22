@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="BLL">
       <HintPath>..\BLL\bin\Debug\BLL.dll</HintPath>
     </Reference>
@@ -72,6 +81,12 @@
     <Reference Include="UI">
       <HintPath>..\UI\bin\Debug\UI.dll</HintPath>
     </Reference>
+    <Reference Include="zxing, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.9.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.9\lib\net48\zxing.presentation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmHomeSalesStaff.cs">
@@ -106,6 +121,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesGUI\frmMainSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmMainSales.Designer.cs">
+      <DependentUpon>frmMainSales.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmHomeSalesStaff.resx">
       <DependentUpon>frmHomeSalesStaff.cs</DependentUpon>
     </EmbeddedResource>
@@ -125,6 +146,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmMainSales.resx">
+      <DependentUpon>frmMainSales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -236,7 +260,62 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="imgs\thung-30-goi-mi-hao-hao-tom-chua-cay-75g-202307281406410377_300x300.jpg">
+    <EmbeddedResource Include="imgs\thung-30-goi-mi-hao-hao-tom-chua-cay-75g-202211181144401243.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\store.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-machine-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash-machine-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bill-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-white1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client-black.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\client-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="imgs\mi-mini-doraemon-hau-sua-pho-mai-ly-48g.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imgs\nuoc-mam-nam-ngu-3-trong-1-750ml.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="imgs\mien-kho-khoai-lang-nongshim-goi-1kg.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imgs\pho-mai-con-bo-cuoi-vi-truyen-thong-112g-hop-8-mieng-hop-122g.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="imgs\sua-9-loai-hat-vinamilk-super-nut-loc-4-hop-180ml.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
   </ItemGroup>

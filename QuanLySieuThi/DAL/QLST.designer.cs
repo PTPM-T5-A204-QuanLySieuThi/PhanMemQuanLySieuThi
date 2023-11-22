@@ -1056,6 +1056,8 @@ namespace DAL
 		
 		private EntitySet<SANPHAM> _SANPHAMs;
 		
+		private EntityRef<LOAISANPHAM> _LOAISANPHAM;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -1071,6 +1073,7 @@ namespace DAL
 		public CTLOAISANPHAM()
 		{
 			this._SANPHAMs = new EntitySet<SANPHAM>(new Action<SANPHAM>(this.attach_SANPHAMs), new Action<SANPHAM>(this.detach_SANPHAMs));
+			this._LOAISANPHAM = default(EntityRef<LOAISANPHAM>);
 			OnCreated();
 		}
 		
@@ -1125,6 +1128,10 @@ namespace DAL
 			{
 				if ((this._MALSP != value))
 				{
+					if (this._LOAISANPHAM.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
 					this.OnMALSPChanging(value);
 					this.SendPropertyChanging();
 					this._MALSP = value;
@@ -1144,6 +1151,40 @@ namespace DAL
 			set
 			{
 				this._SANPHAMs.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAISANPHAM_CTLOAISANPHAM", Storage="_LOAISANPHAM", ThisKey="MALSP", OtherKey="MALSP", IsForeignKey=true)]
+		public LOAISANPHAM LOAISANPHAM
+		{
+			get
+			{
+				return this._LOAISANPHAM.Entity;
+			}
+			set
+			{
+				LOAISANPHAM previousValue = this._LOAISANPHAM.Entity;
+				if (((previousValue != value) 
+							|| (this._LOAISANPHAM.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._LOAISANPHAM.Entity = null;
+						previousValue.CTLOAISANPHAMs.Remove(this);
+					}
+					this._LOAISANPHAM.Entity = value;
+					if ((value != null))
+					{
+						value.CTLOAISANPHAMs.Add(this);
+						this._MALSP = value.MALSP;
+					}
+					else
+					{
+						this._MALSP = default(string);
+					}
+					this.SendPropertyChanged("LOAISANPHAM");
+				}
 			}
 		}
 		
@@ -1852,7 +1893,7 @@ namespace DAL
 		
 		private System.Nullable<System.DateTime> _NGAYKETTHUC;
 		
-		private string _SOGIAM;
+		private System.Nullable<int> _SOGIAM;
 		
 		private string _DIEUKIEN;
 		
@@ -1870,7 +1911,7 @@ namespace DAL
     partial void OnNGAYBATDAUChanged();
     partial void OnNGAYKETTHUCChanging(System.Nullable<System.DateTime> value);
     partial void OnNGAYKETTHUCChanged();
-    partial void OnSOGIAMChanging(string value);
+    partial void OnSOGIAMChanging(System.Nullable<int> value);
     partial void OnSOGIAMChanged();
     partial void OnDIEUKIENChanging(string value);
     partial void OnDIEUKIENChanged();
@@ -1962,8 +2003,8 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOGIAM", DbType="VarChar(20)")]
-		public string SOGIAM
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SOGIAM", DbType="Int")]
+		public System.Nullable<int> SOGIAM
 		{
 			get
 			{
@@ -2058,6 +2099,8 @@ namespace DAL
 		
 		private string _TENLSP;
 		
+		private EntitySet<CTLOAISANPHAM> _CTLOAISANPHAMs;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -2070,6 +2113,7 @@ namespace DAL
 		
 		public LOAISANPHAM()
 		{
+			this._CTLOAISANPHAMs = new EntitySet<CTLOAISANPHAM>(new Action<CTLOAISANPHAM>(this.attach_CTLOAISANPHAMs), new Action<CTLOAISANPHAM>(this.detach_CTLOAISANPHAMs));
 			OnCreated();
 		}
 		
@@ -2113,6 +2157,19 @@ namespace DAL
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="LOAISANPHAM_CTLOAISANPHAM", Storage="_CTLOAISANPHAMs", ThisKey="MALSP", OtherKey="MALSP")]
+		public EntitySet<CTLOAISANPHAM> CTLOAISANPHAMs
+		{
+			get
+			{
+				return this._CTLOAISANPHAMs;
+			}
+			set
+			{
+				this._CTLOAISANPHAMs.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -2131,6 +2188,18 @@ namespace DAL
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_CTLOAISANPHAMs(CTLOAISANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAISANPHAM = this;
+		}
+		
+		private void detach_CTLOAISANPHAMs(CTLOAISANPHAM entity)
+		{
+			this.SendPropertyChanging();
+			entity.LOAISANPHAM = null;
 		}
 	}
 	

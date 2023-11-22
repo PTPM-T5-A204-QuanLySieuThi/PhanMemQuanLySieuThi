@@ -44,6 +44,7 @@
       <Column Name="TENCTLSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="MALSP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="CTLOAISANPHAM_SANPHAM" Member="SANPHAMs" ThisKey="MACTLSP" OtherKey="MACTLSP" Type="SANPHAM" />
+      <Association Name="LOAISANPHAM_CTLOAISANPHAM" Member="LOAISANPHAM" ThisKey="MALSP" OtherKey="MALSP" Type="LOAISANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.DONVITINH" Member="DONVITINHs">
@@ -86,7 +87,7 @@
       <Column Name="TENKM" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="NGAYBATDAU" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYKETTHUC" Type="System.DateTime" DbType="Date" CanBeNull="true" />
-      <Column Name="SOGIAM" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="SOGIAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="DIEUKIEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="KHUYENMAI_CHITIETKHUYENMAI" Member="CHITIETKHUYENMAIs" ThisKey="MAKM" OtherKey="MAKM" Type="CHITIETKHUYENMAI" />
     </Type>
@@ -95,6 +96,7 @@
     <Type Name="LOAISANPHAM">
       <Column Name="MALSP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TENLSP" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="LOAISANPHAM_CTLOAISANPHAM" Member="CTLOAISANPHAMs" ThisKey="MALSP" OtherKey="MALSP" Type="CTLOAISANPHAM" />
     </Type>
   </Table>
   <Table Name="dbo.NHACUNGCAP" Member="NHACUNGCAPs">

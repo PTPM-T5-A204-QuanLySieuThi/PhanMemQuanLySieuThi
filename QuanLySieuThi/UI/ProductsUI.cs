@@ -12,16 +12,38 @@ namespace UI
 {
     public partial class ProductsUI : UserControl
     {
+        public event EventHandler onSelect = null;
+
         public ProductsUI()
         {
             InitializeComponent();
+            this.Load += ProductsUI_Load;
+            picAdd.Click += PicAdd_Click;
         }
 
+        private void ProductsUI_Load(object sender, EventArgs e)
+        {
+            HideLabel();
+        }
+
+        private void PicAdd_Click(object sender, EventArgs e)
+        {
+            onSelect?.Invoke(this, e);
+        }
+
+        private string pMaSP;
         private Image pAnh;
-        private string pTenSp;
+        private string pTenSP;
         private string pGiaGiamSP;
         private string pGiaSP;
         private string pKhuyenMai;
+
+        [Category("Custom Product")]
+        public string PMaSP
+        {
+            get { return pMaSP; }
+            set { pMaSP = value; }
+        }
 
         [Category("Custom Product")]
         public Image PAnh 
@@ -33,8 +55,8 @@ namespace UI
         [Category("Custom Product")]
         public string PTenSp
         {
-            get { return pTenSp; }
-            set { pTenSp = value; lbTenSP.Text = value; }
+            get { return pTenSP; }
+            set { pTenSP = value; lbTenSP.Text = value; }
         }
 
         [Category("Custom Product")]
@@ -56,6 +78,20 @@ namespace UI
         {
             get { return pKhuyenMai; }
             set { pKhuyenMai = value; lbKhuyenMai.Text = value; }
+        }
+
+        private void HideLabel()
+        {
+            if (lbKhuyenMai.Text == string.Empty)
+            {
+                lbGiaSP.Visible = false;
+                lbKhuyenMai.Visible = false;
+            }
+            else
+            {
+                lbGiaSP.Visible = true;
+                lbKhuyenMai.Visible = true;
+            }
         }
     }
 }

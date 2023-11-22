@@ -39,12 +39,20 @@ namespace GUI
             for (int i = 0; i < products.Count; i++)
             {
                 productItems[i] = new ProductsUI();
-                productItems[i].Width = 296;
+                productItems[i].Width = 205;
                 productItems[i].Margin = new Padding(10, 3, 10, 15);
-                productItems[i].PAnh = Image.FromFile("imgs/" + products[i].anhsanpham);
                 productItems[i].PTenSp = products[i].tensp;
                 productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
                 productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - 0.17)).ToString("#,#") + " vnđ";
+                try
+                {
+                    Image image = Image.FromFile("imgs/" + products[i].anhsanpham);
+                    productItems[i].PAnh = new Bitmap(image);
+                }
+                catch (OutOfMemoryException)
+                {
+
+                }
 
                 if (flpSanPham.Controls.Count < 0)
                 {

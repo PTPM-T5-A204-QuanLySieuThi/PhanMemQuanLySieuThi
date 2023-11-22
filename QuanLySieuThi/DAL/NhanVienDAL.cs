@@ -35,9 +35,9 @@ namespace DAL
                 matk = nv.MATK
             });
 
-            List<NhanVienDTO> lst_tqtc = nhanviens.ToList();
+            List<NhanVienDTO> lst_nv = nhanviens.ToList();
 
-            return lst_tqtc;
+            return lst_nv;
         }
 
         //------------------ LẤY DỮ LIỆU NHÂN VIÊN BÁN HÀNG
@@ -58,9 +58,9 @@ namespace DAL
                 matk = nv.MATK
             });
 
-            List<NhanVienDTO> lst_tqtc = nhanviens.ToList();
+            List<NhanVienDTO> lst_nv = nhanviens.ToList();
 
-            return lst_tqtc;
+            return lst_nv;
         }
 
     }

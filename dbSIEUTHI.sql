@@ -107,8 +107,7 @@ CREATE TABLE KHUYENMAI
 	TENKM			NVARCHAR(50),
 	NGAYBATDAU		DATE,
 	NGAYKETTHUC		DATE,
-	SOGIAM			VARCHAR(20),
-	DIEUKIEN		NVARCHAR(100),
+	SOGIAM			INT,
 	CONSTRAINT PK_KHUYENMAI PRIMARY KEY(MAKM)
 );
 
@@ -191,6 +190,10 @@ ADD CONSTRAINT FK_TAIKHOAN_QUYENTRUYCAP FOREIGN KEY(MAQTC) REFERENCES QUYENTRUYC
 ALTER TABLE NHANVIEN 
 ADD CONSTRAINT FK_NHANVIEN_TAIKHOAN FOREIGN KEY(MATK) REFERENCES TAIKHOAN(MATK)
 
+--------------------- BẢNG CHI TIẾT LOẠI SẢN PHẨM
+ALTER TABLE CTLOAISANPHAM 
+ADD CONSTRAINT FK_CTLOAISANPHAM_LOAISANPHAM FOREIGN KEY(MALSP) REFERENCES LOAISANPHAM(MALSP)
+
 --------------------- BẢNG SẢN PHẨM
 ALTER TABLE SANPHAM
 ADD CONSTRAINT FK_SANPHAM_NUOCXUATXU FOREIGN KEY(MANXX) REFERENCES NUOCXUATXU(MANXX),
@@ -214,41 +217,41 @@ ADD CONSTRAINT FK_CHITIETHOADON_HOADON FOREIGN KEY(MAHD) REFERENCES HOADON(MAHD)
 	CONSTRAINT FK_CHITIETHOADON_SANPHAM FOREIGN KEY(MASP) REFERENCES SANPHAM(MASP),
 	CONSTRAINT FK_CHITIETHOADON_NHANVIEN FOREIGN KEY(MANV) REFERENCES NHANVIEN(MANV)
 
---------------------------------------------------------- TRIGGER
---------------------- TRIGGER TẠO RANDOM MÃ NHÂN VIÊN
-CREATE TRIGGER TAONGAUNHIENMANHANVIEN
-ON NHANVIEN
-AFTER INSERT
-AS
-BEGIN    
-    UPDATE NHANVIEN
-    SET MANV = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
-END
-GO
+----------------------------------------------------------- TRIGGER
+----------------------- TRIGGER TẠO RANDOM MÃ NHÂN VIÊN
+--CREATE TRIGGER TAONGAUNHIENMANHANVIEN
+--ON NHANVIEN
+--AFTER INSERT
+--AS
+--BEGIN    
+--    UPDATE NHANVIEN
+--    SET MANV = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
+--END
+--GO
 
---------------------- TRIGGER TẠO RANDOM MÃ KHÁCH HÀNG
-CREATE TRIGGER TAONGAUNHIENMAKHACHHANG
-ON KHACHHANG
-AFTER INSERT
-AS
-BEGIN    
-    UPDATE KHACHHANG
-    SET MAKH = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
-END
-GO
+----------------------- TRIGGER TẠO RANDOM MÃ KHÁCH HÀNG
+--CREATE TRIGGER TAONGAUNHIENMAKHACHHANG
+--ON KHACHHANG
+--AFTER INSERT
+--AS
+--BEGIN    
+--    UPDATE KHACHHANG
+--    SET MAKH = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
+--END
+--GO
 
---------------------- TRIGGER TẠO RANDOM MÃ SẢN PHẨM
-CREATE TRIGGER TAONGAUNHIENMASANPHAM
-ON SANPHAM
-AFTER INSERT
-AS
-BEGIN    
-    UPDATE SANPHAM
-    SET MASP = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
-END
-GO
+----------------------- TRIGGER TẠO RANDOM MÃ SẢN PHẨM
+--CREATE TRIGGER TAONGAUNHIENMASANPHAM
+--ON SANPHAM
+--AFTER INSERT
+--AS
+--BEGIN    
+--    UPDATE SANPHAM
+--    SET MASP = '#' + LEFT(CAST(ABS(CHECKSUM(NEWID())) AS VARCHAR(10)), 7)
+--END
+--GO
 
---------------------- TRIGGER TẠO MÃ TÀI KHOẢN THEO ĐỊNH DẠNG	
+----------------------- TRIGGER TẠO MÃ TÀI KHOẢN THEO ĐỊNH DẠNG	
 CREATE TRIGGER TAOMATAIKHOANTHEODINHDANG
 ON TAIKHOAN
 INSTEAD OF INSERT
@@ -260,41 +263,41 @@ BEGIN
 END
 GO
 
---------------------- TRIGGER TẠO MÃ ĐƠN VỊ TÍNH THEO ĐỊNH DẠNG	
-CREATE TRIGGER TAOMADONVITINHTHEODINHDANG
-ON DONVITINH
-INSTEAD OF INSERT
-AS
-BEGIN
-    INSERT INTO DONVITINH (TENDVT)
-    SELECT I.TENDVT
-    FROM inserted I;
-END
-GO
+----------------------- TRIGGER TẠO MÃ ĐƠN VỊ TÍNH THEO ĐỊNH DẠNG	
+--CREATE TRIGGER TAOMADONVITINHTHEODINHDANG
+--ON DONVITINH
+--INSTEAD OF INSERT
+--AS
+--BEGIN
+--    INSERT INTO DONVITINH (TENDVT)
+--    SELECT I.TENDVT
+--    FROM inserted I;
+--END
+--GO
 
---------------------- TRIGGER TẠO MÃ NHÀ SẢN XUẤT THEO ĐỊNH DẠNG	
-CREATE TRIGGER TAOMANHASANXUATTHEODINHDANG
-ON NHASANXUAT 
-INSTEAD OF INSERT
-AS
-BEGIN
-    INSERT INTO NHASANXUAT (TENNXS, DIACHI, SODIENTHOAI)
-    SELECT I.TENNXS, I.DIACHI, I.SODIENTHOAI
-    FROM inserted I;
-END
-GO
+----------------------- TRIGGER TẠO MÃ NHÀ SẢN XUẤT THEO ĐỊNH DẠNG	
+--CREATE TRIGGER TAOMANHASANXUATTHEODINHDANG
+--ON NHASANXUAT 
+--INSTEAD OF INSERT
+--AS
+--BEGIN
+--    INSERT INTO NHASANXUAT (TENNXS, DIACHI, SODIENTHOAI)
+--    SELECT I.TENNXS, I.DIACHI, I.SODIENTHOAI
+--    FROM inserted I;
+--END
+--GO
 
---------------------- TRIGGER TẠO MÃ NHÀ CUNG CẤP THEO ĐỊNH DẠNG	
-CREATE TRIGGER TAOMANHACUNGCAPTHEODINHDANG
-ON NHACUNGCAP 
-INSTEAD OF INSERT
-AS
-BEGIN
-    INSERT INTO NHACUNGCAP (TENNCC, DIACHI, SODIENTHOAI)
-    SELECT I.TENNCC, I.DIACHI, I.SODIENTHOAI
-    FROM inserted I;
-END
-GO
+----------------------- TRIGGER TẠO MÃ NHÀ CUNG CẤP THEO ĐỊNH DẠNG	
+--CREATE TRIGGER TAOMANHACUNGCAPTHEODINHDANG
+--ON NHACUNGCAP 
+--INSTEAD OF INSERT
+--AS
+--BEGIN
+--    INSERT INTO NHACUNGCAP (TENNCC, DIACHI, SODIENTHOAI)
+--    SELECT I.TENNCC, I.DIACHI, I.SODIENTHOAI
+--    FROM inserted I;
+--END
+--GO
 
 
 --------------------------------------------------- [ KHỞI TẠO CÁC BẢNG DỮ LIỆU ] ---------------------------------------------------
@@ -316,16 +319,16 @@ VALUES
 SET DATEFORMAT DMY
 INSERT INTO NHANVIEN(MANV, HOTEN, ANHDAIDIEN, EMAIL, NGAYSINH, GIOITINH, DIACHI, SODIENTHOAI, MATK)
 VALUES
-('1', N'Phạm Trần Tấn Đạt', '', 'datptt@gmail.com', '22/09/2002', N'Nam', N'F11/27E2 đường Phạm Thị Nghĩ, ấp 6, Xã Vĩnh Lộc A, Huyện Bình Chánh, TP Hồ Chí Minh', '0123456789', 'TK001'),
-('2', N'Trần Bích Phượng', '', 'phuongtb@gmail.com', '12/01/1999', N'Nữ', N' 2/33 đường 147, KP5, Phường Tăng Nhơn Phú B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0987654321', 'TK002'),
-('3', N'Phùng Thanh Độ', '', 'dopt@gmail.com', '28/10/2001', N'Nam', N'223 Hoàng Văn Thụ (K3.28 Cao ốc Kingston Residence), Phường 08, Quận Phú Nhuận, TP Hồ Chí Minh', '0123412345', 'TK002'),
-('4', N'Phan Tấn Trung', '', 'trungpt@gmail.com', '04/04/1996', N'Nam', N'Số 103, đường số 5, Phường Linh Xuân, Thành phố Thủ Đức, TP Hồ Chí Minh', '0234567890', 'TK002'),
-('5', N'Đặng Ngọc Bảo Châu', '', 'chaudnb@gmail.com', '25/12/1998', N'Nữ', N'Tầng 16, tòa nhà E, Town Central, số 11 Đoàn Văn Bơ, phường 13, Quận 4, TP Hồ Chí Minh', '0345678912', 'TK003'),
-('6', N'Nguyễn Trung Thịnh', '', 'thinhnt@gmail.com', '12/07/2000', N'Nam', N'Số 473 Đỗ Xuân Hợp, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0456789123', 'TK003'),
-('7', N'Nguyễn Quốc Bảo', '', 'baonq@gmail.com', '07/12/2000', N'Nam', N'120 Vũ Tông Phan , Khu Phố 5, Phường An Phú, Thành phố Thủ Đức, TP Hồ Chí Minh', '0567891234', 'TK002'),
-('8', N'Trần Quốc Quy', '', 'quytq@gmail.com', '06/11/2001', N'Nam', N'72 Bình Giã, Phường 13, Quận Tân Bình, TP Hồ Chí Minh', '0678912345', 'TK003'),
-('9', N'Lâm Quốc Huy', '', 'huylq@gmail.com', '17/08/1998', N'Nam', N'C10 Rio Vista, 72 Dương Đình Hội, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0789123456', 'TK003'),
-('10', N'Trần Thị Vân Anh', '', 'anhttv@gmail.com', '22/02/1993', N'Nữ', N'K02, Park Riverside, 09 Bưng ông Thoàn, Phường Phú Hữu, Thành phố Thủ Đức, TP Hồ Chí Minh', '0891234567', 'TK002')
+('1011826', N'Phạm Trần Tấn Đạt', '', 'datptt@gmail.com', '22/09/2002', N'Nam', N'F11/27E2 đường Phạm Thị Nghĩ, ấp 6, Xã Vĩnh Lộc A, Huyện Bình Chánh, TP Hồ Chí Minh', '0123456789', 'TK001'),
+('1011168', N'Trần Bích Phượng', '', 'phuongtb@gmail.com', '12/01/1999', N'Nữ', N' 2/33 đường 147, KP5, Phường Tăng Nhơn Phú B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0987654321', 'TK002'),
+('1016056', N'Phùng Thanh Độ', '', 'dopt@gmail.com', '28/10/2001', N'Nam', N'223 Hoàng Văn Thụ (K3.28 Cao ốc Kingston Residence), Phường 08, Quận Phú Nhuận, TP Hồ Chí Minh', '0123412345', 'TK002'),
+('1013178', N'Phan Tấn Trung', '', 'trungpt@gmail.com', '04/04/1996', N'Nam', N'Số 103, đường số 5, Phường Linh Xuân, Thành phố Thủ Đức, TP Hồ Chí Minh', '0234567890', 'TK002'),
+('1016502', N'Đặng Ngọc Bảo Châu', '', 'chaudnb@gmail.com', '25/12/1998', N'Nữ', N'Tầng 16, tòa nhà E, Town Central, số 11 Đoàn Văn Bơ, phường 13, Quận 4, TP Hồ Chí Minh', '0345678912', 'TK003'),
+('1011869', N'Nguyễn Trung Thịnh', '', 'thinhnt@gmail.com', '12/07/2000', N'Nam', N'Số 473 Đỗ Xuân Hợp, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0456789123', 'TK003'),
+('1011893', N'Nguyễn Quốc Bảo', '', 'baonq@gmail.com', '07/12/2000', N'Nam', N'120 Vũ Tông Phan , Khu Phố 5, Phường An Phú, Thành phố Thủ Đức, TP Hồ Chí Minh', '0567891234', 'TK002'),
+('1011570', N'Trần Quốc Quy', '', 'quytq@gmail.com', '06/11/2001', N'Nam', N'72 Bình Giã, Phường 13, Quận Tân Bình, TP Hồ Chí Minh', '0678912345', 'TK003'),
+('1016036', N'Lâm Quốc Huy', '', 'huylq@gmail.com', '17/08/1998', N'Nam', N'C10 Rio Vista, 72 Dương Đình Hội, Phường Phước Long B, Thành phố Thủ Đức, TP Hồ Chí Minh', '0789123456', 'TK003'),
+('1019717', N'Trần Thị Vân Anh', '', 'anhttv@gmail.com', '22/02/1993', N'Nữ', N'K02, Park Riverside, 09 Bưng ông Thoàn, Phường Phú Hữu, Thành phố Thủ Đức, TP Hồ Chí Minh', '0891234567', 'TK002')
 
 --------------------- BẢNG ĐƠN VỊ TÍNH
 INSERT INTO DONVITINH(MADVT, TENDVT)
@@ -347,7 +350,8 @@ VALUES
 ('15', N'Bình'),
 ('16', N'Bộ'),
 ('17', N'Cây'),
-('18', N'Vỉ')
+('18', N'Vỉ'),
+('19', 'Ly')
 
 --------------------- BẢNG NƯỚC XUẤT XỨ
 INSERT INTO NUOCXUATXU(MANXX, TENNXX)
@@ -375,9 +379,9 @@ VALUES
 ('CC002', N'Ba Huân', N'Trang trại chăn nuôi gà Công nghệ cao Ba Huân – Bình Dương', '1800 6002'),
 ('CC003', N'Tường An', N'48/5 Phan Huy ích, P. 15, Q. Tân Bình,Tp. Hồ Chí Minh (TPHCM)', '(028) 38153972'),
 ('CC004', N'Acecook', N'Lô số II-3,Đường số 11,Nhóm CN II, Khu Công nghiệp Tân Bình, Phường Tây Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh, Việt Nam', '(028) 3815 4064'),
-('CC005', N'', N'', ''),
-('CC006', N'', N'', ''),
-('CC007', N'', N'', ''),
+('CC005', N'Nam Ngư', N'Khu Công nghiệp Tân Đông Hiệp A, huyện Dĩ An, tỉnh Bình Dương', ''),
+('CC006', N'Nongshim', N'112 Yeouidaebang-Ro, Dongjak-Gu, Seoul (Shindaebang-Dong)', '080-023-5181'),
+('CC007', N'Bel Việt Nam', N'Lô CN1, KCN Sóng Thần 3, Tp Thủ Dầu Một, Bình Dương', '1800 1110'),
 ('CC008', N'', N'', ''),
 ('CC009', N'', N'', ''),
 ('CC010', N'', N'', ''),
@@ -392,6 +396,7 @@ VALUES
 --------------------- BẢNG LOẠI SẢN PHẨM
 INSERT INTO LOAISANPHAM(MALSP, TENLSP)
 VALUES
+('LS000', N'--'),
 ('LS001', N'Thịt, cá, trứng, hải sản'),
 ('LS002', N'Rau, củ, nấm, trái cây'),
 ('LS003', N'Dầu ăn, nước chấm, gia vị'),
@@ -436,21 +441,48 @@ VALUES
 ('CS024', N'Tiêu, sa tế, ớt bột', 'LS003'),
 ('CS025', N'Bột nghệ, tỏi, hồi, quế,...', 'LS003'),
 ('CS026', N'Sữa tươi', 'LS008'),
-('CS027', N'Mì ăn liền', 'LS005')
+('CS027', N'Mì ăn liền', 'LS005'),
+('CS028', N'Hủ tiếu, miến', 'LS005'),
+('CS029', N'Phở, bún ăn liền', 'LS005'),
+('CS030', N'Cháo gói, cháo tươi', 'LS005'),
+('CS031', N'Bánh gạo Hàn Quốc', 'LS005'),
+('CS032', N'Mì, nui, bún khô', 'LS005'),
+('CS033', N'Sữa chua uống liền', 'LS008'),
+('CS034', N'Sữa hạt, sữa đậu', 'LS008'),
+('CS035', N'Sữa ca cao, lúa mạch', 'LS008'),
+('CS036', N'Sữa đặc', 'LS008'),
+('CS037', N'Ngũ cốc', 'LS008'),
+('CS038', N'Sữa bột', 'LS008'),
+('CS039', N'Sữa chua ăn', 'LS008'),
+('CS040', N'Bơ sữa, phô mai', 'LS008')
 
 --------------------- BẢNG SẢN PHẨM
 SET DATEFORMAT DMY
 INSERT INTO SANPHAM(MASP, BARCODE, TENSP, ANHSANPHAM, NGAYSX, HANSD, GIASP, MOTA, SLTON, MANXX, MANCC, MADVT, MACTLSP)
 VALUES
-('1', '8934988020045', N'Dầu đậu nành 100% nguyên chất Tường An can 5 lít', 'dau-dau-nanh-nguyen-chat-simply-can-5-lit.jpg', '01/11/2023', '02/11/2023', 336000, N'', 250, 'XX001', 'CC003' , '13', 'CS014'),
-('2', '8936029480016', N'Trứng gà so QLEgg hộp 10 tặng 2', 'trung_ga_so_qlegg_hop_10_tang_2.jpg', '01/11/2023', '30/10/2023', 38500, N'', 50, 'XX001', 'CC002' , '4', 'CS006'),
-('3', '8934673581325', N'Sữa Tươi Tiệt Trùng Vinamilk 100% Ít Đường Lốc 4 Hộp 110ML', 'loc_4_hop_sua_tuoi_tiet_trung_it_duong_vinamilk_100_sua_tuoi_180ml.jpg', '01/11/2023', '16/04/2025', 21000, N'', 250, 'XX001', 'CC001' , '12', 'CS026'),
-('4', '8934563034832', N'Mì Hảo Hảo Tôm Chua Cay Thùng 24 Ly 67G', 'dau-dau-nanh-nguyen-chat-simply-can-5-lit.jpg', '01/11/2023', '02/11/2023', 216000 , N'', 90, 'XX001', 'CC004' , '11', 'CS027')
---('5', '8936029480016', N'Trứng gà so QLEgg hộp 10 tặng 2', 'trung_ga_so_qlegg_hop_10_tang_2.jpg', '01/11/2023', '30/10/2023', 38500, N'', 50, 'XX001', 'CC002' , '4', 'CS006'),
---('6', '8934673581325', N'Sữa Tươi Tiệt Trùng Vinamilk 100% Ít Đường Lốc 4 Hộp 110ML', 'loc_4_hop_sua_tuoi_tiet_trung_it_duong_vinamilk_100_sua_tuoi_180ml.jpg', '01/11/2023', '16/04/2025', 21000, N'', 250, 'XX001', 'CC001' , '12', 'CS026'),
---('7', '8934988020045', N'Dầu đậu nành 100% nguyên chất Tường An can 5 lít', 'dau-dau-nanh-nguyen-chat-simply-can-5-lit.jpg', '01/11/2023', '02/11/2023', 336000, N'', 250, 'XX001', 'CC003' , '13', 'CS014'),
---('8', '8936029480016', N'Trứng gà so QLEgg hộp 10 tặng 2', 'trung_ga_so_qlegg_hop_10_tang_2.jpg', '01/11/2023', '30/10/2023', 38500, N'', 50, 'XX001', 'CC002' , '4', 'CS006'),
---('9', '8934673581325', N'Sữa Tươi Tiệt Trùng Vinamilk 100% Ít Đường Lốc 4 Hộp 110ML', 'loc_4_hop_sua_tuoi_tiet_trung_it_duong_vinamilk_100_sua_tuoi_180ml.jpg', '01/11/2023', '16/04/2025', 21000, N'', 250, 'XX001', 'CC001' , '12', 'CS026')
+('1067407', '8934988020045', N'Dầu đậu nành 100% nguyên chất Tường An can 5 lít', 'dau-dau-nanh-nguyen-chat-simply-can-5-lit.jpg', '01/11/2023', '02/11/2023', 336000, N'', 250, 'XX001', 'CC003' , '13', 'CS014'),
+('1268581', '8936064240255', N'Trứng gà so QLEgg hộp 10 tặng 2', 'trung_ga_so_qlegg_hop_10_tang_2.jpg', '01/11/2023', '30/10/2023', 38500, N'', 50, 'XX001', 'CC002' , '4', 'CS006'),
+('1584557', '8934673581325', N'Sữa Tươi Tiệt Trùng Vinamilk 100% Ít Đường Lốc 4 Hộp 110ML', 'loc_4_hop_sua_tuoi_tiet_trung_it_duong_vinamilk_100_sua_tuoi_180ml.jpg', '01/11/2023', '16/04/2025', 21000, N'', 250, 'XX001', 'CC001' , '12', 'CS026'),
+('1701673', '8934563034832', N'Mì Hảo Hảo Tôm Chua Cay Thùng 24 Ly 67G', 'thung-30-goi-mi-hao-hao-tom-chua-cay-75g-202211181144401243.jpg', '01/11/2023', '02/11/2023', 216000 , N'', 90, 'XX001', 'CC004' , '11', 'CS027'),
+('1721720', '8936017368395', N'Nước Mắm Nam Ngư 3 Trong 1 750ML', 'nuoc-mam-nam-ngu-3-trong-1-750ml.jpg', '01/11/2023', '30/10/2023', 51100, N'', 50, 'XX001', 'CC005' , '9', 'CS015'),
+('1732484', '8934563679101', N'Mì Mini Doremon Hàu Sữa Phô Mai Ly 48G', 'mi-mini-doraemon-hau-sua-pho-mai-ly-48g.jpg', '01/11/2023', '16/04/2025', 11300, N'', 250, 'XX001', 'CC004' , '4', 'CS027'),
+('1953004', '8809061676337', N'Miến Khô Khoai Lang Nongshim Gói 1kg', 'mien-kho-khoai-lang-nongshim-goi-1kg.jpg', '01/11/2023', '02/11/2023', 79900, N'', 250, 'XX011', 'CC006' , '3', 'CS028'),
+('2146970', '8934673701013', N'Sữa 9 Loại Hạt Vinamilk Super Nut Lốc 4 Hộp 180ml', 'sua-9-loai-hat-vinamilk-super-nut-loc-4-hop-180ml.jpg', '01/11/2023', '30/10/2023', 48200, N'', 50, 'XX001', 'CC001' , '12', 'CS034'),
+('3465619', '3073781154351', N'Phô Mai Con Bò Cười Vị Truyền Thống 8 Miếng Hộp 112G', 'pho-mai-con-bo-cuoi-vi-truyen-thong-112g-hop-8-mieng-hop-122g.jpg', '01/11/2023', '16/04/2025', 36400, N'', 250, 'XX001', 'CC007' , '4', 'CS040')
 
-SELECT * FROM SANPHAM
+--------------------- BẢNG KHUYẾN MÃI
+SET DATEFORMAT DMY
+INSERT INTO KHUYENMAI(MAKM, TENKM, NGAYBATDAU, NGAYKETTHUC, SOGIAM)
+VALUES
+('KM001', N'Giảm 15%', '17/11/2023', '17/12/2023', 15),
+('KM002', N'Giảm 7%', '17/11/2023', '17/12/2023', 7)
+
+--------------------- BẢNG CHI TIẾT KHUYẾN MÃI
+INSERT INTO CHITIETKHUYENMAI(MAKM, MASP)
+VALUES
+('KM001', '1067407'),
+('KM001', '1701673'),
+('KM002', '2146970')
+
+SELECT * FROM KHUYENMAI
 
