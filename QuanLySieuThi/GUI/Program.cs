@@ -1,4 +1,5 @@
-﻿using GUI.SalesGUI;
+﻿using GUI.AdminGUI;
+using GUI.SalesGUI;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,7 @@ namespace GUI
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmLogin());
+            Application.Run(new frmMainAdmin());
         }
     }
 }

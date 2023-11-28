@@ -31,9 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.timerLoading = new System.Windows.Forms.Timer(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.timeLine = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.timeLine = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -50,24 +50,6 @@
             this.panel1.Size = new System.Drawing.Size(700, 501);
             this.panel1.TabIndex = 5;
             // 
-            // timeLine
-            // 
-            this.timeLine.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.timeLine.Location = new System.Drawing.Point(0, 490);
-            this.timeLine.Name = "timeLine";
-            this.timeLine.Size = new System.Drawing.Size(160, 14);
-            this.timeLine.TabIndex = 5;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::GUI.Properties.Resources.Work_time_rafiki;
-            this.pictureBox1.Location = new System.Drawing.Point(148, 13);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(427, 383);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -79,6 +61,24 @@
             this.label1.Size = new System.Drawing.Size(416, 85);
             this.label1.TabIndex = 8;
             this.label1.Text = "LOADING...";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::GUI.Properties.Resources.Work_time_rafiki;
+            this.pictureBox1.Location = new System.Drawing.Point(148, 13);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(427, 383);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // timeLine
+            // 
+            this.timeLine.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.timeLine.Location = new System.Drawing.Point(0, 490);
+            this.timeLine.Name = "timeLine";
+            this.timeLine.Size = new System.Drawing.Size(160, 14);
+            this.timeLine.TabIndex = 5;
             // 
             // frmLoading
             // 

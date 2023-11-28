@@ -48,8 +48,8 @@
     <Reference Include="DTO">
       <HintPath>..\DTO\bin\Debug\DTO.dll</HintPath>
     </Reference>
-    <Reference Include="Guna.UI2, Version=2.0.4.5, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
-      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.5\lib\net48\Guna.UI2.dll</HintPath>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
     </Reference>
     <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
       <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
@@ -89,11 +89,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmHomeSalesStaff.cs">
+    <Compile Include="AdminGUI\frmMainAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHomeSalesStaff.Designer.cs">
-      <DependentUpon>frmHomeSalesStaff.cs</DependentUpon>
+    <Compile Include="AdminGUI\frmMainAdmin.Designer.cs">
+      <DependentUpon>frmMainAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmProductAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmProductAdmin.Designer.cs">
+      <DependentUpon>frmProductAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="frmLoading.cs">
       <SubType>Form</SubType>
@@ -113,22 +119,49 @@
     <Compile Include="frmProduct.Designer.cs">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmSale.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmSale.Designer.cs">
-      <DependentUpon>frmSale.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesGUI\frmBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmBill.Designer.cs">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGUI\frmDetailBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmDetailBill.Designer.cs">
+      <DependentUpon>frmDetailBill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGUI\frmHomeSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmHomeSales.Designer.cs">
+      <DependentUpon>frmHomeSales.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesGUI\frmMainSales.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="SalesGUI\frmMainSales.Designer.cs">
       <DependentUpon>frmMainSales.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="frmHomeSalesStaff.resx">
-      <DependentUpon>frmHomeSalesStaff.cs</DependentUpon>
+    <Compile Include="SalesGUI\frmProducts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmProducts.Designer.cs">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGUI\frmSales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmSales.Designer.cs">
+      <DependentUpon>frmSales.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AdminGUI\frmMainAdmin.resx">
+      <DependentUpon>frmMainAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmProductAdmin.resx">
+      <DependentUpon>frmProductAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
@@ -139,16 +172,28 @@
     <EmbeddedResource Include="frmProduct.resx">
       <DependentUpon>frmProduct.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmSale.resx">
-      <DependentUpon>frmSale.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmBill.resx">
+      <DependentUpon>frmBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmDetailBill.resx">
+      <DependentUpon>frmDetailBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmHomeSales.resx">
+      <DependentUpon>frmHomeSales.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesGUI\frmMainSales.resx">
       <DependentUpon>frmMainSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmProducts.resx">
+      <DependentUpon>frmProducts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmSales.resx">
+      <DependentUpon>frmSales.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -318,6 +363,42 @@
     <EmbeddedResource Include="imgs\sua-9-loai-hat-vinamilk-super-nut-loc-4-hop-180ml.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\down-arrow-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout-white2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-blue.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\home-white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

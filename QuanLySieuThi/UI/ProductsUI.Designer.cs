@@ -29,20 +29,19 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.picAdd = new System.Windows.Forms.PictureBox();
+            this.picAdd = new System.Windows.Forms.Button();
             this.lbKhuyenMai = new System.Windows.Forms.Label();
             this.lbGiaSP = new System.Windows.Forms.Label();
             this.lbGiaGiam = new System.Windows.Forms.Label();
             this.lbTenSP = new System.Windows.Forms.Label();
             this.picProduct = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.picAdd);
             this.panel1.Controls.Add(this.lbKhuyenMai);
@@ -53,20 +52,24 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(204, 318);
+            this.panel1.Size = new System.Drawing.Size(204, 364);
             this.panel1.TabIndex = 0;
             // 
             // picAdd
             // 
-            this.picAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.picAdd.BackColor = System.Drawing.Color.Transparent;
-            this.picAdd.Image = global::UI.Properties.Resources.shopping_cart;
-            this.picAdd.Location = new System.Drawing.Point(158, 2);
+            this.picAdd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.picAdd.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.picAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picAdd.Font = new System.Drawing.Font("Consolas", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.picAdd.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.picAdd.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.picAdd.Location = new System.Drawing.Point(18, 305);
             this.picAdd.Name = "picAdd";
-            this.picAdd.Size = new System.Drawing.Size(41, 37);
-            this.picAdd.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.picAdd.TabIndex = 6;
-            this.picAdd.TabStop = false;
+            this.picAdd.Size = new System.Drawing.Size(165, 52);
+            this.picAdd.TabIndex = 7;
+            this.picAdd.Text = "THÊM";
+            this.picAdd.UseVisualStyleBackColor = false;
             // 
             // lbKhuyenMai
             // 
@@ -137,10 +140,9 @@
             this.Margin = new System.Windows.Forms.Padding(3, 3, 10, 3);
             this.Name = "ProductsUI";
             this.Padding = new System.Windows.Forms.Padding(5);
-            this.Size = new System.Drawing.Size(214, 328);
+            this.Size = new System.Drawing.Size(214, 374);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             this.ResumeLayout(false);
 
@@ -154,6 +156,6 @@
         private System.Windows.Forms.PictureBox picProduct;
         private System.Windows.Forms.Label lbKhuyenMai;
         private System.Windows.Forms.Label lbGiaSP;
-        private System.Windows.Forms.PictureBox picAdd;
+        private System.Windows.Forms.Button picAdd;
     }
 }

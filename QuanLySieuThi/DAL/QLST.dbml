@@ -3,12 +3,9 @@
   <Table Name="dbo.CHITIETHOADON" Member="CHITIETHOADONs">
     <Type Name="CHITIETHOADON">
       <Column Name="MAHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="MASP" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MANV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MASP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="SOLUONG" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="MATICHDIEM" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Association Name="HOADON_CHITIETHOADON" Member="HOADON" ThisKey="MAHD" OtherKey="MAHD" Type="HOADON" IsForeignKey="true" />
-      <Association Name="NHANVIEN_CHITIETHOADON" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
       <Association Name="SANPHAM_CHITIETHOADON" Member="SANPHAM" ThisKey="MASP" OtherKey="MASP" Type="SANPHAM" IsForeignKey="true" />
     </Type>
   </Table>
@@ -60,10 +57,11 @@
       <Column Name="NGAYLAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="THANHTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="COTICHDIEM" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="COVOUCHER" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Association Name="HOADON_CHITIETHOADON" Member="CHITIETHOADON" ThisKey="MAHD" OtherKey="MAHD" Type="CHITIETHOADON" Cardinality="One" />
+      <Column Name="MANV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="HOADON_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MAHD" OtherKey="MAHD" Type="CHITIETHOADON" />
       <Association Name="HOADON_CHITIETVOUCHER" Member="CHITIETVOUCHERs" ThisKey="MAHD" OtherKey="MAHD" Type="CHITIETVOUCHER" />
+      <Association Name="HOADON_TICHDIEM" Member="TICHDIEMs" ThisKey="MAHD" OtherKey="MAHD" Type="TICHDIEM" />
+      <Association Name="NHANVIEN_HOADON" Member="NHANVIEN" ThisKey="MANV" OtherKey="MANV" Type="NHANVIEN" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
@@ -79,6 +77,7 @@
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="TINHTHANH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="DIEMTICHLUY" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="KHACHHANG_TICHDIEM" Member="TICHDIEMs" ThisKey="MAKH" OtherKey="MAKH" Type="TICHDIEM" />
     </Type>
   </Table>
   <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
@@ -88,7 +87,6 @@
       <Column Name="NGAYBATDAU" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="NGAYKETTHUC" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="SOGIAM" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="DIEUKIEN" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
       <Association Name="KHUYENMAI_CHITIETKHUYENMAI" Member="CHITIETKHUYENMAIs" ThisKey="MAKM" OtherKey="MAKM" Type="CHITIETKHUYENMAI" />
     </Type>
   </Table>
@@ -119,7 +117,7 @@
       <Column Name="SODIENTHOAI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="MATK" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Association Name="NHANVIEN_CHITIETHOADON" Member="CHITIETHOADONs" ThisKey="MANV" OtherKey="MANV" Type="CHITIETHOADON" />
+      <Association Name="NHANVIEN_HOADON" Member="HOADONs" ThisKey="MANV" OtherKey="MANV" Type="HOADON" />
       <Association Name="TAIKHOAN_NHANVIEN" Member="TAIKHOAN" ThisKey="MATK" OtherKey="MATK" Type="TAIKHOAN" IsForeignKey="true" />
     </Type>
   </Table>
@@ -168,6 +166,15 @@
       <Column Name="MAQTC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TAIKHOAN_NHANVIEN" Member="NHANVIENs" ThisKey="MATK" OtherKey="MATK" Type="NHANVIEN" />
       <Association Name="QUYENTRUYCAP_TAIKHOAN" Member="QUYENTRUYCAP" ThisKey="MAQTC" OtherKey="MAQTC" Type="QUYENTRUYCAP" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TICHDIEM" Member="TICHDIEMs">
+    <Type Name="TICHDIEM">
+      <Column Name="MATICHDIEM" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAHD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="MAKH" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="HOADON_TICHDIEM" Member="HOADON" ThisKey="MAHD" OtherKey="MAHD" Type="HOADON" IsForeignKey="true" />
+      <Association Name="KHACHHANG_TICHDIEM" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>
