@@ -16,6 +16,10 @@ namespace GUI.AdminGUI
         bool expand2 = true;
 
         frmProductAdmin fProductAdmin = new frmProductAdmin();
+        frmStaff fStaff = new frmStaff();
+        frmCategory fCategory = new frmCategory();
+        frmBill fBill = new frmBill();
+        frmSupplier fSupplier = new frmSupplier();
 
         public frmMainAdmin()
         {
@@ -42,7 +46,53 @@ namespace GUI.AdminGUI
 
             //------------------ BUTTON CON
             btnProduct.Click += BtnProduct_Click;
+            btnStaff.Click += BtnStaff_Click;
+            btnClient.Click += BtnClient_Click;
+            btnCategory.Click += BtnCategory_Click;
+            btnBill.Click += BtnBill_Click;
+            btnSupplier.Click += BtnSupplier_Click;
 
+        }
+
+        private void BtnSupplier_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fSupplier.TopLevel = false;
+            fSupplier.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fSupplier);
+            fSupplier.Show();
+        }
+
+        private void BtnBill_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fBill.TopLevel = false;
+            fBill.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fBill);
+            fBill.Show();
+        }
+
+        private void BtnCategory_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fCategory.TopLevel = false;
+            fCategory.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fCategory);
+            fCategory.Show();
+        }
+
+        private void BtnClient_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtnStaff_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fStaff.TopLevel = false;
+            fStaff.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fStaff);
+            fStaff.Show();
         }
 
         private void BtnProduct_Click(object sender, EventArgs e)

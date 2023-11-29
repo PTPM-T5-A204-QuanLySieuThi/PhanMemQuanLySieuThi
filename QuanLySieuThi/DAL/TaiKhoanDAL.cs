@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,6 +14,16 @@ namespace DAL
         public TaiKhoanDAL()
         {
 
+        }
+
+        //------------------ LẤY DỮ LIỆU TÀI KHOẢN
+        public List<string> getDataTaiKhoan()
+        {
+            var query = from tk in qlst.TAIKHOANs select tk.MATK;
+
+            List<string> lst_tk = query.ToList();
+
+            return lst_tk;
         }
 
         //------------------ KIỂM TRA ĐĂNG NHẬP THÀNH CÔNG

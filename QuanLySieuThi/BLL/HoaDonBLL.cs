@@ -23,6 +23,12 @@ namespace BLL
             return hoadon_dal.getDataHoaDon();
         }
 
+        //------------------ TÌM DỮ LIỆU HÓA ĐƠN
+        public List<HoaDonDTO> findDataHoaDon(string pMaHD)
+        {
+            return hoadon_dal.findDataHoaDon(pMaHD);
+        }
+
         //------------------ LẤY DỮ LIỆU HÓA ĐƠN THEO MÃ HÓA ĐƠN
         public List<HoaDonDTO> getDataHoaDonTheoMaHD(string pMaHD)
         {

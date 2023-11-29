@@ -16,11 +16,69 @@ namespace GUI.AdminGUI
     {
         SanPhamBLL sanpham_bll = new SanPhamBLL();
 
+        frmAddProduct fAddProduct;
+        frmEditProduct fEditProduct;
+
+        string pMaSP, pTenSP;
+
         public frmProductAdmin()
         {
             InitializeComponent();
             this.Load += FrmProductAdmin_Load;
             txtSearch.TextChanged += TxtSearch_TextChanged;
+            btnAdd.Click += BtnAdd_Click;
+            btnRemove.Click += BtnRemove_Click;
+            btnEdit.Click += BtnEdit_Click;
+            btnLoad.Click += BtnLoad_Click;
+            btnClearText.Click += BtnClearText_Click;
+        }
+
+        private void BtnClearText_Click(object sender, EventArgs e)
+        {
+            txtSearch.ResetText();
+        }
+
+        private void BtnLoad_Click(object sender, EventArgs e)
+        {
+            loadDataProduct();
+            txtSearch.ResetText();
+        }
+
+        private void BtnEdit_Click(object sender, EventArgs e)
+        {
+            pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
+
+            fEditProduct = new frmEditProduct(pMaSP);
+            fEditProduct.ShowDialog();
+            loadDataProduct();
+        }
+
+        private void BtnRemove_Click(object sender, EventArgs e)
+        {
+            pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
+            pTenSP = dgvProduct.CurrentRow.Cells[2].Value.ToString();
+
+            DialogResult r = MessageBox.Show("BẠN CÓ CHẮC LÀ MUỐN XÓA SẢN PHẨM " + pTenSP.ToUpper() + " KHÔNG?", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (DialogResult.Yes == r)
+            {
+                if (sanpham_bll.removeSP(pMaSP))
+                {
+                    MessageBox.Show("ĐÃ XÓA THÀNH CÔNG SẢN PHẨM " + pTenSP.ToUpper(), "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
+                    loadDataProduct();
+                }
+                else
+                {
+                    MessageBox.Show("CÓ LỖI! VUI LÒNG THỬ LẠI", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
+                }
+            }
+        }
+
+        private void BtnAdd_Click(object sender, EventArgs e)
+        {
+            fAddProduct = new frmAddProduct();
+            fAddProduct.ShowDialog();
+            loadDataProduct();
         }
 
         private void FrmProductAdmin_Load(object sender, EventArgs e)

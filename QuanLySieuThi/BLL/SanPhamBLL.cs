@@ -18,6 +18,12 @@ namespace BLL
             return sanpham_dal.getDataSanPham();
         }
 
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
+        public List<SanPhamDTO> getDataSanPhamTheoMaSP(string pMaSP)
+        {
+            return sanpham_dal.getDataSanPhamTheoMaSP(pMaSP);
+        }
+
         //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC
         public List<SanPhamLocDTO> getDataSanPhamLoc()
         {
@@ -59,6 +65,30 @@ namespace BLL
         public void updateSoLuongTon(string pMaSP, int pSoLuong)
         {
             sanpham_dal.updateSoLuongTon(pMaSP, pSoLuong);
+        }
+
+        //------------------ THÊM SẢN PHẨM
+        public void addSP(SanPhamDTO sp)
+        {
+            sanpham_dal.addSP(sp);
+        }
+
+        //------------------ XÓA SẢN PHẨM
+        public bool removeSP(string pMaSP)
+        {
+            return sanpham_dal.removeSP(pMaSP);
+        }
+
+        //------------------ SỬA SẢN PHẨM
+        public void editSP(SanPhamDTO sp)
+        {
+            sanpham_dal.editSP(sp);
+        }
+
+        //------------------ KIỂM TRA KHÓA CHÍNH
+        public bool checkPK(string pCode)
+        {
+            return sanpham_dal.checkPK(pCode);
         }
     }
 }

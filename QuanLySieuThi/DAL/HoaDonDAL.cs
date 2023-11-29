@@ -35,6 +35,25 @@ namespace DAL
             return lst_hd;
         }
 
+        //------------------ TÌM DỮ LIỆU HÓA ĐƠN
+        public List<HoaDonDTO> findDataHoaDon(string pMaHD)
+        {
+            var query = from hd in qlst.HOADONs where hd.MAHD.Contains(pMaHD) || hd.MANV.Contains(pMaHD) select hd;
+
+            var hoadons = query.ToList().ConvertAll(nv => new HoaDonDTO()
+            {
+                mahd = nv.MAHD,
+                tongtien = nv.TONGTIEN,
+                ngaylap = nv.NGAYLAP,
+                thanhtien = nv.THANHTIEN,
+                manv = nv.MANV,
+            });
+
+            List<HoaDonDTO> lst_hd = hoadons.ToList();
+
+            return lst_hd;
+        }
+
         //------------------ LẤY DỮ LIỆU HÓA ĐƠN THEO MÃ HÓA ĐƠN
         public List<HoaDonDTO> getDataHoaDonTheoMaHD(string pMaHD)
         {

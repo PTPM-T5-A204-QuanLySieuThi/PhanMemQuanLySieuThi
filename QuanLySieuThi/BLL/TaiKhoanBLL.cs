@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,12 @@ namespace BLL
         public TaiKhoanBLL()
         {
 
+        }
+
+        //------------------ LẤY DỮ LIỆU TÀI KHOẢN
+        public List<string> getDataTaiKhoan()
+        {
+            return tk_dal.getDataTaiKhoan();
         }
 
         //------------------ KIỂM TRA ĐĂNG NHẬP THÀNH CÔNG

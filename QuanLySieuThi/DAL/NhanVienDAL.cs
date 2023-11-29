@@ -40,6 +40,29 @@ namespace DAL
             return lst_nv;
         }
 
+        //------------------ LẤY DỮ LIỆU NHÂN VIÊN THEO MÃ NHÂN VIÊN
+        public List<NhanVienDTO> getDataNhanVienTheoMaNV(string pMaNV)
+        {
+            var query = from nv in qlst.NHANVIENs where nv.MANV == pMaNV select nv;
+
+            var nhanviens = query.ToList().ConvertAll(nv => new NhanVienDTO()
+            {
+                manv = nv.MANV,
+                hoten = nv.HOTEN,
+                anhdaidien = nv.ANHDAIDIEN,
+                ngaysinh = (DateTime)nv.NGAYSINH,
+                gioitinh = nv.GIOITINH,
+                diachi = nv.DIACHI,
+                sodienthoai = nv.SODIENTHOAI,
+                email = nv.EMAIL,
+                matk = nv.MATK
+            });
+
+            List<NhanVienDTO> lst_nv = nhanviens.ToList();
+
+            return lst_nv;
+        }
+
         //------------------ LẤY DỮ LIỆU NHÂN VIÊN BÁN HÀNG
         public List<NhanVienDTO> getDataNhanVienBanHang()
         {
@@ -61,6 +84,63 @@ namespace DAL
             List<NhanVienDTO> lst_nv = nhanviens.ToList();
 
             return lst_nv;
+        }
+
+        //------------------ THÊM NHÂN VIÊN
+        public void addNV(NhanVienDTO nv)
+        {
+            NHANVIEN nvs = new NHANVIEN();
+
+            nvs.MANV = nv.manv;
+            nvs.HOTEN = nv.hoten;
+            nvs.NGAYSINH = nv.ngaysinh;
+            nvs.ANHDAIDIEN = nv.anhdaidien;
+            nvs.GIOITINH = nv.gioitinh;
+            nvs.DIACHI = nv.diachi;
+            nvs.SODIENTHOAI = nv.sodienthoai;
+            nvs.EMAIL = nv.email;
+            nvs.MATK = nv.matk;
+
+            qlst.NHANVIENs.InsertOnSubmit(nvs);
+            qlst.SubmitChanges();
+        }
+
+        //------------------ XÓA NHÂN VIÊN
+        public bool removeNV(string pMaNV)
+        {
+            NHANVIEN nv = qlst.NHANVIENs.Where(t => t.MANV == pMaNV).FirstOrDefault();
+            if (nv != null)
+            {
+                qlst.NHANVIENs.DeleteOnSubmit(nv);
+                qlst.SubmitChanges();
+                return true;
+            }
+            return false;
+        }
+
+        //------------------ SỬA NHÂN VIÊN
+        public void editNV(NhanVienDTO nv)
+        {
+            NHANVIEN nvs = qlst.NHANVIENs.Where(t => t.MANV == nv.manv).FirstOrDefault();
+
+            nvs.MANV = nv.manv;
+            nvs.HOTEN = nv.hoten;
+            nvs.NGAYSINH = nv.ngaysinh;
+            nvs.ANHDAIDIEN = nv.anhdaidien;
+            nvs.GIOITINH = nv.gioitinh;
+            nvs.DIACHI = nv.diachi;
+            nvs.SODIENTHOAI = nv.sodienthoai;
+            nvs.EMAIL = nv.email;
+            nvs.MATK = nv.matk;
+
+            qlst.SubmitChanges();
+        }
+
+        //------------------ KIỂM TRA KHÓA CHÍNH
+        public bool checkPK(string pCode)
+        {
+            var query = from nv in qlst.NHANVIENs where nv.MANV == pCode select nv;
+            return query.Any();
         }
 
     }
