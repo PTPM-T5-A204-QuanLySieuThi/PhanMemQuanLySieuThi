@@ -45,7 +45,7 @@ namespace GUI.SalesGUI
             dgvBill.Columns[1].HeaderText = "NGÀY LẬP";
             dgvBill.Columns[2].HeaderText = "TỔNG TIỀN";
             dgvBill.Columns[3].HeaderText = "THÀNH TIỀN";
-            dgvBill.Columns[4].HeaderText = "CÓ VOUCHER";
+            dgvBill.Columns[4].HeaderText = "MÃ NHÂN VIÊN";
         }
     }
 }

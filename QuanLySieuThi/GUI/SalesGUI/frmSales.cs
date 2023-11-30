@@ -64,8 +64,8 @@ namespace GUI.SalesGUI
                 {
                     hoadon_dto.mahd = createCodeBill();
                     hoadon_dto.ngaylap = DateTime.Now;
-                    hoadon_dto.tongtien = decimal.Parse(lbTotalTemp.Text.Replace(" vnđ", "")) * 1000;
-                    hoadon_dto.thanhtien = decimal.Parse(lbTotal.Text.Replace(" vnđ", "")) * 1000;
+                    hoadon_dto.tongtien = decimal.Parse(lbTotalTemp.Text.Replace(" vnđ", "").ToString().Replace(",", ""));
+                    hoadon_dto.thanhtien = decimal.Parse(lbTotal.Text.Replace(" vnđ", "").ToString().Replace(",", ""));
                     hoadon_dto.manv = cboStaffs.SelectedValue.ToString();
 
                     hoadon_bll.addHD(hoadon_dto);
@@ -173,14 +173,14 @@ namespace GUI.SalesGUI
                 if (chitietkhuyenmai_bll.isKhuyenMai(products[i].masp))
                 {
                     productItems[i].PKhuyenMai = sale.sogiam.ToString() + "%";
-                    productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
-                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("#,#") + " vnđ";
+                    productItems[i].PGiaSP = products[i].giasp.ToString("N0") + " vnđ";
+                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("N0") + " vnđ";
                 }
                 else
                 {
                     productItems[i].PKhuyenMai = string.Empty;
                     productItems[i].PGiaSP = string.Empty;
-                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("#,#") + " vnđ";
+                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("N0") + " vnđ";
                 }
                 try
                 {
@@ -244,14 +244,14 @@ namespace GUI.SalesGUI
                 if (chitietkhuyenmai_bll.isKhuyenMai(products[i].masp))
                 {
                     productItems[i].PKhuyenMai = sale.sogiam.ToString() + "%";
-                    productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
-                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("#,#") + " vnđ";
+                    productItems[i].PGiaSP = products[i].giasp.ToString("N0") + " vnđ";
+                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("N0") + " vnđ";
                 }
                 else
                 {
                     productItems[i].PKhuyenMai = string.Empty;
                     productItems[i].PGiaSP = string.Empty;
-                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("#,#") + " vnđ";
+                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("N0") + " vnđ";
                 }
                 try
                 {
@@ -315,14 +315,14 @@ namespace GUI.SalesGUI
                 if (chitietkhuyenmai_bll.isKhuyenMai(products[i].masp))
                 {
                     productItems[i].PKhuyenMai = sale.sogiam.ToString() + "%";
-                    productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
-                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("#,#") + " vnđ";
+                    productItems[i].PGiaSP = products[i].giasp.ToString("N0") + " vnđ";
+                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("N0") + " vnđ";
                 }
                 else
                 {
                     productItems[i].PKhuyenMai = string.Empty;
                     productItems[i].PGiaSP = string.Empty;
-                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("#,#") + " vnđ";
+                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("N0") + " vnđ";
                 }
                 try
                 {
@@ -432,12 +432,12 @@ namespace GUI.SalesGUI
             double lamTron = 0;
             foreach (DataGridViewRow item in guna2DataGridView1.Rows)
             {
-                total += Convert.ToDouble(item.Cells["SoTien"].Value.ToString().Replace(" vnđ", ""));
+                total += Convert.ToDouble(item.Cells["SoTien"].Value.ToString().Replace(" vnđ", "").ToString().Replace(",", ""));
             }
 
-            lbTotalTemp.Text = total.ToString("N3") + " vnđ";
+            lbTotalTemp.Text = total.ToString("N0") + " vnđ";
             lamTron = Math.Round(total);
-            lbTotal.Text = lamTron.ToString("N3") + " vnđ";
+            lbTotal.Text = lamTron.ToString("N0") + " vnđ";
         }
 
         private void isVoucher()

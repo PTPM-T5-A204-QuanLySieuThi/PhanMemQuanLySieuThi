@@ -100,10 +100,17 @@ namespace DAL
             qlst.SubmitChanges();
         }
 
+        //------------------ ĐẾM SỐ LOẠI SẢN PHẨM
+        public int countCategory()
+        {
+            var query = from lsp in qlst.LOAISANPHAMs select lsp;
+            return query.Count();
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {
-            var query = from nv in qlst.NHANVIENs where nv.MANV == pCode select nv;
+            var query = from lsp in qlst.LOAISANPHAMs where lsp.MALSP == pCode select lsp;
             return query.Any();
         }
 

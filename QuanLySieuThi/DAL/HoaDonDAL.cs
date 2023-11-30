@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Linq;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -86,6 +87,45 @@ namespace DAL
 
             qlst.HOADONs.InsertOnSubmit(hds);
             qlst.SubmitChanges();
+        }
+
+        //------------------ ĐẾM SỐ HÓA ĐƠN TRONG NGÀY
+        public int countBillDaily()
+        {
+            DateTime dt1 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+            DateTime dt2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(1);
+            var query = from hd in qlst.HOADONs where hd.NGAYLAP >= dt1 && hd.NGAYLAP < dt2 select hd;
+            return query.Count();
+        }
+
+        //------------------ TÍNH DOANH THU HÓA ĐƠN TRONG NGÀY
+        public decimal calBillDaily()
+        {
+            try
+            {
+                DateTime dt1 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+                DateTime dt2 = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day).AddDays(1);
+                decimal totalAmount = (decimal)qlst.HOADONs.Where(hd => hd.NGAYLAP >= dt1 && hd.NGAYLAP < dt2).Sum(hd => hd.THANHTIEN);
+                return totalAmount;
+            }
+            catch
+            {
+                return 0;
+            }
+        }
+
+        //------------------ LẤY DOANH THU THEO THÁNG
+        public decimal calBillMonth(int pMonth, int pYear)
+        {
+            try
+            {
+                decimal totalAmount = (decimal)qlst.HOADONs.Where(hd => hd.NGAYLAP.HasValue && hd.NGAYLAP.Value.Month == pMonth && hd.NGAYLAP.Value.Year == pYear).Sum(hd => hd.THANHTIEN);
+                return totalAmount;
+            }
+            catch
+            {
+                return 0;
+            }
         }
 
         //------------------ KIỂM TRA KHÓA CHÍNH

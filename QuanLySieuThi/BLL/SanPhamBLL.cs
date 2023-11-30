@@ -85,6 +85,12 @@ namespace BLL
             sanpham_dal.editSP(sp);
         }
 
+        //------------------ ĐẾM SỐ SẢN PHẨM
+        public int countProduct()
+        {
+            return sanpham_dal.countProduct();
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

@@ -22,6 +22,8 @@ namespace GUI.SalesGUI
         KhuyenMaiBLL khuyenmai_bll = new KhuyenMaiBLL();
         ChiTietKhuyenMaiBLL chitietkhuyenmai_bll = new ChiTietKhuyenMaiBLL();
 
+        frmDetailProduct fDetailProduct;
+
         public frmProducts()
         {
             InitializeComponent();
@@ -69,9 +71,10 @@ namespace GUI.SalesGUI
 
                 productItems[i].onSelect += (ss, ee) =>
                 {
-                    var wdg = (ProductsUI)ss;
+                    var wdg = (CategoryUI)ss;
 
-                    
+                    fDetailProduct = new frmDetailProduct(wdg.PMaSP);
+                    fDetailProduct.ShowDialog();
                 };
             }
         }

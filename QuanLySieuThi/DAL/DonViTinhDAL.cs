@@ -31,5 +31,13 @@ namespace DAL
 
             return lst_dvt;
         }
+
+        //------------------ LẤY TÊN ĐƠN VỊ TÍNH
+        public string getTenDonViTinh(string pMaSP)
+        {
+            var query = from dvt in qlst.DONVITINHs join sp in qlst.SANPHAMs on dvt.MADVT equals sp.MADVT where sp.MASP == pMaSP select dvt.TENDVT;
+
+            return query.FirstOrDefault();
+        }
     }
 }

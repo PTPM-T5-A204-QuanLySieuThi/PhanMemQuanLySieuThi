@@ -54,7 +54,7 @@
   <Table Name="dbo.HOADON" Member="HOADONs">
     <Type Name="HOADON">
       <Column Name="MAHD" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="NGAYLAP" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="NGAYLAP" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="TONGTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="THANHTIEN" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
       <Column Name="MANV" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -66,18 +66,18 @@
   </Table>
   <Table Name="dbo.KHACHHANG" Member="KHACHHANGs">
     <Type Name="KHACHHANG">
-      <Column Name="MAKH" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="MAKH" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="ANHDAIDIEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
-      <Column Name="SODIENTHOAI" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="SODIENTHOAI" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MATKHAU" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="EMAIL" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="TINHTHANH" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="DIEMTICHLUY" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Association Name="KHACHHANG_TICHDIEM" Member="TICHDIEMs" ThisKey="MAKH" OtherKey="MAKH" Type="TICHDIEM" />
+      <Association Name="KHACHHANG_TICHDIEM" Member="TICHDIEMs" ThisKey="SODIENTHOAI" OtherKey="SODIENTHOAI" Type="TICHDIEM" />
     </Type>
   </Table>
   <Table Name="dbo.KHUYENMAI" Member="KHUYENMAIs">
@@ -110,7 +110,7 @@
     <Type Name="NHANVIEN">
       <Column Name="MANV" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="HOTEN" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="ANHDAIDIEN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ANHDAIDIEN" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="NGAYSINH" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GIOITINH" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
       <Column Name="DIACHI" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
@@ -140,11 +140,11 @@
       <Column Name="MASP" Type="System.String" DbType="VarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="BARCODE" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
       <Column Name="TENSP" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
-      <Column Name="ANHSANPHAM" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ANHSANPHAM" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
       <Column Name="NGAYSX" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="HANSD" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="GIASP" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="MOTA" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="MOTA" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
       <Column Name="SLTON" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="MANXX" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Column Name="MANCC" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
@@ -172,9 +172,9 @@
     <Type Name="TICHDIEM">
       <Column Name="MATICHDIEM" Type="System.String" DbType="VarChar(6) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="MAHD" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
-      <Column Name="MAKH" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="SODIENTHOAI" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
       <Association Name="HOADON_TICHDIEM" Member="HOADON" ThisKey="MAHD" OtherKey="MAHD" Type="HOADON" IsForeignKey="true" />
-      <Association Name="KHACHHANG_TICHDIEM" Member="KHACHHANG" ThisKey="MAKH" OtherKey="MAKH" Type="KHACHHANG" IsForeignKey="true" />
+      <Association Name="KHACHHANG_TICHDIEM" Member="KHACHHANG" ThisKey="SODIENTHOAI" OtherKey="SODIENTHOAI" Type="KHACHHANG" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -22,5 +22,11 @@ namespace BLL
         {
             return ctloaisanpham_dal.getDataCTLoaiSanPham();
         }
+
+        //------------------ LẤY TÊN CHI TIẾT LOẠI SẢN PHẨM
+        public string getTenCTLoaiChiTiet(string pMaSP)
+        {
+            return ctloaisanpham_dal.getTenCTLoaiChiTiet(pMaSP);
+        }
     }
 }

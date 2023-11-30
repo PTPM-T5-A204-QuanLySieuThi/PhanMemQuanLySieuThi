@@ -82,7 +82,7 @@ namespace GUI.AdminGUI
 
         private void TxtSearch_TextChanged(object sender, EventArgs e)
         {
-            dgvStaff.DataSource = nhanvien_bll.getListNhanVien();
+            dgvStaff.DataSource = nhanvien_bll.getDataNhanVienTheoMaNV(txtSearch.Text);
 
             dgvStaff.Columns[0].HeaderText = "MÃ NHÂN VIÊN";
             dgvStaff.Columns[1].HeaderText = "HỌ TÊN";

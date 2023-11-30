@@ -22,5 +22,11 @@ namespace BLL
         {
             return donvitinh_dal.getDataDonViTinh();
         }
+
+        //------------------ LẤY TÊN ĐƠN VỊ TÍNH
+        public string getTenDonViTinh(string pMaSP)
+        {
+            return donvitinh_dal.getTenDonViTinh(pMaSP);
+        }
     }
 }

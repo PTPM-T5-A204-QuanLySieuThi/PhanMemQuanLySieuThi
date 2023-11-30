@@ -1326,7 +1326,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYLAP", DbType="Date")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NGAYLAP", DbType="DateTime")]
 		public System.Nullable<System.DateTime> NGAYLAP
 		{
 			get
@@ -1604,7 +1604,7 @@ namespace DAL
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
 		public string MAKH
 		{
 			get
@@ -1724,7 +1724,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(10)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(10) NOT NULL", CanBeNull=false, IsPrimaryKey=true)]
 		public string SODIENTHOAI
 		{
 			get
@@ -1824,7 +1824,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TICHDIEM", Storage="_TICHDIEMs", ThisKey="MAKH", OtherKey="MAKH")]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TICHDIEM", Storage="_TICHDIEMs", ThisKey="SODIENTHOAI", OtherKey="SODIENTHOAI")]
 		public EntitySet<TICHDIEM> TICHDIEMs
 		{
 			get
@@ -2431,7 +2431,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHDAIDIEN", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHDAIDIEN", DbType="VarChar(300)")]
 		public string ANHDAIDIEN
 		{
 			get
@@ -3030,7 +3030,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHSANPHAM", DbType="VarChar(100)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ANHSANPHAM", DbType="VarChar(300)")]
 		public string ANHSANPHAM
 		{
 			get
@@ -3110,7 +3110,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(500)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MOTA", DbType="NVarChar(1000)")]
 		public string MOTA
 		{
 			get
@@ -3666,7 +3666,7 @@ namespace DAL
 		
 		private string _MAHD;
 		
-		private string _MAKH;
+		private string _SODIENTHOAI;
 		
 		private EntityRef<HOADON> _HOADON;
 		
@@ -3680,8 +3680,8 @@ namespace DAL
     partial void OnMATICHDIEMChanged();
     partial void OnMAHDChanging(string value);
     partial void OnMAHDChanged();
-    partial void OnMAKHChanging(string value);
-    partial void OnMAKHChanged();
+    partial void OnSODIENTHOAIChanging(string value);
+    partial void OnSODIENTHOAIChanged();
     #endregion
 		
 		public TICHDIEM()
@@ -3735,26 +3735,26 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MAKH", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
-		public string MAKH
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_SODIENTHOAI", DbType="VarChar(10) NOT NULL", CanBeNull=false)]
+		public string SODIENTHOAI
 		{
 			get
 			{
-				return this._MAKH;
+				return this._SODIENTHOAI;
 			}
 			set
 			{
-				if ((this._MAKH != value))
+				if ((this._SODIENTHOAI != value))
 				{
 					if (this._KHACHHANG.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
-					this.OnMAKHChanging(value);
+					this.OnSODIENTHOAIChanging(value);
 					this.SendPropertyChanging();
-					this._MAKH = value;
-					this.SendPropertyChanged("MAKH");
-					this.OnMAKHChanged();
+					this._SODIENTHOAI = value;
+					this.SendPropertyChanged("SODIENTHOAI");
+					this.OnSODIENTHOAIChanged();
 				}
 			}
 		}
@@ -3793,7 +3793,7 @@ namespace DAL
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TICHDIEM", Storage="_KHACHHANG", ThisKey="MAKH", OtherKey="MAKH", IsForeignKey=true)]
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="KHACHHANG_TICHDIEM", Storage="_KHACHHANG", ThisKey="SODIENTHOAI", OtherKey="SODIENTHOAI", IsForeignKey=true)]
 		public KHACHHANG KHACHHANG
 		{
 			get
@@ -3816,11 +3816,11 @@ namespace DAL
 					if ((value != null))
 					{
 						value.TICHDIEMs.Add(this);
-						this._MAKH = value.MAKH;
+						this._SODIENTHOAI = value.SODIENTHOAI;
 					}
 					else
 					{
-						this._MAKH = default(string);
+						this._SODIENTHOAI = default(string);
 					}
 					this.SendPropertyChanged("KHACHHANG");
 				}

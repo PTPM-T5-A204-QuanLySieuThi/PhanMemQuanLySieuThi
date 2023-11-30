@@ -50,6 +50,7 @@
     <Compile Include="CTLoaiSanPhamDAL.cs" />
     <Compile Include="DonViTinhDAL.cs" />
     <Compile Include="HoaDonDAL.cs" />
+    <Compile Include="KhachHangDAL.cs" />
     <Compile Include="KhuyenMaiDAL.cs" />
     <Compile Include="LoaiSanPhamDAL.cs" />
     <Compile Include="NhaCungCapDAL.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="QuyenTruyCapDAL.cs" />
     <Compile Include="SanPhamDAL.cs" />
     <Compile Include="TaiKhoanDAL.cs" />
+    <Compile Include="VoucherDAL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

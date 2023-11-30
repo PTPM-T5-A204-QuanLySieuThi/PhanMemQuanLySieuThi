@@ -31,5 +31,13 @@ namespace DAL
 
             return lst_nxx;
         }
+
+        //------------------ LẤY TÊN NƯỚC XUẤT XỨ
+        public string getTenNuocXuatXu(string pMaSP)
+        {
+            var query = from nxx in qlst.NUOCXUATXUs join sp in qlst.SANPHAMs on nxx.MANXX equals sp.MANXX where sp.MASP == pMaSP select nxx.TENNXX;
+
+            return query.FirstOrDefault();
+        }
     }
 }

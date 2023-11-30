@@ -17,10 +17,16 @@ namespace BLL
 
         }
 
-        //------------------ LẤY DỮ LIỆU NHÂN VIÊN
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM
         public List<LoaiSanPhamDTO> getDataLoaiSanPham()
         {
             return loaisanpham_dal.getDataLoaiSanPham();
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ LOẠI SẢN PHẨM
+        public List<LoaiSanPhamDTO> getDataLoaiSanPhamTheoMaLSP(string pMaLSP)
+        {
+            return loaisanpham_dal.getDataLoaiSanPhamTheoMaLSP(pMaLSP);
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
@@ -45,6 +51,12 @@ namespace BLL
         public void editLSP(LoaiSanPhamDTO lsp)
         {
             loaisanpham_dal.editLSP(lsp);
+        }
+
+        //------------------ ĐẾM SỐ LOẠI SẢN PHẨM
+        public int countCategory()
+        {
+            return loaisanpham_dal.countCategory();
         }
 
         //------------------ KIỂM TRA KHÓA CHÍNH

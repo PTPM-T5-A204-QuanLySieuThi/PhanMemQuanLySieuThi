@@ -32,5 +32,13 @@ namespace DAL
 
             return lst_ctlsp;
         }
+
+        //------------------ LẤY TÊN CHI TIẾT LOẠI SẢN PHẨM
+        public string getTenCTLoaiChiTiet(string pMaSP)
+        {
+            var query = from ctlsp in qlst.CTLOAISANPHAMs join sp in qlst.SANPHAMs on ctlsp.MACTLSP equals sp.MACTLSP where sp.MASP == pMaSP select ctlsp.TENCTLSP;
+
+            return query.FirstOrDefault();
+        }
     }
 }

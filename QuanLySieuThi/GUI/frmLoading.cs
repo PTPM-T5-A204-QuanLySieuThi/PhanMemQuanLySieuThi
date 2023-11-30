@@ -1,4 +1,6 @@
-﻿using GUI.SalesGUI;
+﻿using BLL;
+using GUI.AdminGUI;
+using GUI.SalesGUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,11 +15,19 @@ namespace GUI
 {
     public partial class frmLoading : MetroFramework.Forms.MetroForm
     {
-        frmMainSales fMainSales = new frmMainSales();
+        string pPassword;
+        string pRoleValue;
 
-        public frmLoading()
+        frmMainSales fMainSales = new frmMainSales();
+        frmMainAdmin fMainAdmin = new frmMainAdmin();
+
+        NhanVienBLL nhanvien_bll = new NhanVienBLL();
+
+        public frmLoading(string _role, string _pass)
         {
             InitializeComponent();
+            pRoleValue = _role;
+            pPassword = _pass;
             timerLoading = new Timer();
             timerLoading.Interval = 1;
             timerLoading.Enabled = true;
@@ -29,9 +39,22 @@ namespace GUI
             timeLine.Width += 3;
             if(timeLine.Width >= 686)
             {
-                timerLoading.Stop();
-                fMainSales.Show();
-                this.Close();
+                if (nhanvien_bll.getMaTaiKhoan(pRoleValue, pPassword) == "TK001")
+                {
+                    timerLoading.Stop();
+                    fMainAdmin.Show();
+                    this.Close();
+                }
+                else if(nhanvien_bll.getMaTaiKhoan(pRoleValue, pPassword) == "TK002")
+                {
+                    timerLoading.Stop();
+                    fMainSales.Show();
+                    this.Close();
+                }
+                else
+                {
+
+                }
             }
         }
     }

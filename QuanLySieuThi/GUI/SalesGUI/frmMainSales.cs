@@ -37,6 +37,7 @@ namespace GUI.SalesGUI
             pnProduct.Visible = false;
             pnBill.Visible = false;
 
+            fHomeSales = new frmHomeSales();
             pnBody.Controls.Clear();
             fHomeSales.TopLevel = false;
             pnBody.Controls.Add(fHomeSales);

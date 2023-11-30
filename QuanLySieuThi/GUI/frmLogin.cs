@@ -61,7 +61,7 @@ namespace GUI
             if(tk_bll.isSuccessLogin(pRoleValue, pPassword))
             {
                 rememberPS(pRole, pPassword);
-                frmLoading fLoading = new frmLoading();
+                frmLoading fLoading = new frmLoading(pRoleValue, pPassword);
                 fLoading.Show();
                 this.Hide();
             }

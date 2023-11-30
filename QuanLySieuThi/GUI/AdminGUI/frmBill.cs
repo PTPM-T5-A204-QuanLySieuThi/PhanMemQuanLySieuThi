@@ -20,23 +20,11 @@ namespace GUI.AdminGUI
         {
             InitializeComponent();
             this.Load += FrmBill_Load;
-            txtSearch.TextChanged += TxtSearch_TextChanged;
         }
 
         private void FrmBill_Load(object sender, EventArgs e)
         {
             loadDataProduct();
-        }
-
-        private void TxtSearch_TextChanged(object sender, EventArgs e)
-        {
-            dgvBill.DataSource = hoadon_bll.findDataHoaDon(txtSearch.Text);
-
-            dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
-            dgvBill.Columns[1].HeaderText = "NGÀY LẬP";
-            dgvBill.Columns[2].HeaderText = "TỔNG TIỀN";
-            dgvBill.Columns[3].HeaderText = "THÀNH TIỀN";
-            dgvBill.Columns[4].HeaderText = "MÃ NHÂN VIÊN";
         }
 
         private void loadDataProduct()

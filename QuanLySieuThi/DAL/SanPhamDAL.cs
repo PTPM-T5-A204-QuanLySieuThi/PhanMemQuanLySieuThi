@@ -269,6 +269,14 @@ namespace DAL
             qlst.SubmitChanges();
         }
 
+
+        //------------------ ĐẾM SỐ SẢN PHẨM
+        public int countProduct()
+        {
+            var query = from sp in qlst.SANPHAMs select sp;
+            return query.Count();
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

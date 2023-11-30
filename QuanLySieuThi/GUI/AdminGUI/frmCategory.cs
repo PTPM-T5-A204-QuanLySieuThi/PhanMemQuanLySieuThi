@@ -16,8 +16,8 @@ namespace GUI.AdminGUI
     {
         LoaiSanPhamBLL loaisanpham_bll = new LoaiSanPhamBLL();
 
-        frmAddStaff fAddStaff;
-        frmEditStaff fEditStaff;
+        frmAddCategory fAddCategory;
+        frmEditCategory fEditCategory;
 
         string pMaLSP, pTenLSP;
 
@@ -35,27 +35,50 @@ namespace GUI.AdminGUI
 
         private void BtnClearText_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            txtSearch.ResetText();
         }
 
         private void BtnLoad_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            loadDataCategory();
+            txtSearch.ResetText();
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            pMaLSP = dgvCategory.CurrentRow.Cells[0].Value.ToString();
+
+            fEditCategory = new frmEditCategory(pMaLSP);
+            fEditCategory.ShowDialog();
+            loadDataCategory();
         }
 
         private void BtnRemove_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            pMaLSP = dgvCategory.CurrentRow.Cells[0].Value.ToString();
+            pTenLSP = dgvCategory.CurrentRow.Cells[1].Value.ToString();
+
+            DialogResult r = MessageBox.Show("BẠN CÓ CHẮC LÀ MUỐN XÓA LOẠI SẢN PHẨM " + pTenLSP.ToUpper() + " KHÔNG?", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (DialogResult.Yes == r)
+            {
+                if (loaisanpham_bll.removeLSP(pMaLSP))
+                {
+                    MessageBox.Show("ĐÃ XÓA THÀNH CÔNG LOẠI SẢN PHẨM " + pTenLSP.ToUpper(), "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
+                    loadDataCategory();
+                }
+                else
+                {
+                    MessageBox.Show("CÓ LỖI! VUI LÒNG THỬ LẠI", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
+                }
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            fAddCategory = new frmAddCategory();
+            fAddCategory.ShowDialog();
+            loadDataCategory();
         }
 
         private void FrmCategory_Load(object sender, EventArgs e)

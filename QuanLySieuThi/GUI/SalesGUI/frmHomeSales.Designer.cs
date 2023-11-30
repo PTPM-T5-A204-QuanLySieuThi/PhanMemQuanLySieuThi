@@ -29,21 +29,26 @@
         private void InitializeComponent()
         {
             this.guna2CustomGradientPanel1 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2CustomGradientPanel5 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.bigLabel9 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbRevenue = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel5 = new ReaLTaiizor.Controls.BigLabel();
             this.guna2CustomGradientPanel4 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.bigLabel8 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2GradientPanel6 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbSalesVolume = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel4 = new ReaLTaiizor.Controls.BigLabel();
             this.guna2CustomGradientPanel3 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.bigLabel7 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2GradientPanel4 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbCategory = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel3 = new ReaLTaiizor.Controls.BigLabel();
             this.guna2CustomGradientPanel2 = new Guna.UI2.WinForms.Guna2CustomGradientPanel();
-            this.bigLabel6 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.lbProduct = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel2 = new ReaLTaiizor.Controls.BigLabel();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
             this.guna2CustomGradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
             this.guna2CustomGradientPanel5.SuspendLayout();
@@ -63,31 +68,6 @@
             this.guna2CustomGradientPanel1.Size = new System.Drawing.Size(1303, 850);
             this.guna2CustomGradientPanel1.TabIndex = 0;
             // 
-            // bigLabel1
-            // 
-            this.bigLabel1.AutoSize = true;
-            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bigLabel1.Location = new System.Drawing.Point(11, 7);
-            this.bigLabel1.Name = "bigLabel1";
-            this.bigLabel1.Size = new System.Drawing.Size(179, 38);
-            this.bigLabel1.TabIndex = 0;
-            this.bigLabel1.Text = "TRANG CHỦ";
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2GradientPanel1.BorderRadius = 5;
-            this.guna2GradientPanel1.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2GradientPanel1.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(18, 245);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1270, 10);
-            this.guna2GradientPanel1.TabIndex = 2;
-            // 
             // guna2GradientPanel2
             // 
             this.guna2GradientPanel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -106,7 +86,9 @@
             // 
             this.guna2CustomGradientPanel5.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel5.BorderRadius = 10;
-            this.guna2CustomGradientPanel5.Controls.Add(this.bigLabel9);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2GradientPanel7);
+            this.guna2CustomGradientPanel5.Controls.Add(this.guna2GradientPanel5);
+            this.guna2CustomGradientPanel5.Controls.Add(this.lbRevenue);
             this.guna2CustomGradientPanel5.Controls.Add(this.bigLabel5);
             this.guna2CustomGradientPanel5.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(47)))), ((int)(((byte)(34)))));
             this.guna2CustomGradientPanel5.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
@@ -117,17 +99,37 @@
             this.guna2CustomGradientPanel5.Size = new System.Drawing.Size(295, 170);
             this.guna2CustomGradientPanel5.TabIndex = 2;
             // 
-            // bigLabel9
+            // guna2GradientPanel7
             // 
-            this.bigLabel9.AutoSize = true;
-            this.bigLabel9.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel9.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel9.ForeColor = System.Drawing.Color.White;
-            this.bigLabel9.Location = new System.Drawing.Point(110, 75);
-            this.bigLabel9.Name = "bigLabel9";
-            this.bigLabel9.Size = new System.Drawing.Size(70, 81);
-            this.bigLabel9.TabIndex = 0;
-            this.bigLabel9.Text = "0";
+            this.guna2GradientPanel7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientPanel7.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel7.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel7.Location = new System.Drawing.Point(25, 56);
+            this.guna2GradientPanel7.Name = "guna2GradientPanel7";
+            this.guna2GradientPanel7.Size = new System.Drawing.Size(239, 10);
+            this.guna2GradientPanel7.TabIndex = 1;
+            // 
+            // guna2GradientPanel5
+            // 
+            this.guna2GradientPanel5.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel5.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel5.Location = new System.Drawing.Point(-254, 75);
+            this.guna2GradientPanel5.Name = "guna2GradientPanel5";
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(239, 10);
+            this.guna2GradientPanel5.TabIndex = 1;
+            // 
+            // lbRevenue
+            // 
+            this.lbRevenue.AutoSize = true;
+            this.lbRevenue.BackColor = System.Drawing.Color.Transparent;
+            this.lbRevenue.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRevenue.ForeColor = System.Drawing.Color.White;
+            this.lbRevenue.Location = new System.Drawing.Point(31, 75);
+            this.lbRevenue.Name = "lbRevenue";
+            this.lbRevenue.Size = new System.Drawing.Size(40, 46);
+            this.lbRevenue.TabIndex = 0;
+            this.lbRevenue.Text = "0";
             // 
             // bigLabel5
             // 
@@ -145,7 +147,8 @@
             // 
             this.guna2CustomGradientPanel4.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel4.BorderRadius = 10;
-            this.guna2CustomGradientPanel4.Controls.Add(this.bigLabel8);
+            this.guna2CustomGradientPanel4.Controls.Add(this.guna2GradientPanel6);
+            this.guna2CustomGradientPanel4.Controls.Add(this.lbSalesVolume);
             this.guna2CustomGradientPanel4.Controls.Add(this.bigLabel4);
             this.guna2CustomGradientPanel4.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(115)))), ((int)(((byte)(130)))));
             this.guna2CustomGradientPanel4.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
@@ -156,17 +159,28 @@
             this.guna2CustomGradientPanel4.Size = new System.Drawing.Size(295, 170);
             this.guna2CustomGradientPanel4.TabIndex = 3;
             // 
-            // bigLabel8
+            // guna2GradientPanel6
             // 
-            this.bigLabel8.AutoSize = true;
-            this.bigLabel8.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel8.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel8.ForeColor = System.Drawing.Color.White;
-            this.bigLabel8.Location = new System.Drawing.Point(110, 75);
-            this.bigLabel8.Name = "bigLabel8";
-            this.bigLabel8.Size = new System.Drawing.Size(70, 81);
-            this.bigLabel8.TabIndex = 0;
-            this.bigLabel8.Text = "0";
+            this.guna2GradientPanel6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientPanel6.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel6.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel6.Location = new System.Drawing.Point(25, 56);
+            this.guna2GradientPanel6.Name = "guna2GradientPanel6";
+            this.guna2GradientPanel6.Size = new System.Drawing.Size(239, 10);
+            this.guna2GradientPanel6.TabIndex = 1;
+            // 
+            // lbSalesVolume
+            // 
+            this.lbSalesVolume.AutoSize = true;
+            this.lbSalesVolume.BackColor = System.Drawing.Color.Transparent;
+            this.lbSalesVolume.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSalesVolume.ForeColor = System.Drawing.Color.White;
+            this.lbSalesVolume.Location = new System.Drawing.Point(110, 75);
+            this.lbSalesVolume.Name = "lbSalesVolume";
+            this.lbSalesVolume.Size = new System.Drawing.Size(40, 46);
+            this.lbSalesVolume.TabIndex = 0;
+            this.lbSalesVolume.Text = "0";
             // 
             // bigLabel4
             // 
@@ -184,7 +198,8 @@
             // 
             this.guna2CustomGradientPanel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel3.BorderRadius = 10;
-            this.guna2CustomGradientPanel3.Controls.Add(this.bigLabel7);
+            this.guna2CustomGradientPanel3.Controls.Add(this.guna2GradientPanel4);
+            this.guna2CustomGradientPanel3.Controls.Add(this.lbCategory);
             this.guna2CustomGradientPanel3.Controls.Add(this.bigLabel3);
             this.guna2CustomGradientPanel3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(180)))), ((int)(((byte)(0)))));
             this.guna2CustomGradientPanel3.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -195,17 +210,26 @@
             this.guna2CustomGradientPanel3.Size = new System.Drawing.Size(295, 170);
             this.guna2CustomGradientPanel3.TabIndex = 4;
             // 
-            // bigLabel7
+            // guna2GradientPanel4
             // 
-            this.bigLabel7.AutoSize = true;
-            this.bigLabel7.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel7.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel7.ForeColor = System.Drawing.Color.White;
-            this.bigLabel7.Location = new System.Drawing.Point(110, 75);
-            this.bigLabel7.Name = "bigLabel7";
-            this.bigLabel7.Size = new System.Drawing.Size(70, 81);
-            this.bigLabel7.TabIndex = 0;
-            this.bigLabel7.Text = "0";
+            this.guna2GradientPanel4.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel4.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel4.Location = new System.Drawing.Point(25, 56);
+            this.guna2GradientPanel4.Name = "guna2GradientPanel4";
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(239, 10);
+            this.guna2GradientPanel4.TabIndex = 1;
+            // 
+            // lbCategory
+            // 
+            this.lbCategory.AutoSize = true;
+            this.lbCategory.BackColor = System.Drawing.Color.Transparent;
+            this.lbCategory.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCategory.ForeColor = System.Drawing.Color.White;
+            this.lbCategory.Location = new System.Drawing.Point(110, 75);
+            this.lbCategory.Name = "lbCategory";
+            this.lbCategory.Size = new System.Drawing.Size(40, 46);
+            this.lbCategory.TabIndex = 0;
+            this.lbCategory.Text = "0";
             // 
             // bigLabel3
             // 
@@ -223,7 +247,8 @@
             // 
             this.guna2CustomGradientPanel2.BackColor = System.Drawing.Color.Transparent;
             this.guna2CustomGradientPanel2.BorderRadius = 10;
-            this.guna2CustomGradientPanel2.Controls.Add(this.bigLabel6);
+            this.guna2CustomGradientPanel2.Controls.Add(this.guna2GradientPanel3);
+            this.guna2CustomGradientPanel2.Controls.Add(this.lbProduct);
             this.guna2CustomGradientPanel2.Controls.Add(this.bigLabel2);
             this.guna2CustomGradientPanel2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(124)))), ((int)(((byte)(32)))));
             this.guna2CustomGradientPanel2.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
@@ -234,17 +259,28 @@
             this.guna2CustomGradientPanel2.Size = new System.Drawing.Size(295, 170);
             this.guna2CustomGradientPanel2.TabIndex = 5;
             // 
-            // bigLabel6
+            // guna2GradientPanel3
             // 
-            this.bigLabel6.AutoSize = true;
-            this.bigLabel6.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel6.Font = new System.Drawing.Font("Segoe UI", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel6.ForeColor = System.Drawing.Color.White;
-            this.bigLabel6.Location = new System.Drawing.Point(110, 75);
-            this.bigLabel6.Name = "bigLabel6";
-            this.bigLabel6.Size = new System.Drawing.Size(70, 81);
-            this.bigLabel6.TabIndex = 0;
-            this.bigLabel6.Text = "0";
+            this.guna2GradientPanel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientPanel3.FillColor = System.Drawing.Color.White;
+            this.guna2GradientPanel3.FillColor2 = System.Drawing.Color.White;
+            this.guna2GradientPanel3.Location = new System.Drawing.Point(25, 56);
+            this.guna2GradientPanel3.Name = "guna2GradientPanel3";
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(239, 10);
+            this.guna2GradientPanel3.TabIndex = 1;
+            // 
+            // lbProduct
+            // 
+            this.lbProduct.AutoSize = true;
+            this.lbProduct.BackColor = System.Drawing.Color.Transparent;
+            this.lbProduct.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbProduct.ForeColor = System.Drawing.Color.White;
+            this.lbProduct.Location = new System.Drawing.Point(110, 75);
+            this.lbProduct.Name = "lbProduct";
+            this.lbProduct.Size = new System.Drawing.Size(40, 46);
+            this.lbProduct.TabIndex = 0;
+            this.lbProduct.Text = "0";
             // 
             // bigLabel2
             // 
@@ -257,6 +293,31 @@
             this.bigLabel2.Size = new System.Drawing.Size(137, 31);
             this.bigLabel2.TabIndex = 0;
             this.bigLabel2.Text = "SẢN PHẨM";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2GradientPanel1.BorderRadius = 5;
+            this.guna2GradientPanel1.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(18, 245);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1270, 10);
+            this.guna2GradientPanel1.TabIndex = 2;
+            // 
+            // bigLabel1
+            // 
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Segoe UI", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
+            this.bigLabel1.Location = new System.Drawing.Point(11, 7);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(179, 38);
+            this.bigLabel1.TabIndex = 0;
+            this.bigLabel1.Text = "TRANG CHỦ";
             // 
             // frmHomeSales
             // 
@@ -291,16 +352,21 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel5;
-        private ReaLTaiizor.Controls.BigLabel bigLabel9;
+        private ReaLTaiizor.Controls.BigLabel lbRevenue;
         private ReaLTaiizor.Controls.BigLabel bigLabel5;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel4;
-        private ReaLTaiizor.Controls.BigLabel bigLabel8;
+        private ReaLTaiizor.Controls.BigLabel lbSalesVolume;
         private ReaLTaiizor.Controls.BigLabel bigLabel4;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel3;
-        private ReaLTaiizor.Controls.BigLabel bigLabel7;
+        private ReaLTaiizor.Controls.BigLabel lbCategory;
         private ReaLTaiizor.Controls.BigLabel bigLabel3;
         private Guna.UI2.WinForms.Guna2CustomGradientPanel guna2CustomGradientPanel2;
-        private ReaLTaiizor.Controls.BigLabel bigLabel6;
+        private ReaLTaiizor.Controls.BigLabel lbProduct;
         private ReaLTaiizor.Controls.BigLabel bigLabel2;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel6;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel4;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
+        private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel7;
     }
 }

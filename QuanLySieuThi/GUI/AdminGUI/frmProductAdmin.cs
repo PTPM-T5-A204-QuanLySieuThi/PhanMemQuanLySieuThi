@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using GUI.SalesGUI;
 
 namespace GUI.AdminGUI
 {
@@ -18,6 +19,7 @@ namespace GUI.AdminGUI
 
         frmAddProduct fAddProduct;
         frmEditProduct fEditProduct;
+        frmDetailProduct fDetailProduct;
 
         string pMaSP, pTenSP;
 
@@ -31,6 +33,15 @@ namespace GUI.AdminGUI
             btnEdit.Click += BtnEdit_Click;
             btnLoad.Click += BtnLoad_Click;
             btnClearText.Click += BtnClearText_Click;
+            dgvProduct.CellDoubleClick += DgvProduct_CellDoubleClick;
+        }
+
+        private void DgvProduct_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
+
+            fDetailProduct = new frmDetailProduct(pMaSP);
+            fDetailProduct.ShowDialog();
         }
 
         private void BtnClearText_Click(object sender, EventArgs e)

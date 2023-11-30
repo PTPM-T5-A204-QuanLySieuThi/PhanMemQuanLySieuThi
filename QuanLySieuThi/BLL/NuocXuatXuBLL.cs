@@ -22,5 +22,11 @@ namespace BLL
         {
             return nuocxuatxu_dal.getDataNuocXuatXu();
         }
+
+        //------------------ LẤY TÊN NƯỚC XUẤT XỨ
+        public string getTenNuocXuatXu(string pMaSP)
+        {
+            return nuocxuatxu_dal.getTenNuocXuatXu(pMaSP);
+        }
     }
 }

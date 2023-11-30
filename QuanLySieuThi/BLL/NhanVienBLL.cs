@@ -35,6 +35,12 @@ namespace BLL
             return nhanvien_dal.getDataNhanVienBanHang();
         }
 
+        //------------------ LẤY TÊN TÀI KHOẢN
+        public string getMaTaiKhoan(string pRole, string pPass)
+        {
+            return nhanvien_dal.getMaTaiKhoan(pRole, pPass);
+        }
+
         //------------------ THÊM NHÂN VIÊN
         public void addNV(NhanVienDTO nv)
         {

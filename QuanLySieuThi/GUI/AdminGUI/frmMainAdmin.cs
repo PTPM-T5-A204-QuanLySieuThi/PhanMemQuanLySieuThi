@@ -17,9 +17,13 @@ namespace GUI.AdminGUI
 
         frmProductAdmin fProductAdmin = new frmProductAdmin();
         frmStaff fStaff = new frmStaff();
+        frmClient fClient = new frmClient();
         frmCategory fCategory = new frmCategory();
         frmBill fBill = new frmBill();
+        frmPromotion fPromotion = new frmPromotion();
+        frmVoucher fVoucher = new frmVoucher();
         frmSupplier fSupplier = new frmSupplier();
+        frmChart fChart = new frmChart();
 
         public frmMainAdmin()
         {
@@ -50,8 +54,19 @@ namespace GUI.AdminGUI
             btnClient.Click += BtnClient_Click;
             btnCategory.Click += BtnCategory_Click;
             btnBill.Click += BtnBill_Click;
+            btnPromotion.Click += BtnPromotion_Click;
+            btnVoucher.Click += BtnVoucher_Click;
             btnSupplier.Click += BtnSupplier_Click;
+            btnBillMonth.Click += BtnBillMonth_Click;
+        }
 
+        private void BtnBillMonth_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fChart.TopLevel = false;
+            fChart.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fChart);
+            fChart.Show();
         }
 
         private void BtnSupplier_Click(object sender, EventArgs e)
@@ -61,6 +76,24 @@ namespace GUI.AdminGUI
             fSupplier.Dock = DockStyle.Fill;
             pnlBody.Controls.Add(fSupplier);
             fSupplier.Show();
+        }
+
+        private void BtnVoucher_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fVoucher.TopLevel = false;
+            fVoucher.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fVoucher);
+            fVoucher.Show();
+        }
+
+        private void BtnPromotion_Click(object sender, EventArgs e)
+        {
+            pnlBody.Controls.Clear();
+            fPromotion.TopLevel = false;
+            fPromotion.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fPromotion);
+            fPromotion.Show();
         }
 
         private void BtnBill_Click(object sender, EventArgs e)
@@ -83,7 +116,11 @@ namespace GUI.AdminGUI
 
         private void BtnClient_Click(object sender, EventArgs e)
         {
-
+            pnlBody.Controls.Clear();
+            fClient.TopLevel = false;
+            fClient.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fClient);
+            fClient.Show();
         }
 
         private void BtnStaff_Click(object sender, EventArgs e)

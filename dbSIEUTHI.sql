@@ -28,7 +28,7 @@ CREATE TABLE NHANVIEN
 (
 	MANV			VARCHAR(10) NOT NULL,
 	HOTEN			NVARCHAR(50),
-	ANHDAIDIEN		VARCHAR(100),
+	ANHDAIDIEN		VARCHAR(300),
 	NGAYSINH		DATE,
 	GIOITINH		NVARCHAR(5),
 	DIACHI			NVARCHAR(200),
@@ -87,11 +87,11 @@ CREATE TABLE SANPHAM
 	MASP			VARCHAR(10) NOT NULL,
 	BARCODE			VARCHAR(20),
 	TENSP			NVARCHAR(150),
-	ANHSANPHAM		VARCHAR(100),
+	ANHSANPHAM		VARCHAR(300),
 	NGAYSX			DATE,
 	HANSD			DATE,
 	GIASP			DECIMAL(18, 0),
-	MOTA			NVARCHAR(500),
+	MOTA			NVARCHAR(1000),
 	SLTON			INT,
 	MANXX			VARCHAR(10) NOT NULL,
 	MANCC			VARCHAR(10) NOT NULL,
@@ -140,19 +140,19 @@ CREATE TABLE KHACHHANG
 	NGAYSINH		DATE,
 	GIOITINH		NVARCHAR(5),
 	DIACHI			NVARCHAR(100),
-	SODIENTHOAI		VARCHAR(10),
+	SODIENTHOAI		VARCHAR(10) NOT NULL,
 	MATKHAU			VARCHAR(20),
 	EMAIL			VARCHAR(30),
 	TINHTHANH		VARCHAR(20),
 	DIEMTICHLUY		DECIMAL(5,2),
-	CONSTRAINT PK_KHACHHANG PRIMARY KEY(MAKH)
+	CONSTRAINT PK_KHACHHANG PRIMARY KEY(SODIENTHOAI)
 );
 
 --------------------- BẢNG HÓA ĐƠN
 CREATE TABLE HOADON
 (
 	MAHD			VARCHAR(10) NOT NULL,
-	NGAYLAP			DATE,
+	NGAYLAP			DATETIME,
 	TONGTIEN		DECIMAL(18, 0),
 	THANHTIEN		DECIMAL(18, 0),
 	MANV			VARCHAR(10) NOT NULL,
@@ -181,7 +181,7 @@ CREATE TABLE TICHDIEM
 (
 	MATICHDIEM		VARCHAR(6) NOT NULL,
 	MAHD			VARCHAR(10) NOT NULL,
-	MAKH			VARCHAR(10) NOT NULL,
+	SODIENTHOAI		VARCHAR(10) NOT NULL,
 	CONSTRAINT PK_TICHDIEM PRIMARY KEY(MATICHDIEM)
 );
 
@@ -229,7 +229,7 @@ ADD CONSTRAINT FK_CHITIETHOADON_HOADON FOREIGN KEY(MAHD) REFERENCES HOADON(MAHD)
 --------------------- BẢNG TÍCH ĐIỂM
 ALTER TABLE TICHDIEM
 ADD CONSTRAINT FK_TICHDIEM_HOADON FOREIGN KEY(MAHD) REFERENCES HOADON(MAHD),
-	CONSTRAINT FK_TICHDIEM_KHACHHANG FOREIGN KEY(MAKH) REFERENCES KHACHHANG(MAKH)
+	CONSTRAINT FK_TICHDIEM_KHACHHANG FOREIGN KEY(SODIENTHOAI) REFERENCES KHACHHANG(SODIENTHOAI)
 
 ----------------------------------------------------------- TRIGGER
 ----------------------- TRIGGER TẠO MÃ TÀI KHOẢN THEO ĐỊNH DẠNG	
@@ -325,17 +325,17 @@ VALUES
 ('CC004', N'Acecook', N'Lô số II-3,Đường số 11,Nhóm CN II, Khu Công nghiệp Tân Bình, Phường Tây Thạnh, Quận Tân Phú, Thành phố Hồ Chí Minh, Việt Nam', '(028) 3815 4064'),
 ('CC005', N'Nam Ngư', N'Khu Công nghiệp Tân Đông Hiệp A, huyện Dĩ An, tỉnh Bình Dương', ''),
 ('CC006', N'Nongshim', N'112 Yeouidaebang-Ro, Dongjak-Gu, Seoul (Shindaebang-Dong)', '080-023-5181'),
-('CC007', N'Bel Việt Nam', N'Lô CN1, KCN Sóng Thần 3, Tp Thủ Dầu Một, Bình Dương', '1800 1110'),
-('CC008', N'', N'', ''),
-('CC009', N'', N'', ''),
-('CC010', N'', N'', ''),
-('CC011', N'', N'', ''),
-('CC012', N'', N'', ''),
-('CC013', N'', N'', ''),
-('CC014', N'', N'', ''),
-('CC015', N'', N'', ''),
-('CC016', N'', N'', ''),
-('CC017', N'', N'', '')
+('CC007', N'Bel Việt Nam', N'Lô CN1, KCN Sóng Thần 3, Tp Thủ Dầu Một, Bình Dương', '1800 1110')
+--('CC008', N'', N'', ''),
+--('CC009', N'', N'', ''),
+--('CC010', N'', N'', ''),
+--('CC011', N'', N'', ''),
+--('CC012', N'', N'', ''),
+--('CC013', N'', N'', ''),
+--('CC014', N'', N'', ''),
+--('CC015', N'', N'', ''),
+--('CC016', N'', N'', ''),
+--('CC017', N'', N'', '')
 
 --------------------- BẢNG LOẠI SẢN PHẨM
 INSERT INTO LOAISANPHAM(MALSP, TENLSP)
@@ -429,9 +429,10 @@ VALUES
 ('KM002', '2146970')
 
 
-SELECT * from hoadon
+SELECT * from hoadon where NGAYLAP = '30/11/2023'
 SELECT * from chitiethoadon 
 SELECT * from sanpham
+SELECT * from khachhang
 
 delete chitiethoadon
-delete hoadon
+delete hoadon where MAHD = '1002699740'

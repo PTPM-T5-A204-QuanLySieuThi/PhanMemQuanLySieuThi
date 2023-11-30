@@ -69,6 +69,7 @@
     <Reference Include="System.Design" />
     <Reference Include="System.Management" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -89,17 +90,47 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminGUI\frmAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddCategory.Designer.cs">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddClient.Designer.cs">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\frmAddProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminGUI\frmAddProduct.Designer.cs">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminGUI\frmAddPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddPromotion.Designer.cs">
+      <DependentUpon>frmAddPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\frmAddStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminGUI\frmAddStaff.Designer.cs">
       <DependentUpon>frmAddStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddSupplier.Designer.cs">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmAddVoucher.Designer.cs">
+      <DependentUpon>frmAddVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\frmBill.cs">
       <SubType>Form</SubType>
@@ -113,11 +144,29 @@
     <Compile Include="AdminGUI\frmCategory.Designer.cs">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminGUI\frmChart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmChart.Designer.cs">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\frmClient.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminGUI\frmClient.Designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditCategory.Designer.cs">
+      <DependentUpon>frmEditCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditClient.Designer.cs">
+      <DependentUpon>frmEditClient.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\frmEditProduct.cs">
       <SubType>Form</SubType>
@@ -125,11 +174,29 @@
     <Compile Include="AdminGUI\frmEditProduct.Designer.cs">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminGUI\frmEditPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditPromotion.Designer.cs">
+      <DependentUpon>frmEditPromotion.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\frmEditStaff.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AdminGUI\frmEditStaff.Designer.cs">
       <DependentUpon>frmEditStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditSupplier.Designer.cs">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditVoucher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmEditVoucher.Designer.cs">
+      <DependentUpon>frmEditVoucher.cs</DependentUpon>
     </Compile>
     <Compile Include="AdminGUI\frmMainAdmin.cs">
       <SubType>Form</SubType>
@@ -199,6 +266,18 @@
     <Compile Include="SalesGUI\frmDetailBill.Designer.cs">
       <DependentUpon>frmDetailBill.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesGUI\frmDetailProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmDetailProduct.Designer.cs">
+      <DependentUpon>frmDetailProduct.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesGUI\frmExportBill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesGUI\frmExportBill.Designer.cs">
+      <DependentUpon>frmExportBill.cs</DependentUpon>
+    </Compile>
     <Compile Include="SalesGUI\frmHomeSales.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -223,11 +302,26 @@
     <Compile Include="SalesGUI\frmSales.Designer.cs">
       <DependentUpon>frmSales.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AdminGUI\frmAddCategory.resx">
+      <DependentUpon>frmAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmAddClient.resx">
+      <DependentUpon>frmAddClient.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmAddProduct.resx">
       <DependentUpon>frmAddProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmAddPromotion.resx">
+      <DependentUpon>frmAddPromotion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmAddStaff.resx">
       <DependentUpon>frmAddStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmAddSupplier.resx">
+      <DependentUpon>frmAddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmAddVoucher.resx">
+      <DependentUpon>frmAddVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmBill.resx">
       <DependentUpon>frmBill.cs</DependentUpon>
@@ -235,14 +329,32 @@
     <EmbeddedResource Include="AdminGUI\frmCategory.resx">
       <DependentUpon>frmCategory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmChart.resx">
+      <DependentUpon>frmChart.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmEditCategory.resx">
+      <DependentUpon>frmEditCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmEditClient.resx">
+      <DependentUpon>frmEditClient.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmEditProduct.resx">
       <DependentUpon>frmEditProduct.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmEditPromotion.resx">
+      <DependentUpon>frmEditPromotion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmEditStaff.resx">
       <DependentUpon>frmEditStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmEditSupplier.resx">
+      <DependentUpon>frmEditSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmEditVoucher.resx">
+      <DependentUpon>frmEditVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmMainAdmin.resx">
       <DependentUpon>frmMainAdmin.cs</DependentUpon>
@@ -250,11 +362,17 @@
     <EmbeddedResource Include="AdminGUI\frmProductAdmin.resx">
       <DependentUpon>frmProductAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmPromotion.resx">
+      <DependentUpon>frmPromotion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmStaff.resx">
       <DependentUpon>frmStaff.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmSupplier.resx">
       <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmVoucher.resx">
+      <DependentUpon>frmVoucher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmLoading.resx">
       <DependentUpon>frmLoading.cs</DependentUpon>
@@ -275,6 +393,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesGUI\frmDetailBill.resx">
       <DependentUpon>frmDetailBill.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmDetailProduct.resx">
+      <DependentUpon>frmDetailProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesGUI\frmExportBill.resx">
+      <DependentUpon>frmExportBill.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesGUI\frmHomeSales.resx">
       <DependentUpon>frmHomeSales.cs</DependentUpon>

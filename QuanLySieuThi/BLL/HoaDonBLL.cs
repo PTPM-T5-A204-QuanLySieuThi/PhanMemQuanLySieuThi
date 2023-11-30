@@ -41,6 +41,24 @@ namespace BLL
             hoadon_dal.addHD(hd);
         }
 
+        //------------------ ĐẾM SỐ HÓA ĐƠN TRONG NGÀY
+        public int countBillDaily()
+        {
+            return hoadon_dal.countBillDaily();
+        }
+
+        //------------------ TÍNH DOANH THU HÓA ĐƠN TRONG NGÀY
+        public decimal calBillDaily()
+        {
+            return hoadon_dal.calBillDaily();
+        }
+
+        //------------------ LẤY DOANH THU THEO THÁNG
+        public decimal calBillMonth(int pMonth,int pYear)
+        {
+            return hoadon_dal.calBillMonth(pMonth, pYear);
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {
