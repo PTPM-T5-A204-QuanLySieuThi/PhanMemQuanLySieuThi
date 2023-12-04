@@ -105,6 +105,12 @@ namespace GUI.SalesGUI
             pnBill.Visible = false;
 
             pnBody.Controls.Clear();
+            fSales.TopLevel = false;
+            pnBody.Controls.Add(fSales);
+            fSales.Dock = DockStyle.Fill;
+            fSales.Show();
+
+            pnBody.Controls.Clear();
             fHomeSales.TopLevel = false;
             pnBody.Controls.Add(fHomeSales);
             fHomeSales.Dock = DockStyle.Fill;

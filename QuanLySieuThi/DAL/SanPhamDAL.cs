@@ -19,7 +19,7 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM
         public List<SanPhamDTO> getDataSanPham()
         {
-            var query = from sp in qlst.SANPHAMs select sp;
+            var query = from sp in qlst.SANPHAMs where sp.SLTON > 0 select sp;
 
             var sanphams = query.ToList().ConvertAll(nv => new SanPhamDTO()
             {
@@ -46,7 +46,7 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
         public List<SanPhamDTO> getDataSanPhamTheoMaSP(string pMaSP)
         {
-            var query = from sp in qlst.SANPHAMs where sp.MASP == pMaSP select sp;
+            var query = from sp in qlst.SANPHAMs where sp.MASP == pMaSP && sp.SLTON > 0 select sp;
 
             var sanphams = query.ToList().ConvertAll(nv => new SanPhamDTO()
             {
@@ -73,7 +73,7 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC
         public List<SanPhamLocDTO> getDataSanPhamLoc()
         {
-            var query = from sp in qlst.SANPHAMs select sp;
+            var query = from sp in qlst.SANPHAMs where sp.SLTON > 0 select sp;
 
             var sanphams = query.ToList().ConvertAll(nv => new SanPhamLocDTO()
             {
@@ -94,7 +94,7 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
         public List<SanPhamDTO> getDataSanPhamDK(string pValue)
         {
-            var query = from sp in qlst.SANPHAMs where sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) select sp;
+            var query = from sp in qlst.SANPHAMs where sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) && sp.SLTON > 0 select sp;
 
             var sanphams = query.ToList().ConvertAll(nv => new SanPhamDTO()
             {
@@ -121,7 +121,7 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC CÓ ĐIỀU KIỆN
         public List<SanPhamLocDTO> getDataSanPhamLocDK(string pValue)
         {
-            var query = from sp in qlst.SANPHAMs where sp.MASP.Contains(pValue) || sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) select sp;
+            var query = from sp in qlst.SANPHAMs where sp.MASP.Contains(pValue) || sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) && sp.SLTON > 0 select sp;
 
             var sanphams = query.ToList().ConvertAll(nv => new SanPhamLocDTO()
             {
@@ -275,6 +275,13 @@ namespace DAL
         {
             var query = from sp in qlst.SANPHAMs select sp;
             return query.Count();
+        }
+
+        //------------------ LẤY SỐ LƯỢNG TỒN
+        public int getSLT(string pMaSP)
+        {
+            var query = from sp in qlst.SANPHAMs where sp.MASP == pMaSP select sp.SLTON;
+            return (int)query.FirstOrDefault();
         }
 
         //------------------ KIỂM TRA KHÓA CHÍNH

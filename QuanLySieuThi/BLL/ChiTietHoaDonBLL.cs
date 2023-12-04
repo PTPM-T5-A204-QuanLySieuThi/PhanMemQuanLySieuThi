@@ -23,6 +23,12 @@ namespace BLL
             return chitiethoadon_dal.getDataCTHoaDon();
         }
 
+        //------------------ LẤY DỮ LIỆU CHI TIẾT HÓA ĐƠN THEO MÃ HÓA ĐƠN
+        public List<ChiTietHoaDonDTO> getDataCTHoaDonTheoHD(string pMaHD)
+        {
+            return chitiethoadon_dal.getDataCTHoaDonTheoHD(pMaHD);
+        }
+
         //------------------ LẤY DỮ LIỆU CHI TIẾT HÓA ĐƠN THEO MÃ HÓA ĐƠN VÀ MÃ SẢN PHẨM
         public List<ChiTietHoaDonDTO> getDataCTHoaDonTheoMaHD(string pMaHD, string pMaSP)
         {

@@ -109,7 +109,6 @@ namespace GUI.AdminGUI
             dgvProduct.Columns[5].HeaderText = "GIÁ";
             dgvProduct.Columns[6].HeaderText = "SL TỒN";
         }
-
         private void loadDataProduct()
         {
             dgvProduct.DataSource = sanpham_bll.getDataSanPhamLoc();

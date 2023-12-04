@@ -85,6 +85,12 @@ namespace BLL
             sanpham_dal.editSP(sp);
         }
 
+        //------------------ LẤY SỐ LƯỢNG TỒN
+        public int getSLT(string pMaSP)
+        {
+            return sanpham_dal.getSLT(pMaSP);
+        }
+
         //------------------ ĐẾM SỐ SẢN PHẨM
         public int countProduct()
         {

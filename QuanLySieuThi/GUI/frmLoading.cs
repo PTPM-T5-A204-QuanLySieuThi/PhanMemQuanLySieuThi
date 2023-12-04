@@ -1,6 +1,7 @@
 ﻿using BLL;
 using GUI.AdminGUI;
 using GUI.SalesGUI;
+using GUI.WarehouseGUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace GUI
 
         frmMainSales fMainSales = new frmMainSales();
         frmMainAdmin fMainAdmin = new frmMainAdmin();
+        frmMainWarehouse fMainWarehouse = new frmMainWarehouse();
 
         NhanVienBLL nhanvien_bll = new NhanVienBLL();
 
@@ -53,7 +55,9 @@ namespace GUI
                 }
                 else
                 {
-
+                    timerLoading.Stop();
+                    fMainWarehouse.Show();
+                    this.Close();
                 }
             }
         }

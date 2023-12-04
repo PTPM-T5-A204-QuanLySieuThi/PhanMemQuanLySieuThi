@@ -37,6 +37,7 @@ namespace UI
         private string pGiaGiamSP;
         private string pGiaSP;
         private string pKhuyenMai;
+        private string pSLTon;
 
         [Category("Custom Product")]
         public string PMaSP
@@ -78,6 +79,13 @@ namespace UI
         {
             get { return pKhuyenMai; }
             set { pKhuyenMai = value; lbKhuyenMai.Text = value; }
+        }
+
+        [Category("Custom Product")]
+        public string PSLTon
+        {
+            get { return pSLTon; }
+            set { pSLTon = value; lbSLT.Text = value; }
         }
 
         private void HideLabel()

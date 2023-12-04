@@ -56,7 +56,7 @@ namespace GUI.SalesGUI
                 productItems[i].Margin = new Padding(100, 20, 10, 0);
                 productItems[i].PMaSP = products[i].masp;
                 productItems[i].PTenSp = products[i].tensp;
-                productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
+                productItems[i].PGiaSP = products[i].giasp.ToString("N0") + " vnđ";
 
                 lst_cthd = cthoadon_nll.getDataCTHoaDonTheoMaHD(pMaHD, products[i].masp);
                 productItems[i].PSoLuong = "x" + lst_cthd[0].soluong.ToString();
@@ -64,17 +64,17 @@ namespace GUI.SalesGUI
                 if (chitietkhuyenmai_bll.isKhuyenMai(products[i].masp))
                 {
                     productItems[i].PKhuyenMai = sale.sogiam.ToString() + "%";
-                    productItems[i].PGiaSP = products[i].giasp.ToString("#,#") + " vnđ";
-                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("#,#") + " vnđ";
+                    productItems[i].PGiaSP = products[i].giasp.ToString("N0") + " vnđ";
+                    productItems[i].PGiaGiamSP = (products[i].giasp * (decimal)(1 - ((double)sale.sogiam / 100))).ToString("N0") + " vnđ";
                 }
                 else
                 {
                     productItems[i].PKhuyenMai = string.Empty;
                     productItems[i].PGiaSP = string.Empty;
-                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("#,#") + " vnđ";
+                    productItems[i].PGiaGiamSP = products[i].giasp.ToString("N0") + " vnđ";
                 }
 
-                productItems[i].PThanhTien = (double.Parse(productItems[i].PGiaGiamSP.Replace(" vnđ", "")) * lst_cthd[0].soluong).ToString("N3") + " vnđ";
+                productItems[i].PThanhTien = (double.Parse(productItems[i].PGiaGiamSP.Replace(" vnđ", "").ToString().Replace(",","")) * lst_cthd[0].soluong).ToString("N0") + " vnđ";
 
                 try
                 {
@@ -111,8 +111,8 @@ namespace GUI.SalesGUI
             lbMaHD.Text = lst_hd[0].mahd;
             lbNgayLap.Text = lst_hd[0].ngaylap.ToString();
             lbMaNV.Text = lst_hd[0].manv;
-            double temp = (double)lst_hd[0].thanhtien;
-            lbThanhTien.Text = temp.ToString("N3") + " vnđ";
+            double temp = double.Parse(lst_hd[0].thanhtien.ToString().Replace(" vnđ", "").ToString().Replace(",", ""));
+            lbThanhTien.Text = temp.ToString("N0") + " vnđ";
 
 
         }

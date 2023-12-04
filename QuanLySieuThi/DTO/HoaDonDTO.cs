@@ -9,9 +9,10 @@ namespace DTO
     public class HoaDonDTO
     {
         public string mahd { get; set; }
-        public DateTime? ngaylap { get; set; }
-        public decimal? tongtien { get; set; }
-        public decimal? thanhtien { get; set; }
         public string manv { get; set; }
+        public string makh { get; set; }
+        public DateTime ngaylap { get; set; }
+        public decimal thanhtien { get; set; }
+        public bool trangthai { get; set; }
     }
 }

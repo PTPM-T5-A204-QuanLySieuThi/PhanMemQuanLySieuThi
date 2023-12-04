@@ -112,7 +112,7 @@
             this.guna2GradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(10, 0, 10, 10);
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(1023, 692);
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(1023, 873);
             this.guna2GradientPanel1.TabIndex = 5;
             // 
             // guna2GradientPanel3
@@ -132,7 +132,7 @@
             this.guna2GradientPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2GradientPanel3.Location = new System.Drawing.Point(0, 49);
             this.guna2GradientPanel3.Name = "guna2GradientPanel3";
-            this.guna2GradientPanel3.Size = new System.Drawing.Size(1023, 643);
+            this.guna2GradientPanel3.Size = new System.Drawing.Size(1023, 824);
             this.guna2GradientPanel3.TabIndex = 6;
             // 
             // lbThanhTien
@@ -167,7 +167,7 @@
             this.flpSanPham.AutoScroll = true;
             this.flpSanPham.Location = new System.Drawing.Point(33, 249);
             this.flpSanPham.Name = "flpSanPham";
-            this.flpSanPham.Size = new System.Drawing.Size(958, 361);
+            this.flpSanPham.Size = new System.Drawing.Size(958, 542);
             this.flpSanPham.TabIndex = 8;
             // 
             // lbNgayLap
@@ -258,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1023, 692);
+            this.ClientSize = new System.Drawing.Size(1023, 873);
             this.Controls.Add(this.guna2GradientPanel3);
             this.Controls.Add(this.guna2GradientPanel2);
             this.Controls.Add(this.guna2GradientPanel1);

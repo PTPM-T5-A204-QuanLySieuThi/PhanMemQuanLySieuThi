@@ -25,10 +25,11 @@ namespace DAL
             var hoadons = query.ToList().ConvertAll(nv => new HoaDonDTO()
             {
                 mahd = nv.MAHD,
-                tongtien = nv.TONGTIEN,
-                ngaylap = nv.NGAYLAP,
-                thanhtien = nv.THANHTIEN,
-                manv = nv.MANV
+                makh = nv.MAKH,
+                manv = nv.MANV,
+                thanhtien = (decimal)nv.THANHTIEN,
+                ngaylap = (DateTime)nv.NGAYLAP,
+                trangthai = (bool)nv.TRANGTHAI
             });
 
             List<HoaDonDTO> lst_hd = hoadons.ToList();
@@ -44,10 +45,11 @@ namespace DAL
             var hoadons = query.ToList().ConvertAll(nv => new HoaDonDTO()
             {
                 mahd = nv.MAHD,
-                tongtien = nv.TONGTIEN,
-                ngaylap = nv.NGAYLAP,
-                thanhtien = nv.THANHTIEN,
+                makh = nv.MAKH,
                 manv = nv.MANV,
+                thanhtien = (decimal)nv.THANHTIEN,
+                ngaylap = (DateTime)nv.NGAYLAP,
+                trangthai = (bool)nv.TRANGTHAI
             });
 
             List<HoaDonDTO> lst_hd = hoadons.ToList();
@@ -63,10 +65,11 @@ namespace DAL
             var hoadons = query.ToList().ConvertAll(nv => new HoaDonDTO()
             {
                 mahd = nv.MAHD,
-                tongtien = nv.TONGTIEN,
-                ngaylap = nv.NGAYLAP,
-                thanhtien = nv.THANHTIEN,
+                makh = nv.MAKH,
                 manv = nv.MANV,
+                thanhtien = (decimal)nv.THANHTIEN,
+                ngaylap = (DateTime)nv.NGAYLAP,
+                trangthai = (bool)nv.TRANGTHAI
             });
 
             List<HoaDonDTO> lst_hd = hoadons.ToList();
@@ -80,13 +83,34 @@ namespace DAL
             HOADON hds = new HOADON();
 
             hds.MAHD = hd.mahd;
-            hds.NGAYLAP = hd.ngaylap;
-            hds.TONGTIEN = hd.tongtien;
-            hds.THANHTIEN = hd.thanhtien;
             hds.MANV = hd.manv;
+            hds.MAKH = hd.makh;
+            hds.NGAYLAP = hd.ngaylap;
+            hds.THANHTIEN = hd.thanhtien;
+            hds.TRANGTHAI = hd.trangthai;
 
             qlst.HOADONs.InsertOnSubmit(hds);
             qlst.SubmitChanges();
+        }
+
+        //------------------ TÌM HÓA ĐƠN THEO NGÀY THÁNG NĂM
+        public List<HoaDonDTO> findBillOnDate(DateTime pValue)
+        {
+            var query = from hd in qlst.HOADONs where hd.NGAYLAP >= pValue && hd.NGAYLAP < pValue.AddDays(1) select hd;
+
+            var hoadons = query.ToList().ConvertAll(nv => new HoaDonDTO()
+            {
+                mahd = nv.MAHD,
+                makh = nv.MAKH,
+                manv = nv.MANV,
+                thanhtien = (decimal)nv.THANHTIEN,
+                ngaylap = (DateTime)nv.NGAYLAP,
+                trangthai = (bool)nv.TRANGTHAI
+            });
+
+            List<HoaDonDTO> lst_hd = hoadons.ToList();
+
+            return lst_hd;
         }
 
         //------------------ ĐẾM SỐ HÓA ĐƠN TRONG NGÀY

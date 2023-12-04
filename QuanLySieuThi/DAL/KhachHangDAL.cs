@@ -145,6 +145,21 @@ namespace DAL
             qlst.SubmitChanges();
         }
 
+        //------------------ TÌM MÃ KHÁCH HÀNG
+        public string findCodeClient(string pPhoneNum)
+        {
+            var query = from kh in qlst.KHACHHANGs where kh.SODIENTHOAI == pPhoneNum select kh.MAKH;
+
+            return query.FirstOrDefault();
+        }
+
+        //------------------ KIỂM TRA SỐ ĐIỆN THOẠI ĐÃ ĐƯỢC ĐĂNG KÝ CHƯA
+        public bool checkPhoneNum(string pPhoneNum)
+        {
+            var query = from kh in qlst.KHACHHANGs where kh.SODIENTHOAI == pPhoneNum select kh;
+            return query.Any();
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

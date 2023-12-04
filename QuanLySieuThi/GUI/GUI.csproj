@@ -302,6 +302,12 @@
     <Compile Include="SalesGUI\frmSales.Designer.cs">
       <DependentUpon>frmSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseGUI\frmMainWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseGUI\frmMainWarehouse.Designer.cs">
+      <DependentUpon>frmMainWarehouse.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AdminGUI\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
     </EmbeddedResource>
@@ -411,6 +417,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SalesGUI\frmSales.resx">
       <DependentUpon>frmSales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseGUI\frmMainWarehouse.resx">
+      <DependentUpon>frmMainWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -20,6 +20,19 @@ namespace GUI.AdminGUI
         {
             InitializeComponent();
             this.Load += FrmBill_Load;
+            dtpTime.ValueChanged += DtpTime_ValueChanged;
+        }
+
+        private void DtpTime_ValueChanged(object sender, EventArgs e)
+        {
+            dgvBill.DataSource = hoadon_bll.findBillOnDate(dtpTime.Value);
+
+            dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
+            dgvBill.Columns[1].HeaderText = "MÃ KHÁCH HÀNG";
+            dgvBill.Columns[2].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[3].HeaderText = "NGÀY LẬP";
+            dgvBill.Columns[4].HeaderText = "THÀNH TIỀN";
+            dgvBill.Columns[5].HeaderText = "TRẠNG THÁI";
         }
 
         private void FrmBill_Load(object sender, EventArgs e)
@@ -32,10 +45,11 @@ namespace GUI.AdminGUI
             dgvBill.DataSource = hoadon_bll.getDataHoaDon();
 
             dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
-            dgvBill.Columns[1].HeaderText = "NGÀY LẬP";
-            dgvBill.Columns[2].HeaderText = "TỔNG TIỀN";
-            dgvBill.Columns[3].HeaderText = "THÀNH TIỀN";
-            dgvBill.Columns[4].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[1].HeaderText = "MÃ KHÁCH HÀNG";
+            dgvBill.Columns[2].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[3].HeaderText = "NGÀY LẬP";
+            dgvBill.Columns[4].HeaderText = "THÀNH TIỀN";
+            dgvBill.Columns[5].HeaderText = "TRẠNG THÁI";
         }
     }
 }

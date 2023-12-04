@@ -193,10 +193,16 @@
             this.txtSLT.BackColor = System.Drawing.Color.Transparent;
             this.txtSLT.BorderRadius = 5;
             this.txtSLT.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtSLT.Enabled = false;
             this.txtSLT.Font = new System.Drawing.Font("Consolas", 13.8F);
             this.txtSLT.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.txtSLT.Location = new System.Drawing.Point(834, 299);
             this.txtSLT.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSLT.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.txtSLT.Name = "txtSLT";
             this.txtSLT.Size = new System.Drawing.Size(324, 43);
             this.txtSLT.TabIndex = 21;

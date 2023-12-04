@@ -59,6 +59,13 @@ namespace BLL
             return hoadon_dal.calBillMonth(pMonth, pYear);
         }
 
+
+        //------------------ TÌM HÓA ĐƠN THEO NGÀY THÁNG NĂM
+        public List<HoaDonDTO> findBillOnDate(DateTime pValue)
+        {
+            return hoadon_dal.findBillOnDate(pValue);
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

@@ -28,21 +28,21 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvProduct = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.btnClearText = new System.Windows.Forms.PictureBox();
+            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLoad = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnEdit = new Guna.UI2.WinForms.Guna2CircleButton();
             this.btnRemove = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btnAdd = new Guna.UI2.WinForms.Guna2CircleButton();
-            this.btnClearText = new System.Windows.Forms.PictureBox();
-            this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
@@ -54,29 +54,29 @@
             // 
             // dgvProduct
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvProduct.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgvProduct.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvProduct.ColumnHeadersHeight = 40;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProduct.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvProduct.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvProduct.Location = new System.Drawing.Point(5, 5);
             this.dgvProduct.MultiSelect = false;
@@ -156,72 +156,6 @@
             this.panel2.Size = new System.Drawing.Size(648, 112);
             this.panel2.TabIndex = 3;
             // 
-            // btnLoad
-            // 
-            this.btnLoad.BorderColor = System.Drawing.Color.Transparent;
-            this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnLoad.FillColor = System.Drawing.Color.Transparent;
-            this.btnLoad.FocusedColor = System.Drawing.Color.White;
-            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLoad.ForeColor = System.Drawing.Color.Transparent;
-            this.btnLoad.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnLoad.Image = global::GUI.Properties.Resources.refresh;
-            this.btnLoad.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnLoad.Location = new System.Drawing.Point(276, 15);
-            this.btnLoad.Name = "btnLoad";
-            this.btnLoad.PressedColor = System.Drawing.Color.White;
-            this.btnLoad.PressedDepth = 0;
-            this.btnLoad.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnLoad.Size = new System.Drawing.Size(80, 80);
-            this.btnLoad.TabIndex = 4;
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BorderColor = System.Drawing.Color.Transparent;
-            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
-            this.btnEdit.FocusedColor = System.Drawing.Color.White;
-            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnEdit.ForeColor = System.Drawing.Color.Transparent;
-            this.btnEdit.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnEdit.Image = global::GUI.Properties.Resources.pencil;
-            this.btnEdit.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnEdit.Location = new System.Drawing.Point(190, 15);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.PressedColor = System.Drawing.Color.White;
-            this.btnEdit.PressedDepth = 0;
-            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnEdit.Size = new System.Drawing.Size(80, 80);
-            this.btnEdit.TabIndex = 4;
-            // 
-            // btnRemove
-            // 
-            this.btnRemove.BorderColor = System.Drawing.Color.Transparent;
-            this.btnRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnRemove.FillColor = System.Drawing.Color.Transparent;
-            this.btnRemove.FocusedColor = System.Drawing.Color.White;
-            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnRemove.ForeColor = System.Drawing.Color.Transparent;
-            this.btnRemove.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnRemove.Image = global::GUI.Properties.Resources.minus;
-            this.btnRemove.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnRemove.Location = new System.Drawing.Point(104, 15);
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.PressedColor = System.Drawing.Color.White;
-            this.btnRemove.PressedDepth = 0;
-            this.btnRemove.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnRemove.Size = new System.Drawing.Size(80, 80);
-            this.btnRemove.TabIndex = 5;
-            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btnClearText);
@@ -231,28 +165,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(690, 112);
             this.panel1.TabIndex = 2;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
-            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
-            this.btnAdd.FocusedColor = System.Drawing.Color.White;
-            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
-            this.btnAdd.HoverState.FillColor = System.Drawing.Color.White;
-            this.btnAdd.Image = global::GUI.Properties.Resources.add;
-            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
-            this.btnAdd.Location = new System.Drawing.Point(18, 15);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.PressedColor = System.Drawing.Color.White;
-            this.btnAdd.PressedDepth = 0;
-            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.btnAdd.Size = new System.Drawing.Size(80, 80);
-            this.btnAdd.TabIndex = 6;
             // 
             // btnClearText
             // 
@@ -290,6 +202,94 @@
             this.txtSearch.Size = new System.Drawing.Size(587, 64);
             this.txtSearch.TabIndex = 2;
             // 
+            // btnLoad
+            // 
+            this.btnLoad.BorderColor = System.Drawing.Color.Transparent;
+            this.btnLoad.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnLoad.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnLoad.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnLoad.FillColor = System.Drawing.Color.Transparent;
+            this.btnLoad.FocusedColor = System.Drawing.Color.White;
+            this.btnLoad.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLoad.ForeColor = System.Drawing.Color.Transparent;
+            this.btnLoad.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnLoad.Image = global::GUI.Properties.Resources.refresh;
+            this.btnLoad.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnLoad.Location = new System.Drawing.Point(276, 15);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.PressedColor = System.Drawing.Color.White;
+            this.btnLoad.PressedDepth = 0;
+            this.btnLoad.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnLoad.Size = new System.Drawing.Size(80, 80);
+            this.btnLoad.TabIndex = 7;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.BorderColor = System.Drawing.Color.Transparent;
+            this.btnEdit.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnEdit.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnEdit.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnEdit.FillColor = System.Drawing.Color.Transparent;
+            this.btnEdit.FocusedColor = System.Drawing.Color.White;
+            this.btnEdit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnEdit.ForeColor = System.Drawing.Color.Transparent;
+            this.btnEdit.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnEdit.Image = global::GUI.Properties.Resources.pencil;
+            this.btnEdit.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnEdit.Location = new System.Drawing.Point(190, 15);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PressedColor = System.Drawing.Color.White;
+            this.btnEdit.PressedDepth = 0;
+            this.btnEdit.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnEdit.Size = new System.Drawing.Size(80, 80);
+            this.btnEdit.TabIndex = 8;
+            // 
+            // btnRemove
+            // 
+            this.btnRemove.BorderColor = System.Drawing.Color.Transparent;
+            this.btnRemove.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemove.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnRemove.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnRemove.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnRemove.FillColor = System.Drawing.Color.Transparent;
+            this.btnRemove.FocusedColor = System.Drawing.Color.White;
+            this.btnRemove.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnRemove.ForeColor = System.Drawing.Color.Transparent;
+            this.btnRemove.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnRemove.Image = global::GUI.Properties.Resources.minus;
+            this.btnRemove.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnRemove.Location = new System.Drawing.Point(104, 15);
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.PressedColor = System.Drawing.Color.White;
+            this.btnRemove.PressedDepth = 0;
+            this.btnRemove.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnRemove.Size = new System.Drawing.Size(80, 80);
+            this.btnRemove.TabIndex = 9;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BorderColor = System.Drawing.Color.Transparent;
+            this.btnAdd.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnAdd.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnAdd.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnAdd.FillColor = System.Drawing.Color.Transparent;
+            this.btnAdd.FocusedColor = System.Drawing.Color.White;
+            this.btnAdd.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnAdd.ForeColor = System.Drawing.Color.Transparent;
+            this.btnAdd.HoverState.FillColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::GUI.Properties.Resources.add;
+            this.btnAdd.ImageSize = new System.Drawing.Size(50, 50);
+            this.btnAdd.Location = new System.Drawing.Point(18, 15);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PressedColor = System.Drawing.Color.White;
+            this.btnAdd.PressedDepth = 0;
+            this.btnAdd.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.btnAdd.Size = new System.Drawing.Size(80, 80);
+            this.btnAdd.TabIndex = 10;
+            // 
             // frmProductAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -317,13 +317,13 @@
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel2;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.PictureBox btnClearText;
+        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
         private System.Windows.Forms.Panel panel2;
         private Guna.UI2.WinForms.Guna2CircleButton btnLoad;
         private Guna.UI2.WinForms.Guna2CircleButton btnEdit;
         private Guna.UI2.WinForms.Guna2CircleButton btnRemove;
         private Guna.UI2.WinForms.Guna2CircleButton btnAdd;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.PictureBox btnClearText;
-        private Guna.UI2.WinForms.Guna2TextBox txtSearch;
     }
 }

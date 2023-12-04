@@ -35,20 +35,23 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSales));
             this.guna2GradientPanel5 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel8 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.chkPoints = new ReaLTaiizor.Controls.MetroCheckBox();
-            this.chkVoucher = new ReaLTaiizor.Controls.MetroCheckBox();
             this.guna2GradientPanel13 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel9 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnPay = new Guna.UI2.WinForms.Guna2Button();
+            this.bigLabel5 = new ReaLTaiizor.Controls.BigLabel();
             this.lbTotalTemp = new ReaLTaiizor.Controls.BigLabel();
+            this.txtClientGive = new Guna.UI2.WinForms.Guna2TextBox();
             this.txtPhone = new Guna.UI2.WinForms.Guna2TextBox();
-            this.txtVoucher = new Guna.UI2.WinForms.Guna2TextBox();
+            this.lbTienThoi = new ReaLTaiizor.Controls.BigLabel();
             this.lbTotal = new ReaLTaiizor.Controls.BigLabel();
             this.lbVoucher = new ReaLTaiizor.Controls.BigLabel();
-            this.bigLabel5 = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel4 = new ReaLTaiizor.Controls.BigLabel();
+            this.bigLabel1 = new ReaLTaiizor.Controls.BigLabel();
+            this.bigLabel6 = new ReaLTaiizor.Controls.BigLabel();
             this.bigLabel3 = new ReaLTaiizor.Controls.BigLabel();
             this.guna2GradientPanel7 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
@@ -72,6 +75,9 @@
             this.guna2GradientPanel10 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.dungeonHeaderLabel1 = new ReaLTaiizor.Controls.DungeonHeaderLabel();
             this.cboStaffs = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.bigLabel7 = new ReaLTaiizor.Controls.BigLabel();
+            this.ppdBill = new System.Windows.Forms.PrintPreviewDialog();
+            this.pdBill = new System.Drawing.Printing.PrintDocument();
             this.guna2GradientPanel5.SuspendLayout();
             this.guna2GradientPanel8.SuspendLayout();
             this.guna2GradientPanel7.SuspendLayout();
@@ -94,7 +100,7 @@
             this.guna2GradientPanel5.Controls.Add(this.guna2GradientPanel6);
             this.guna2GradientPanel5.Location = new System.Drawing.Point(808, 0);
             this.guna2GradientPanel5.Name = "guna2GradientPanel5";
-            this.guna2GradientPanel5.Size = new System.Drawing.Size(496, 850);
+            this.guna2GradientPanel5.Size = new System.Drawing.Size(496, 880);
             this.guna2GradientPanel5.TabIndex = 5;
             // 
             // guna2GradientPanel8
@@ -104,21 +110,24 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientPanel8.BackColor = System.Drawing.Color.White;
             this.guna2GradientPanel8.Controls.Add(this.chkPoints);
-            this.guna2GradientPanel8.Controls.Add(this.chkVoucher);
             this.guna2GradientPanel8.Controls.Add(this.guna2GradientPanel13);
             this.guna2GradientPanel8.Controls.Add(this.guna2GradientPanel9);
             this.guna2GradientPanel8.Controls.Add(this.btnPay);
-            this.guna2GradientPanel8.Controls.Add(this.lbTotalTemp);
-            this.guna2GradientPanel8.Controls.Add(this.txtPhone);
-            this.guna2GradientPanel8.Controls.Add(this.txtVoucher);
-            this.guna2GradientPanel8.Controls.Add(this.lbTotal);
-            this.guna2GradientPanel8.Controls.Add(this.lbVoucher);
             this.guna2GradientPanel8.Controls.Add(this.bigLabel5);
+            this.guna2GradientPanel8.Controls.Add(this.lbTotalTemp);
+            this.guna2GradientPanel8.Controls.Add(this.txtClientGive);
+            this.guna2GradientPanel8.Controls.Add(this.txtPhone);
+            this.guna2GradientPanel8.Controls.Add(this.lbTienThoi);
+            this.guna2GradientPanel8.Controls.Add(this.lbTotal);
+            this.guna2GradientPanel8.Controls.Add(this.bigLabel7);
+            this.guna2GradientPanel8.Controls.Add(this.lbVoucher);
             this.guna2GradientPanel8.Controls.Add(this.bigLabel4);
+            this.guna2GradientPanel8.Controls.Add(this.bigLabel1);
+            this.guna2GradientPanel8.Controls.Add(this.bigLabel6);
             this.guna2GradientPanel8.Controls.Add(this.bigLabel3);
-            this.guna2GradientPanel8.Location = new System.Drawing.Point(0, 538);
+            this.guna2GradientPanel8.Location = new System.Drawing.Point(0, 485);
             this.guna2GradientPanel8.Name = "guna2GradientPanel8";
-            this.guna2GradientPanel8.Size = new System.Drawing.Size(496, 312);
+            this.guna2GradientPanel8.Size = new System.Drawing.Size(496, 395);
             this.guna2GradientPanel8.TabIndex = 2;
             // 
             // chkPoints
@@ -134,7 +143,7 @@
             this.chkPoints.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
             this.chkPoints.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.chkPoints.IsDerivedStyle = true;
-            this.chkPoints.Location = new System.Drawing.Point(184, 130);
+            this.chkPoints.Location = new System.Drawing.Point(335, 127);
             this.chkPoints.Name = "chkPoints";
             this.chkPoints.SignStyle = ReaLTaiizor.Enum.Metro.SignStyle.Sign;
             this.chkPoints.Size = new System.Drawing.Size(25, 16);
@@ -143,29 +152,6 @@
             this.chkPoints.TabIndex = 11;
             this.chkPoints.ThemeAuthor = "Taiizor";
             this.chkPoints.ThemeName = "MetroLight";
-            // 
-            // chkVoucher
-            // 
-            this.chkVoucher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.chkVoucher.BackColor = System.Drawing.Color.Transparent;
-            this.chkVoucher.BackgroundColor = System.Drawing.Color.White;
-            this.chkVoucher.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(155)))), ((int)(((byte)(155)))), ((int)(((byte)(155)))));
-            this.chkVoucher.Checked = false;
-            this.chkVoucher.CheckSignColor = System.Drawing.Color.FromArgb(((int)(((byte)(65)))), ((int)(((byte)(177)))), ((int)(((byte)(225)))));
-            this.chkVoucher.CheckState = ReaLTaiizor.Enum.Metro.CheckState.Unchecked;
-            this.chkVoucher.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.chkVoucher.DisabledBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(205)))), ((int)(((byte)(205)))));
-            this.chkVoucher.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.chkVoucher.IsDerivedStyle = true;
-            this.chkVoucher.Location = new System.Drawing.Point(184, 69);
-            this.chkVoucher.Name = "chkVoucher";
-            this.chkVoucher.SignStyle = ReaLTaiizor.Enum.Metro.SignStyle.Sign;
-            this.chkVoucher.Size = new System.Drawing.Size(25, 16);
-            this.chkVoucher.Style = ReaLTaiizor.Enum.Metro.Style.Light;
-            this.chkVoucher.StyleManager = null;
-            this.chkVoucher.TabIndex = 11;
-            this.chkVoucher.ThemeAuthor = "Taiizor";
-            this.chkVoucher.ThemeName = "MetroLight";
             // 
             // guna2GradientPanel13
             // 
@@ -184,7 +170,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.guna2GradientPanel9.FillColor = System.Drawing.SystemColors.MenuHighlight;
             this.guna2GradientPanel9.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.guna2GradientPanel9.Location = new System.Drawing.Point(30, 179);
+            this.guna2GradientPanel9.Location = new System.Drawing.Point(33, 160);
             this.guna2GradientPanel9.Name = "guna2GradientPanel9";
             this.guna2GradientPanel9.Size = new System.Drawing.Size(420, 2);
             this.guna2GradientPanel9.TabIndex = 10;
@@ -202,11 +188,24 @@
             this.btnPay.FillColor = System.Drawing.SystemColors.MenuHighlight;
             this.btnPay.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPay.ForeColor = System.Drawing.Color.White;
-            this.btnPay.Location = new System.Drawing.Point(83, 244);
+            this.btnPay.Location = new System.Drawing.Point(83, 327);
             this.btnPay.Name = "btnPay";
             this.btnPay.Size = new System.Drawing.Size(343, 63);
             this.btnPay.TabIndex = 9;
             this.btnPay.Text = "THANH TOÁN";
+            // 
+            // bigLabel5
+            // 
+            this.bigLabel5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.bigLabel5.AutoSize = true;
+            this.bigLabel5.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel5.ForeColor = System.Drawing.Color.Black;
+            this.bigLabel5.Location = new System.Drawing.Point(413, 233);
+            this.bigLabel5.Name = "bigLabel5";
+            this.bigLabel5.Size = new System.Drawing.Size(43, 23);
+            this.bigLabel5.TabIndex = 7;
+            this.bigLabel5.Text = "vnđ";
             // 
             // lbTotalTemp
             // 
@@ -220,6 +219,33 @@
             this.lbTotalTemp.Size = new System.Drawing.Size(65, 23);
             this.lbTotalTemp.TabIndex = 7;
             this.lbTotalTemp.Text = "0 vnđ";
+            // 
+            // txtClientGive
+            // 
+            this.txtClientGive.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtClientGive.BackColor = System.Drawing.Color.Transparent;
+            this.txtClientGive.BorderRadius = 5;
+            this.txtClientGive.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtClientGive.DefaultText = "";
+            this.txtClientGive.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtClientGive.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtClientGive.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtClientGive.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtClientGive.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.txtClientGive.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtClientGive.ForeColor = System.Drawing.Color.Black;
+            this.txtClientGive.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
+            this.txtClientGive.IconLeftOffset = new System.Drawing.Point(10, 0);
+            this.txtClientGive.IconLeftSize = new System.Drawing.Size(30, 30);
+            this.txtClientGive.Location = new System.Drawing.Point(227, 221);
+            this.txtClientGive.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtClientGive.Name = "txtClientGive";
+            this.txtClientGive.PasswordChar = '\0';
+            this.txtClientGive.PlaceholderText = "";
+            this.txtClientGive.SelectedText = "";
+            this.txtClientGive.Size = new System.Drawing.Size(179, 40);
+            this.txtClientGive.TabIndex = 0;
+            this.txtClientGive.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtPhone
             // 
@@ -238,42 +264,27 @@
             this.txtPhone.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
             this.txtPhone.IconLeftOffset = new System.Drawing.Point(10, 0);
             this.txtPhone.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtPhone.Location = new System.Drawing.Point(224, 116);
+            this.txtPhone.Location = new System.Drawing.Point(244, 59);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.PasswordChar = '\0';
             this.txtPhone.PlaceholderText = "";
             this.txtPhone.SelectedText = "";
-            this.txtPhone.Size = new System.Drawing.Size(257, 40);
+            this.txtPhone.Size = new System.Drawing.Size(240, 40);
             this.txtPhone.TabIndex = 0;
-            this.txtPhone.Visible = false;
             // 
-            // txtVoucher
+            // lbTienThoi
             // 
-            this.txtVoucher.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtVoucher.BackColor = System.Drawing.Color.Transparent;
-            this.txtVoucher.BorderRadius = 5;
-            this.txtVoucher.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtVoucher.DefaultText = "";
-            this.txtVoucher.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.txtVoucher.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.txtVoucher.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVoucher.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.txtVoucher.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.txtVoucher.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtVoucher.ForeColor = System.Drawing.Color.Black;
-            this.txtVoucher.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(213)))), ((int)(((byte)(218)))), ((int)(((byte)(223)))));
-            this.txtVoucher.IconLeftOffset = new System.Drawing.Point(10, 0);
-            this.txtVoucher.IconLeftSize = new System.Drawing.Size(30, 30);
-            this.txtVoucher.Location = new System.Drawing.Point(224, 55);
-            this.txtVoucher.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtVoucher.Name = "txtVoucher";
-            this.txtVoucher.PasswordChar = '\0';
-            this.txtVoucher.PlaceholderText = "";
-            this.txtVoucher.SelectedText = "";
-            this.txtVoucher.Size = new System.Drawing.Size(257, 40);
-            this.txtVoucher.TabIndex = 0;
-            this.txtVoucher.Visible = false;
+            this.lbTienThoi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.lbTienThoi.AutoSize = true;
+            this.lbTienThoi.BackColor = System.Drawing.Color.Transparent;
+            this.lbTienThoi.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTienThoi.ForeColor = System.Drawing.Color.Black;
+            this.lbTienThoi.Location = new System.Drawing.Point(290, 286);
+            this.lbTienThoi.Name = "lbTienThoi";
+            this.lbTienThoi.Size = new System.Drawing.Size(65, 23);
+            this.lbTienThoi.TabIndex = 7;
+            this.lbTienThoi.Text = "0 vnđ";
             // 
             // lbTotal
             // 
@@ -282,7 +293,7 @@
             this.lbTotal.BackColor = System.Drawing.Color.Transparent;
             this.lbTotal.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTotal.ForeColor = System.Drawing.Color.Black;
-            this.lbTotal.Location = new System.Drawing.Point(290, 190);
+            this.lbTotal.Location = new System.Drawing.Point(290, 179);
             this.lbTotal.Name = "lbTotal";
             this.lbTotal.Size = new System.Drawing.Size(65, 23);
             this.lbTotal.TabIndex = 7;
@@ -294,23 +305,11 @@
             this.lbVoucher.BackColor = System.Drawing.Color.Transparent;
             this.lbVoucher.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbVoucher.ForeColor = System.Drawing.Color.Black;
-            this.lbVoucher.Location = new System.Drawing.Point(26, 133);
+            this.lbVoucher.Location = new System.Drawing.Point(29, 127);
             this.lbVoucher.Name = "lbVoucher";
-            this.lbVoucher.Size = new System.Drawing.Size(109, 23);
+            this.lbVoucher.Size = new System.Drawing.Size(120, 23);
             this.lbVoucher.TabIndex = 8;
-            this.lbVoucher.Text = "TÍCH ĐIỂM";
-            // 
-            // bigLabel5
-            // 
-            this.bigLabel5.AutoSize = true;
-            this.bigLabel5.BackColor = System.Drawing.Color.Transparent;
-            this.bigLabel5.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bigLabel5.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel5.Location = new System.Drawing.Point(26, 69);
-            this.bigLabel5.Name = "bigLabel5";
-            this.bigLabel5.Size = new System.Drawing.Size(131, 23);
-            this.bigLabel5.TabIndex = 8;
-            this.bigLabel5.Text = "CÓ VOUCHER:";
+            this.lbVoucher.Text = "TÍCH ĐIỂM:";
             // 
             // bigLabel4
             // 
@@ -324,6 +323,32 @@
             this.bigLabel4.TabIndex = 8;
             this.bigLabel4.Text = "TẠM TÍNH:";
             // 
+            // bigLabel1
+            // 
+            this.bigLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bigLabel1.AutoSize = true;
+            this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel1.ForeColor = System.Drawing.Color.Black;
+            this.bigLabel1.Location = new System.Drawing.Point(26, 179);
+            this.bigLabel1.Name = "bigLabel1";
+            this.bigLabel1.Size = new System.Drawing.Size(186, 23);
+            this.bigLabel1.TabIndex = 8;
+            this.bigLabel1.Text = "PHẢI THANH TOÁN:";
+            // 
+            // bigLabel6
+            // 
+            this.bigLabel6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.bigLabel6.AutoSize = true;
+            this.bigLabel6.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel6.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel6.ForeColor = System.Drawing.Color.Black;
+            this.bigLabel6.Location = new System.Drawing.Point(26, 286);
+            this.bigLabel6.Name = "bigLabel6";
+            this.bigLabel6.Size = new System.Drawing.Size(164, 23);
+            this.bigLabel6.TabIndex = 8;
+            this.bigLabel6.Text = "TIỀN THỐI LẠI:";
+            // 
             // bigLabel3
             // 
             this.bigLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
@@ -331,11 +356,11 @@
             this.bigLabel3.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel3.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel3.ForeColor = System.Drawing.Color.Black;
-            this.bigLabel3.Location = new System.Drawing.Point(26, 190);
+            this.bigLabel3.Location = new System.Drawing.Point(26, 233);
             this.bigLabel3.Name = "bigLabel3";
-            this.bigLabel3.Size = new System.Drawing.Size(131, 23);
+            this.bigLabel3.Size = new System.Drawing.Size(175, 23);
             this.bigLabel3.TabIndex = 8;
-            this.bigLabel3.Text = "THÀNH TIỀN:";
+            this.bigLabel3.Text = "TIỀN KHÁCH ĐƯA:";
             // 
             // guna2GradientPanel7
             // 
@@ -349,7 +374,7 @@
             this.guna2GradientPanel7.Location = new System.Drawing.Point(0, 66);
             this.guna2GradientPanel7.Name = "guna2GradientPanel7";
             this.guna2GradientPanel7.Padding = new System.Windows.Forms.Padding(5, 5, 5, 0);
-            this.guna2GradientPanel7.Size = new System.Drawing.Size(496, 585);
+            this.guna2GradientPanel7.Size = new System.Drawing.Size(496, 615);
             this.guna2GradientPanel7.TabIndex = 1;
             // 
             // guna2DataGridView1
@@ -398,7 +423,7 @@
             this.guna2DataGridView1.RowHeadersVisible = false;
             this.guna2DataGridView1.RowHeadersWidth = 50;
             this.guna2DataGridView1.RowTemplate.Height = 24;
-            this.guna2DataGridView1.Size = new System.Drawing.Size(491, 452);
+            this.guna2DataGridView1.Size = new System.Drawing.Size(491, 399);
             this.guna2DataGridView1.TabIndex = 1;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -481,7 +506,7 @@
             this.dgvBill.RowHeadersVisible = false;
             this.dgvBill.RowHeadersWidth = 51;
             this.dgvBill.RowTemplate.Height = 24;
-            this.dgvBill.Size = new System.Drawing.Size(486, 580);
+            this.dgvBill.Size = new System.Drawing.Size(486, 610);
             this.dgvBill.TabIndex = 0;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
             this.dgvBill.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -557,7 +582,7 @@
             this.guna2GradientPanel4.Location = new System.Drawing.Point(1, 0);
             this.guna2GradientPanel4.Name = "guna2GradientPanel4";
             this.guna2GradientPanel4.Padding = new System.Windows.Forms.Padding(15, 15, 15, 5);
-            this.guna2GradientPanel4.Size = new System.Drawing.Size(809, 850);
+            this.guna2GradientPanel4.Size = new System.Drawing.Size(809, 880);
             this.guna2GradientPanel4.TabIndex = 4;
             // 
             // guna2GradientPanel12
@@ -570,7 +595,7 @@
             this.guna2GradientPanel12.Location = new System.Drawing.Point(15, 282);
             this.guna2GradientPanel12.Name = "guna2GradientPanel12";
             this.guna2GradientPanel12.Padding = new System.Windows.Forms.Padding(5);
-            this.guna2GradientPanel12.Size = new System.Drawing.Size(779, 503);
+            this.guna2GradientPanel12.Size = new System.Drawing.Size(779, 533);
             this.guna2GradientPanel12.TabIndex = 6;
             // 
             // flpSanPham
@@ -580,7 +605,7 @@
             this.flpSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.flpSanPham.Location = new System.Drawing.Point(5, 5);
             this.flpSanPham.Name = "flpSanPham";
-            this.flpSanPham.Size = new System.Drawing.Size(769, 493);
+            this.flpSanPham.Size = new System.Drawing.Size(769, 523);
             this.flpSanPham.TabIndex = 0;
             // 
             // guna2GradientPanel11
@@ -689,7 +714,7 @@
             this.guna2GradientPanel10.Controls.Add(this.dungeonHeaderLabel1);
             this.guna2GradientPanel10.Controls.Add(this.cboStaffs);
             this.guna2GradientPanel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.guna2GradientPanel10.Location = new System.Drawing.Point(15, 785);
+            this.guna2GradientPanel10.Location = new System.Drawing.Point(15, 815);
             this.guna2GradientPanel10.Name = "guna2GradientPanel10";
             this.guna2GradientPanel10.Size = new System.Drawing.Size(779, 60);
             this.guna2GradientPanel10.TabIndex = 4;
@@ -727,11 +752,33 @@
             this.cboStaffs.Size = new System.Drawing.Size(194, 36);
             this.cboStaffs.TabIndex = 2;
             // 
+            // bigLabel7
+            // 
+            this.bigLabel7.AutoSize = true;
+            this.bigLabel7.BackColor = System.Drawing.Color.Transparent;
+            this.bigLabel7.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bigLabel7.ForeColor = System.Drawing.Color.Black;
+            this.bigLabel7.Location = new System.Drawing.Point(29, 73);
+            this.bigLabel7.Name = "bigLabel7";
+            this.bigLabel7.Size = new System.Drawing.Size(164, 23);
+            this.bigLabel7.TabIndex = 8;
+            this.bigLabel7.Text = "SỐ ĐIỆN THOẠI:";
+            // 
+            // ppdBill
+            // 
+            this.ppdBill.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.ppdBill.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.ppdBill.ClientSize = new System.Drawing.Size(400, 300);
+            this.ppdBill.Enabled = true;
+            this.ppdBill.Icon = ((System.Drawing.Icon)(resources.GetObject("ppdBill.Icon")));
+            this.ppdBill.Name = "ppdBill";
+            this.ppdBill.Visible = false;
+            // 
             // frmSales
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1305, 850);
+            this.ClientSize = new System.Drawing.Size(1305, 880);
             this.Controls.Add(this.guna2GradientPanel5);
             this.Controls.Add(this.guna2GradientPanel4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -760,15 +807,12 @@
 
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel5;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel8;
-        private ReaLTaiizor.Controls.MetroCheckBox chkVoucher;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel13;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel9;
         private Guna.UI2.WinForms.Guna2Button btnPay;
         private ReaLTaiizor.Controls.BigLabel lbTotalTemp;
-        private Guna.UI2.WinForms.Guna2TextBox txtVoucher;
         private ReaLTaiizor.Controls.BigLabel lbTotal;
         private ReaLTaiizor.Controls.BigLabel lbVoucher;
-        private ReaLTaiizor.Controls.BigLabel bigLabel5;
         private ReaLTaiizor.Controls.BigLabel bigLabel4;
         private ReaLTaiizor.Controls.BigLabel bigLabel3;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel7;
@@ -795,5 +839,13 @@
         private Guna.UI2.WinForms.Guna2ComboBox cboStaffs;
         private ReaLTaiizor.Controls.MetroCheckBox chkPoints;
         private Guna.UI2.WinForms.Guna2TextBox txtPhone;
+        private ReaLTaiizor.Controls.BigLabel lbTienThoi;
+        private ReaLTaiizor.Controls.BigLabel bigLabel1;
+        private Guna.UI2.WinForms.Guna2TextBox txtClientGive;
+        private ReaLTaiizor.Controls.BigLabel bigLabel6;
+        private ReaLTaiizor.Controls.BigLabel bigLabel5;
+        private ReaLTaiizor.Controls.BigLabel bigLabel7;
+        private System.Windows.Forms.PrintPreviewDialog ppdBill;
+        private System.Drawing.Printing.PrintDocument pdBill;
     }
 }

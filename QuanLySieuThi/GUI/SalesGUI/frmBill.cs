@@ -42,10 +42,11 @@ namespace GUI.SalesGUI
             dgvBill.DataSource = hoadon_bll.getDataHoaDon();
 
             dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
-            dgvBill.Columns[1].HeaderText = "NGÀY LẬP";
-            dgvBill.Columns[2].HeaderText = "TỔNG TIỀN";
-            dgvBill.Columns[3].HeaderText = "THÀNH TIỀN";
-            dgvBill.Columns[4].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[1].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[2].HeaderText = "MÃ KHÁCH HÀNG";
+            dgvBill.Columns[3].HeaderText = "NGÀY LẬP";
+            dgvBill.Columns[4].HeaderText = "THÀNH TIỀN";
+            dgvBill.Columns[5].HeaderText = "TRẠNG THÁI";
         }
     }
 }

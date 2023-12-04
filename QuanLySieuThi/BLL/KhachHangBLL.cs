@@ -54,6 +54,18 @@ namespace BLL
             khachhang_dal.editKH(kh);
         }
 
+        //------------------ TÌM MÃ KHÁCH HÀNG
+        public string findCodeClient(string pPhoneNum)
+        {
+            return khachhang_dal.findCodeClient(pPhoneNum);
+        }
+
+        //------------------ KIỂM TRA SỐ ĐIỆN THOẠI ĐÃ ĐƯỢC ĐĂNG KÝ CHƯA
+        public bool checkPhoneNum(string pPhoneNum)
+        {
+            return khachhang_dal.checkPhoneNum(pPhoneNum);
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

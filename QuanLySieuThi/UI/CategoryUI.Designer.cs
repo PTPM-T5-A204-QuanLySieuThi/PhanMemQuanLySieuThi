@@ -31,14 +31,14 @@
             this.components = new System.ComponentModel.Container();
             this.guna2Elipse1 = new Guna.UI2.WinForms.Guna2Elipse(this.components);
             this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.btnSeen = new Guna.UI2.WinForms.Guna2Button();
             this.lbGiaSP = new System.Windows.Forms.Label();
             this.lbTenSP = new System.Windows.Forms.Label();
             this.picProduct = new System.Windows.Forms.PictureBox();
-            this.guna2GradientPanel2 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.guna2GradientPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GradientPanel1
@@ -53,6 +53,21 @@
             this.guna2GradientPanel1.Padding = new System.Windows.Forms.Padding(3);
             this.guna2GradientPanel1.Size = new System.Drawing.Size(483, 128);
             this.guna2GradientPanel1.TabIndex = 0;
+            // 
+            // guna2GradientPanel2
+            // 
+            this.guna2GradientPanel2.BorderRadius = 8;
+            this.guna2GradientPanel2.Controls.Add(this.btnSeen);
+            this.guna2GradientPanel2.Controls.Add(this.lbGiaSP);
+            this.guna2GradientPanel2.Controls.Add(this.lbTenSP);
+            this.guna2GradientPanel2.Controls.Add(this.picProduct);
+            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.guna2GradientPanel2.FillColor = System.Drawing.SystemColors.Info;
+            this.guna2GradientPanel2.FillColor2 = System.Drawing.SystemColors.Info;
+            this.guna2GradientPanel2.Location = new System.Drawing.Point(3, 3);
+            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
+            this.guna2GradientPanel2.Size = new System.Drawing.Size(477, 122);
+            this.guna2GradientPanel2.TabIndex = 1;
             // 
             // btnSeen
             // 
@@ -69,7 +84,7 @@
             this.btnSeen.Name = "btnSeen";
             this.btnSeen.Size = new System.Drawing.Size(128, 40);
             this.btnSeen.TabIndex = 10;
-            this.btnSeen.Text = "XEM";
+            this.btnSeen.Text = "CHI TIẾT";
             // 
             // lbGiaSP
             // 
@@ -106,21 +121,6 @@
             this.picProduct.TabIndex = 7;
             this.picProduct.TabStop = false;
             // 
-            // guna2GradientPanel2
-            // 
-            this.guna2GradientPanel2.BorderRadius = 8;
-            this.guna2GradientPanel2.Controls.Add(this.btnSeen);
-            this.guna2GradientPanel2.Controls.Add(this.lbGiaSP);
-            this.guna2GradientPanel2.Controls.Add(this.lbTenSP);
-            this.guna2GradientPanel2.Controls.Add(this.picProduct);
-            this.guna2GradientPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.guna2GradientPanel2.FillColor = System.Drawing.SystemColors.Info;
-            this.guna2GradientPanel2.FillColor2 = System.Drawing.SystemColors.Info;
-            this.guna2GradientPanel2.Location = new System.Drawing.Point(3, 3);
-            this.guna2GradientPanel2.Name = "guna2GradientPanel2";
-            this.guna2GradientPanel2.Size = new System.Drawing.Size(477, 122);
-            this.guna2GradientPanel2.TabIndex = 1;
-            // 
             // CategoryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -131,9 +131,9 @@
             this.Padding = new System.Windows.Forms.Padding(5);
             this.Size = new System.Drawing.Size(493, 138);
             this.guna2GradientPanel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             this.guna2GradientPanel2.ResumeLayout(false);
             this.guna2GradientPanel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picProduct)).EndInit();
             this.ResumeLayout(false);
 
         }

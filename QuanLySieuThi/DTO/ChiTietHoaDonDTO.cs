@@ -11,5 +11,6 @@ namespace DTO
         public string mahd { get; set; }
         public string masp { get; set; }
         public int soluong { get; set; }
+        public decimal tongtien { get; set; }
     }
 }

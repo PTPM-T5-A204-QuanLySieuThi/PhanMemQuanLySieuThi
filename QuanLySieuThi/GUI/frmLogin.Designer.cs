@@ -50,15 +50,15 @@
             this.metroPanel1.Controls.Add(this.pictureBox1);
             this.metroPanel1.HorizontalScrollbarBarColor = true;
             this.metroPanel1.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.HorizontalScrollbarSize = 8;
-            this.metroPanel1.Location = new System.Drawing.Point(0, 6);
+            this.metroPanel1.HorizontalScrollbarSize = 10;
+            this.metroPanel1.Location = new System.Drawing.Point(0, 7);
             this.metroPanel1.Margin = new System.Windows.Forms.Padding(0);
             this.metroPanel1.Name = "metroPanel1";
-            this.metroPanel1.Size = new System.Drawing.Size(374, 405);
+            this.metroPanel1.Size = new System.Drawing.Size(499, 498);
             this.metroPanel1.TabIndex = 0;
             this.metroPanel1.VerticalScrollbarBarColor = true;
             this.metroPanel1.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel1.VerticalScrollbarSize = 8;
+            this.metroPanel1.VerticalScrollbarSize = 11;
             // 
             // pictureBox1
             // 
@@ -66,7 +66,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(374, 405);
+            this.pictureBox1.Size = new System.Drawing.Size(499, 498);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 2;
             this.pictureBox1.TabStop = false;
@@ -84,15 +84,15 @@
             this.metroPanel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.metroPanel2.HorizontalScrollbarBarColor = true;
             this.metroPanel2.HorizontalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.HorizontalScrollbarSize = 8;
-            this.metroPanel2.Location = new System.Drawing.Point(373, 60);
+            this.metroPanel2.HorizontalScrollbarSize = 10;
+            this.metroPanel2.Location = new System.Drawing.Point(497, 74);
             this.metroPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.metroPanel2.Name = "metroPanel2";
-            this.metroPanel2.Size = new System.Drawing.Size(416, 350);
+            this.metroPanel2.Size = new System.Drawing.Size(555, 431);
             this.metroPanel2.TabIndex = 2;
             this.metroPanel2.VerticalScrollbarBarColor = true;
             this.metroPanel2.VerticalScrollbarHighlightOnWheel = false;
-            this.metroPanel2.VerticalScrollbarSize = 8;
+            this.metroPanel2.VerticalScrollbarSize = 11;
             // 
             // btnShowPS
             // 
@@ -106,11 +106,11 @@
             this.btnShowPS.InterpolationType = System.Drawing.Drawing2D.InterpolationMode.HighQualityBilinear;
             this.btnShowPS.IsElipse = false;
             this.btnShowPS.IsParallax = false;
-            this.btnShowPS.Location = new System.Drawing.Point(346, 173);
-            this.btnShowPS.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowPS.Location = new System.Drawing.Point(461, 213);
+            this.btnShowPS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowPS.Name = "btnShowPS";
             this.btnShowPS.PixelOffsetType = System.Drawing.Drawing2D.PixelOffsetMode.HighQuality;
-            this.btnShowPS.Size = new System.Drawing.Size(33, 33);
+            this.btnShowPS.Size = new System.Drawing.Size(44, 41);
             this.btnShowPS.SmoothingType = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             this.btnShowPS.TabIndex = 17;
             this.btnShowPS.Tag = "closePS";
@@ -129,13 +129,13 @@
             this.txtPS.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPS.ForeColor = System.Drawing.Color.DimGray;
             this.txtPS.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtPS.Location = new System.Drawing.Point(151, 171);
-            this.txtPS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPS.Location = new System.Drawing.Point(201, 210);
+            this.txtPS.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtPS.Name = "txtPS";
             this.txtPS.PasswordChar = '\0';
             this.txtPS.PlaceholderText = "";
             this.txtPS.SelectedText = "";
-            this.txtPS.Size = new System.Drawing.Size(232, 37);
+            this.txtPS.Size = new System.Drawing.Size(309, 46);
             this.txtPS.TabIndex = 16;
             // 
             // cboRole
@@ -148,19 +148,19 @@
             this.cboRole.Font = new System.Drawing.Font("Consolas", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboRole.ForeColor = System.Drawing.Color.DimGray;
             this.cboRole.ItemHeight = 30;
-            this.cboRole.Location = new System.Drawing.Point(51, 112);
+            this.cboRole.Location = new System.Drawing.Point(68, 138);
+            this.cboRole.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cboRole.Name = "cboRole";
-            this.cboRole.Size = new System.Drawing.Size(332, 36);
+            this.cboRole.Size = new System.Drawing.Size(441, 36);
             this.cboRole.TabIndex = 15;
             // 
             // lbError
             // 
             this.lbError.AutoSize = true;
             this.lbError.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.lbError.Location = new System.Drawing.Point(145, 211);
-            this.lbError.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbError.Location = new System.Drawing.Point(193, 260);
             this.lbError.Name = "lbError";
-            this.lbError.Size = new System.Drawing.Size(0, 13);
+            this.lbError.Size = new System.Drawing.Size(0, 16);
             this.lbError.TabIndex = 14;
             // 
             // chkRememberPS
@@ -170,10 +170,10 @@
             this.chkRememberPS.Cursor = System.Windows.Forms.Cursors.Hand;
             this.chkRememberPS.EnabledCalc = true;
             this.chkRememberPS.ForeColor = System.Drawing.Color.DimGray;
-            this.chkRememberPS.Location = new System.Drawing.Point(277, 239);
-            this.chkRememberPS.Margin = new System.Windows.Forms.Padding(2);
+            this.chkRememberPS.Location = new System.Drawing.Point(369, 294);
+            this.chkRememberPS.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.chkRememberPS.Name = "chkRememberPS";
-            this.chkRememberPS.Size = new System.Drawing.Size(121, 18);
+            this.chkRememberPS.Size = new System.Drawing.Size(161, 18);
             this.chkRememberPS.TabIndex = 13;
             this.chkRememberPS.Text = "NHỚ MẬT KHẨU";
             // 
@@ -183,10 +183,9 @@
             this.moonLabel2.BackColor = System.Drawing.Color.Transparent;
             this.moonLabel2.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.moonLabel2.ForeColor = System.Drawing.Color.DimGray;
-            this.moonLabel2.Location = new System.Drawing.Point(47, 182);
-            this.moonLabel2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.moonLabel2.Location = new System.Drawing.Point(63, 224);
             this.moonLabel2.Name = "moonLabel2";
-            this.moonLabel2.Size = new System.Drawing.Size(90, 19);
+            this.moonLabel2.Size = new System.Drawing.Size(109, 23);
             this.moonLabel2.TabIndex = 4;
             this.moonLabel2.Text = "MẬT KHẨU:";
             // 
@@ -196,10 +195,9 @@
             this.bigLabel1.BackColor = System.Drawing.Color.Transparent;
             this.bigLabel1.Font = new System.Drawing.Font("Century Gothic", 48F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bigLabel1.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.bigLabel1.Location = new System.Drawing.Point(49, 15);
-            this.bigLabel1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.bigLabel1.Location = new System.Drawing.Point(65, 18);
             this.bigLabel1.Name = "bigLabel1";
-            this.bigLabel1.Size = new System.Drawing.Size(347, 77);
+            this.bigLabel1.Size = new System.Drawing.Size(432, 93);
             this.bigLabel1.TabIndex = 3;
             this.bigLabel1.Text = "WELCOME";
             // 
@@ -214,27 +212,27 @@
             this.btnLogin.Image = null;
             this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLogin.InactiveColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnLogin.Location = new System.Drawing.Point(121, 276);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnLogin.Location = new System.Drawing.Point(161, 340);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.PressedBorderColor = System.Drawing.Color.Transparent;
             this.btnLogin.PressedColor = System.Drawing.Color.DeepSkyBlue;
-            this.btnLogin.Size = new System.Drawing.Size(197, 54);
+            this.btnLogin.Size = new System.Drawing.Size(263, 66);
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "ĐĂNG NHẬP";
             this.btnLogin.TextAlignment = System.Drawing.StringAlignment.Center;
             // 
             // frmLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(789, 410);
+            this.ClientSize = new System.Drawing.Size(1052, 505);
             this.Controls.Add(this.metroPanel2);
             this.Controls.Add(this.metroPanel1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.MaximizeBox = false;
             this.Name = "frmLogin";
-            this.Padding = new System.Windows.Forms.Padding(0, 60, 0, 0);
+            this.Padding = new System.Windows.Forms.Padding(0, 74, 0, 0);
             this.Text = "                  ";
             this.metroPanel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
