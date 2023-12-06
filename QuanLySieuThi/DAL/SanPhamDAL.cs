@@ -44,6 +44,33 @@ namespace DAL
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
+        public List<SanPhamDTO> getAllDataSanPhamTheoMaSP(string pMaSP)
+        {
+            var query = from sp in qlst.SANPHAMs where sp.MASP == pMaSP select sp;
+
+            var sanphams = query.ToList().ConvertAll(nv => new SanPhamDTO()
+            {
+                masp = nv.MASP,
+                barcode = nv.BARCODE,
+                tensp = nv.TENSP,
+                anhsanpham = nv.ANHSANPHAM,
+                ngaysx = (DateTime)nv.NGAYSX,
+                hansd = (DateTime)nv.HANSD,
+                giasp = (decimal)nv.GIASP,
+                mota = nv.MOTA,
+                slton = (int)nv.SLTON,
+                manxx = nv.MANXX,
+                mancc = nv.MANCC,
+                madvt = nv.MADVT,
+                mactlsp = nv.MACTLSP
+            });
+
+            List<SanPhamDTO> lst_sp = sanphams.ToList();
+
+            return lst_sp;
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
         public List<SanPhamDTO> getDataSanPhamTheoMaSP(string pMaSP)
         {
             var query = from sp in qlst.SANPHAMs where sp.MASP == pMaSP && sp.SLTON > 0 select sp;
@@ -89,6 +116,25 @@ namespace DAL
             List<SanPhamLocDTO> lst_sp = sanphams.ToList();
 
             return lst_sp;
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC
+        public List<SanPhamLocDTO> getAllDataSanPhamLoc()
+        {
+            var query = from sp in qlst.SANPHAMs select sp;
+
+            var sanphams = query.ToList().ConvertAll(nv => new SanPhamLocDTO()
+            {
+                masp = nv.MASP,
+                barcode = nv.BARCODE,
+                tensp = nv.TENSP,
+                ngaysx = (DateTime)nv.NGAYSX,
+                hansd = (DateTime)nv.HANSD,
+                giasp = (decimal)nv.GIASP,
+                slton = (int)nv.SLTON
+            });
+
+            return sanphams;
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
@@ -265,7 +311,7 @@ namespace DAL
             sps.MANCC = sp.mancc;
             sps.MADVT = sp.madvt;
             sps.MACTLSP = sp.mactlsp;
-
+                       
             qlst.SubmitChanges();
         }
 
@@ -299,6 +345,16 @@ namespace DAL
                     qlst.SubmitChanges();
                 }
             }
+        }
+
+        //------------------ NHẬP KHO
+        public void importProduct(string pMaSP, int pSoLuong)
+        {
+            SANPHAM sps = qlst.SANPHAMs.Where(t => t.MASP == pMaSP).FirstOrDefault();
+
+            sps.SLTON += pSoLuong;
+
+            qlst.SubmitChanges();
         }
 
         //------------------ KIỂM TRA KHÓA CHÍNH

@@ -19,6 +19,12 @@ namespace BLL
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
+        public List<SanPhamDTO> getAllDataSanPhamTheoMaSP(string pMaSP)
+        {
+            return sanpham_dal.getAllDataSanPhamTheoMaSP(pMaSP);
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM THEO MÃ SẢN PHẨM
         public List<SanPhamDTO> getDataSanPhamTheoMaSP(string pMaSP)
         {
             return sanpham_dal.getDataSanPhamTheoMaSP(pMaSP);
@@ -28,6 +34,12 @@ namespace BLL
         public List<SanPhamLocDTO> getDataSanPhamLoc()
         {
             return sanpham_dal.getDataSanPhamLoc();
+        }
+
+        //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC
+        public List<SanPhamLocDTO> getAllDataSanPhamLoc()
+        {
+            return sanpham_dal.getAllDataSanPhamLoc();
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
@@ -101,6 +113,12 @@ namespace BLL
         public int countProduct()
         {
             return sanpham_dal.countProduct();
+        }
+
+        //------------------ NHẬP KHO
+        public void importProduct(string pMaSP, int pSoLuong)
+        {
+            sanpham_dal.importProduct(pMaSP, pSoLuong);
         }
 
         //------------------ KIỂM TRA KHÓA CHÍNH

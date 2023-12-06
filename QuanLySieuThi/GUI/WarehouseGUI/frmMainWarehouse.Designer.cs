@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             this.pnlBody = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnHome = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -41,7 +38,6 @@
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnLogout = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.pnImportProduct = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.pnHome = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
             this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
@@ -50,8 +46,6 @@
             this.btnImportProduct = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
-            this.flowLayoutPanel1.SuspendLayout();
-            this.guna2Panel15.SuspendLayout();
             this.guna2GradientPanel3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
             this.guna2GradientPanel2.SuspendLayout();
@@ -72,61 +66,6 @@
             this.pnlBody.Name = "pnlBody";
             this.pnlBody.Size = new System.Drawing.Size(1082, 801);
             this.pnlBody.TabIndex = 5;
-            // 
-            // flowLayoutPanel1
-            // 
-            this.flowLayoutPanel1.Controls.Add(this.guna2Panel15);
-            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(10, 0);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(0);
-            this.flowLayoutPanel1.MaximumSize = new System.Drawing.Size(400, 186);
-            this.flowLayoutPanel1.MinimumSize = new System.Drawing.Size(400, 62);
-            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(400, 62);
-            this.flowLayoutPanel1.TabIndex = 2;
-            // 
-            // guna2Panel15
-            // 
-            this.guna2Panel15.Controls.Add(this.btnHome);
-            this.guna2Panel15.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel15.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel15.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel15.Name = "guna2Panel15";
-            this.guna2Panel15.Size = new System.Drawing.Size(400, 62);
-            this.guna2Panel15.TabIndex = 0;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnHome.BorderColor = System.Drawing.Color.Transparent;
-            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.HoverState.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.HoverState.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.HoverState.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = global::GUI.Properties.Resources.home_white;
-            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnHome.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.PressedColor = System.Drawing.Color.PeachPuff;
-            this.btnHome.PressedDepth = 0;
-            this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnHome.Size = new System.Drawing.Size(400, 62);
-            this.btnHome.TabIndex = 11;
-            this.btnHome.Text = "TRANG CHỦ";
-            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // guna2GradientPanel3
             // 
@@ -217,10 +156,8 @@
             this.guna2Panel3.BackColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.Controls.Add(this.pnLogout);
             this.guna2Panel3.Controls.Add(this.pnImportProduct);
-            this.guna2Panel3.Controls.Add(this.pnHome);
             this.guna2Panel3.Controls.Add(this.flowLayoutPanel2);
             this.guna2Panel3.Controls.Add(this.dropDownMenu2);
-            this.guna2Panel3.Controls.Add(this.flowLayoutPanel1);
             this.guna2Panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.guna2Panel3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Panel3.Location = new System.Drawing.Point(0, 0);
@@ -234,7 +171,7 @@
             // 
             this.pnLogout.FillColor = System.Drawing.Color.White;
             this.pnLogout.FillColor2 = System.Drawing.Color.White;
-            this.pnLogout.Location = new System.Drawing.Point(0, 124);
+            this.pnLogout.Location = new System.Drawing.Point(0, 62);
             this.pnLogout.Name = "pnLogout";
             this.pnLogout.Size = new System.Drawing.Size(10, 62);
             this.pnLogout.TabIndex = 7;
@@ -244,26 +181,16 @@
             // 
             this.pnImportProduct.FillColor = System.Drawing.Color.White;
             this.pnImportProduct.FillColor2 = System.Drawing.Color.White;
-            this.pnImportProduct.Location = new System.Drawing.Point(0, 62);
+            this.pnImportProduct.Location = new System.Drawing.Point(0, 0);
             this.pnImportProduct.Name = "pnImportProduct";
             this.pnImportProduct.Size = new System.Drawing.Size(10, 62);
             this.pnImportProduct.TabIndex = 7;
-            this.pnImportProduct.Visible = false;
-            // 
-            // pnHome
-            // 
-            this.pnHome.FillColor = System.Drawing.Color.White;
-            this.pnHome.FillColor2 = System.Drawing.Color.White;
-            this.pnHome.Location = new System.Drawing.Point(0, 0);
-            this.pnHome.Name = "pnHome";
-            this.pnHome.Size = new System.Drawing.Size(10, 62);
-            this.pnHome.TabIndex = 7;
             // 
             // flowLayoutPanel2
             // 
             this.flowLayoutPanel2.Controls.Add(this.guna2Panel16);
             this.flowLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(10, 124);
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(10, 62);
             this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.flowLayoutPanel2.MaximumSize = new System.Drawing.Size(400, 186);
             this.flowLayoutPanel2.MinimumSize = new System.Drawing.Size(400, 62);
@@ -319,7 +246,7 @@
             this.dropDownMenu2.Controls.Add(this.guna2Panel1);
             this.dropDownMenu2.Controls.Add(this.guna2Panel13);
             this.dropDownMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dropDownMenu2.Location = new System.Drawing.Point(10, 62);
+            this.dropDownMenu2.Location = new System.Drawing.Point(10, 0);
             this.dropDownMenu2.Margin = new System.Windows.Forms.Padding(0);
             this.dropDownMenu2.MaximumSize = new System.Drawing.Size(400, 124);
             this.dropDownMenu2.MinimumSize = new System.Drawing.Size(400, 62);
@@ -405,8 +332,6 @@
             this.Name = "frmMainWarehouse";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "frmMainWarehouse";
-            this.flowLayoutPanel1.ResumeLayout(false);
-            this.guna2Panel15.ResumeLayout(false);
             this.guna2GradientPanel3.ResumeLayout(false);
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
@@ -424,9 +349,6 @@
         #endregion
 
         private Guna.UI2.WinForms.Guna2GradientPanel pnlBody;
-        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private Guna.UI2.WinForms.Guna2Panel guna2Panel15;
-        private Guna.UI2.WinForms.Guna2GradientButton btnHome;
         private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
         private Guna.UI2.WinForms.Guna2GradientPanel guna2GradientPanel3;
         private Guna.UI2.WinForms.Guna2ControlBox guna2ControlBox1;
@@ -437,7 +359,6 @@
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2GradientPanel pnLogout;
         private Guna.UI2.WinForms.Guna2GradientPanel pnImportProduct;
-        private Guna.UI2.WinForms.Guna2GradientPanel pnHome;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel16;
         private Guna.UI2.WinForms.Guna2GradientButton btnLogout;

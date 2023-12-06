@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GUI.AdminGUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,18 +13,14 @@ namespace GUI.WarehouseGUI
 {
     public partial class frmMainWarehouse : Form
     {
+        frmWarehouse fWarehouse = new frmWarehouse();
+
         public frmMainWarehouse()
         {
             InitializeComponent();
             this.Load += FrmMainWarehouse_Load;
-            btnHome.Click += BtnHome_Click;
             btnImportProduct.Click += BtnImportProduct_Click;
             btnLogout.Click += BtnLogout_Click;
-        }
-
-        private void BtnHome_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)
@@ -37,13 +34,24 @@ namespace GUI.WarehouseGUI
         private void BtnImportProduct_Click(object sender, EventArgs e)
         {
             pnImportProduct.Visible = true;
-            pnHome.Visible = false;
             pnLogout.Visible = false;
+
+            pnlBody.Controls.Clear();
+            fWarehouse.TopLevel = false;
+            fWarehouse.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fWarehouse);
+            fWarehouse.Show();
         }
 
         private void FrmMainWarehouse_Load(object sender, EventArgs e)
         {
             setSizeFrom();
+
+            pnlBody.Controls.Clear();
+            fWarehouse.TopLevel = false;
+            fWarehouse.Dock = DockStyle.Fill;
+            pnlBody.Controls.Add(fWarehouse);
+            fWarehouse.Show();
         }
 
         private void setSizeFrom()

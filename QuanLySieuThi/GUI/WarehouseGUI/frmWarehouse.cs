@@ -1,4 +1,7 @@
-﻿using System;
+﻿using BLL;
+using GUI.AdminGUI;
+using GUI.SalesGUI;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,31 +10,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DTO;
-using BLL;
-using GUI.SalesGUI;
 
-namespace GUI.AdminGUI
+namespace GUI.WarehouseGUI
 {
-    public partial class frmProductAdmin : Form
+    public partial class frmWarehouse : Form
     {
         SanPhamBLL sanpham_bll = new SanPhamBLL();
 
-        frmAddProduct fAddProduct;
-        frmEditProduct fEditProduct;
-        frmDetailProduct fDetailProduct;
+        frmImportProduct fImportProduct;
 
         string pMaSP, pTenSP;
 
-        public frmProductAdmin()
+        public frmWarehouse()
         {
             InitializeComponent();
+
             this.Load += FrmProductAdmin_Load;
             txtSearch.TextChanged += TxtSearch_TextChanged;
-            btnAdd.Click += BtnAdd_Click;
-            btnRemove.Click += BtnRemove_Click;
-            btnEdit.Click += BtnEdit_Click;
-            btnLoad.Click += BtnLoad_Click;
             btnClearText.Click += BtnClearText_Click;
             dgvProduct.CellDoubleClick += DgvProduct_CellDoubleClick;
         }
@@ -40,8 +35,10 @@ namespace GUI.AdminGUI
         {
             pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
 
-            fDetailProduct = new frmDetailProduct(pMaSP);
-            fDetailProduct.ShowDialog();
+            fImportProduct = new frmImportProduct(pMaSP);
+            fImportProduct.ShowDialog();
+
+            FrmProductAdmin_Load(sender, e);
         }
 
         private void BtnClearText_Click(object sender, EventArgs e)
@@ -53,43 +50,6 @@ namespace GUI.AdminGUI
         {
             loadDataProduct();
             txtSearch.ResetText();
-        }
-
-        private void BtnEdit_Click(object sender, EventArgs e)
-        {
-            pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
-
-            fEditProduct = new frmEditProduct(pMaSP);
-            fEditProduct.ShowDialog();
-            loadDataProduct();
-        }
-
-        private void BtnRemove_Click(object sender, EventArgs e)
-        {
-            pMaSP = dgvProduct.CurrentRow.Cells[0].Value.ToString();
-            pTenSP = dgvProduct.CurrentRow.Cells[2].Value.ToString();
-
-            DialogResult r = MessageBox.Show("BẠN CÓ CHẮC LÀ MUỐN XÓA SẢN PHẨM " + pTenSP.ToUpper() + " KHÔNG?", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (DialogResult.Yes == r)
-            {
-                if (sanpham_bll.removeSP(pMaSP))
-                {
-                    MessageBox.Show("ĐÃ XÓA THÀNH CÔNG SẢN PHẨM " + pTenSP.ToUpper(), "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
-                    loadDataProduct();
-                }
-                else
-                {
-                    MessageBox.Show("CÓ LỖI! VUI LÒNG THỬ LẠI", "PHẦN MỀM QUẢN LÝ CỦA HÀNG BÁCH HÓA");
-                }
-            }
-        }
-
-        private void BtnAdd_Click(object sender, EventArgs e)
-        {
-            fAddProduct = new frmAddProduct();
-            fAddProduct.ShowDialog();
-            loadDataProduct();
         }
 
         private void FrmProductAdmin_Load(object sender, EventArgs e)

@@ -302,11 +302,23 @@
     <Compile Include="SalesGUI\frmSales.Designer.cs">
       <DependentUpon>frmSales.cs</DependentUpon>
     </Compile>
+    <Compile Include="WarehouseGUI\frmImportProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseGUI\frmImportProduct.Designer.cs">
+      <DependentUpon>frmImportProduct.cs</DependentUpon>
+    </Compile>
     <Compile Include="WarehouseGUI\frmMainWarehouse.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="WarehouseGUI\frmMainWarehouse.Designer.cs">
       <DependentUpon>frmMainWarehouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseGUI\frmWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseGUI\frmWarehouse.Designer.cs">
+      <DependentUpon>frmWarehouse.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AdminGUI\frmAddCategory.resx">
       <DependentUpon>frmAddCategory.cs</DependentUpon>
@@ -418,8 +430,14 @@
     <EmbeddedResource Include="SalesGUI\frmSales.resx">
       <DependentUpon>frmSales.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseGUI\frmImportProduct.resx">
+      <DependentUpon>frmImportProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="WarehouseGUI\frmMainWarehouse.resx">
       <DependentUpon>frmMainWarehouse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseGUI\frmWarehouse.resx">
+      <DependentUpon>frmWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
