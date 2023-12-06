@@ -121,20 +121,20 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC
         public List<SanPhamLocDTO> getAllDataSanPhamLoc()
         {
-            var query = from sp in qlst.SANPHAMs select sp;
-
-            var sanphams = query.ToList().ConvertAll(nv => new SanPhamLocDTO()
+            var sanphams = from sp in qlst.SANPHAMs select new SanPhamLocDTO()
             {
-                masp = nv.MASP,
-                barcode = nv.BARCODE,
-                tensp = nv.TENSP,
-                ngaysx = (DateTime)nv.NGAYSX,
-                hansd = (DateTime)nv.HANSD,
-                giasp = (decimal)nv.GIASP,
-                slton = (int)nv.SLTON
-            });
+                masp = sp.MASP,
+                barcode = sp.BARCODE,
+                tensp = sp.TENSP,
+                ngaysx = (DateTime)sp.NGAYSX,
+                hansd = (DateTime)sp.HANSD,
+                giasp = (decimal)sp.GIASP,
+                slton = (int)sp.SLTON
+            };
 
-            return sanphams;
+            List<SanPhamLocDTO> lst_sp = sanphams.ToList();
+
+            return lst_sp;
         }
 
         //------------------ LẤY DỮ LIỆU SẢN PHẨM CÓ ĐIỀU KIỆN
@@ -167,18 +167,16 @@ namespace DAL
         //------------------ LẤY DỮ LIỆU SẢN PHẨM LỌC CÓ ĐIỀU KIỆN
         public List<SanPhamLocDTO> getDataSanPhamLocDK(string pValue)
         {
-            var query = from sp in qlst.SANPHAMs where sp.MASP.Contains(pValue) || sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) && sp.SLTON > 0 select sp;
-
-            var sanphams = query.ToList().ConvertAll(nv => new SanPhamLocDTO()
+            var sanphams = from sp in qlst.SANPHAMs where sp.MASP.Contains(pValue) || sp.TENSP.Contains(pValue) || sp.BARCODE.Contains(pValue) && sp.SLTON > 0 select new SanPhamLocDTO()
             {
-                masp = nv.MASP,
-                barcode = nv.BARCODE,
-                tensp = nv.TENSP,
-                ngaysx = (DateTime)nv.NGAYSX,
-                hansd = (DateTime)nv.HANSD,
-                giasp = (decimal)nv.GIASP,
-                slton = (int)nv.SLTON
-            });
+                masp = sp.MASP,
+                barcode = sp.BARCODE,
+                tensp = sp.TENSP,
+                ngaysx = (DateTime)sp.NGAYSX,
+                hansd = (DateTime)sp.HANSD,
+                giasp = (decimal)sp.GIASP,
+                slton = (int)sp.SLTON
+            };
 
             List<SanPhamLocDTO> lst_sp = sanphams.ToList();
 

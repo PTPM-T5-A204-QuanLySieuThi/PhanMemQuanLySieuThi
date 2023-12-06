@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DTO;
+using GUI.SalesGUI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,22 +21,32 @@ namespace GUI.AdminGUI
 
         HoaDonDTO hoadon_dto = new HoaDonDTO();
 
+        frmDetailBillAdmin fDetailBillAdmin;
+
         public frmBill()
         {
             InitializeComponent();
             this.Load += FrmBill_Load;
             dtpTime.ValueChanged += DtpTime_ValueChanged;
             btnConfirm.Click += BtnConfirm_Click;
+            dgvBill.DoubleClick += DgvBill_DoubleClick;
+        }
+
+        private void DgvBill_DoubleClick(object sender, EventArgs e)
+        {
+            string pCode = dgvBill.CurrentRow.Cells[0].Value.ToString();
+            fDetailBillAdmin = new frmDetailBillAdmin(pCode);
+            fDetailBillAdmin.ShowDialog();
+            loadDataProduct();
         }
 
         private void BtnConfirm_Click(object sender, EventArgs e)
         {
             string pMaHD = dgvBill.CurrentRow.Cells[0].Value.ToString();
-            string pMaKH = dgvBill.CurrentRow.Cells[1].Value.ToString();
-            string pMaNV = dgvBill.CurrentRow.Cells[2].Value.ToString();
+            string pMaNV = dgvBill.CurrentRow.Cells[1].Value.ToString();
+            string pMaKH = dgvBill.CurrentRow.Cells[2].Value.ToString();
             string pNgayLap = dgvBill.CurrentRow.Cells[3].Value.ToString();
             string pThanhTien = dgvBill.CurrentRow.Cells[4].Value.ToString();
-            string pTrangThai = dgvBill.CurrentRow.Cells[5].Value.ToString();
 
             if (hoadon_bll.checkBillConfirm(pMaHD))
             {
@@ -56,7 +67,8 @@ namespace GUI.AdminGUI
                 {
                     sanpham_bll.updateSLT(pMaHD, item.masp);
                 }
-
+                MessageBox.Show("ĐÃ XÁC NHẬN THANH TOÁN THÀNH CÔNG", "PANDA MARTKET");
+                loadDataProduct();
             }
         }
 
@@ -65,8 +77,8 @@ namespace GUI.AdminGUI
             dgvBill.DataSource = hoadon_bll.findBillOnDate(DateTime.Parse(dtpTime.Value.ToString("dd/MM/yyy")));
 
             dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
-            dgvBill.Columns[1].HeaderText = "MÃ KHÁCH HÀNG";
-            dgvBill.Columns[2].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[1].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[2].HeaderText = "MÃ KHÁCH HÀNG";
             dgvBill.Columns[3].HeaderText = "NGÀY LẬP";
             dgvBill.Columns[4].HeaderText = "THÀNH TIỀN";
             dgvBill.Columns[5].HeaderText = "TRẠNG THÁI";
@@ -82,8 +94,8 @@ namespace GUI.AdminGUI
             dgvBill.DataSource = hoadon_bll.getDataHoaDon();
 
             dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
-            dgvBill.Columns[1].HeaderText = "MÃ KHÁCH HÀNG";
-            dgvBill.Columns[2].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[1].HeaderText = "MÃ NHÂN VIÊN";
+            dgvBill.Columns[2].HeaderText = "MÃ KHÁCH HÀNG";
             dgvBill.Columns[3].HeaderText = "NGÀY LẬP";
             dgvBill.Columns[4].HeaderText = "THÀNH TIỀN";
             dgvBill.Columns[5].HeaderText = "TRẠNG THÁI";

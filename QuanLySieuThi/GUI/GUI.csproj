@@ -156,6 +156,12 @@
     <Compile Include="AdminGUI\frmClient.Designer.cs">
       <DependentUpon>frmClient.cs</DependentUpon>
     </Compile>
+    <Compile Include="AdminGUI\frmDetailBillAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminGUI\frmDetailBillAdmin.Designer.cs">
+      <DependentUpon>frmDetailBillAdmin.cs</DependentUpon>
+    </Compile>
     <Compile Include="AdminGUI\frmEditCategory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -352,6 +358,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmClient.resx">
       <DependentUpon>frmClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminGUI\frmDetailBillAdmin.resx">
+      <DependentUpon>frmDetailBillAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="AdminGUI\frmEditCategory.resx">
       <DependentUpon>frmEditCategory.cs</DependentUpon>

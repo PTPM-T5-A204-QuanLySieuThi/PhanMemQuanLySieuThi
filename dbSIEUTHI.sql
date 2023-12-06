@@ -448,4 +448,8 @@ VALUES
 ('KM002', '2146970')
 
 
+select * from PHIEUNHAPKHO
+
+SELECT [t0].[MASP], [t0].[BARCODE], [t0].[TENSP], [t0].[ANHSANPHAM], [t0].[NGAYSX], [t0].[HANSD], [t0].[GIASP], [t0].[MOTA], [t0].[SLTON], [t0].[MANXX], [t0].[MANCC], [t0].[MADVT], [t0].[MACTLSP]
+FROM [dbo].[SANPHAM] AS [t0]
 

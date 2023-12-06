@@ -37,8 +37,7 @@ namespace GUI.WarehouseGUI
 
             fImportProduct = new frmImportProduct(pMaSP);
             fImportProduct.ShowDialog();
-
-            FrmProductAdmin_Load(sender, e);
+            loadDataProduct();
         }
 
         private void BtnClearText_Click(object sender, EventArgs e)
