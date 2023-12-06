@@ -31,6 +31,7 @@
             this.pnlBody = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel15 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHome = new Guna.UI2.WinForms.Guna2GradientButton();
             this.guna2GradientPanel3 = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.guna2ControlBox1 = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnExit = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -43,12 +44,11 @@
             this.pnHome = new Guna.UI2.WinForms.Guna2GradientPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel16 = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.dropDownMenu2 = new System.Windows.Forms.FlowLayoutPanel();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
-            this.btnLogout = new Guna.UI2.WinForms.Guna2GradientButton();
             this.btnImportProduct = new Guna.UI2.WinForms.Guna2GradientButton();
-            this.btnHome = new Guna.UI2.WinForms.Guna2GradientButton();
+            this.guna2Panel13 = new Guna.UI2.WinForms.Guna2Panel();
             this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.flowLayoutPanel1.SuspendLayout();
             this.guna2Panel15.SuspendLayout();
@@ -94,6 +94,39 @@
             this.guna2Panel15.Name = "guna2Panel15";
             this.guna2Panel15.Size = new System.Drawing.Size(400, 62);
             this.guna2Panel15.TabIndex = 0;
+            // 
+            // btnHome
+            // 
+            this.btnHome.BackColor = System.Drawing.Color.Transparent;
+            this.btnHome.BorderColor = System.Drawing.Color.Transparent;
+            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHome.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.btnHome.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnHome.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
+            this.btnHome.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnHome.ForeColor = System.Drawing.Color.White;
+            this.btnHome.HoverState.FillColor = System.Drawing.SystemColors.MenuHighlight;
+            this.btnHome.HoverState.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
+            this.btnHome.HoverState.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btnHome.HoverState.ForeColor = System.Drawing.Color.White;
+            this.btnHome.Image = global::GUI.Properties.Resources.home_white;
+            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.btnHome.ImageOffset = new System.Drawing.Point(25, 0);
+            this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
+            this.btnHome.Location = new System.Drawing.Point(0, 0);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(0);
+            this.btnHome.Name = "btnHome";
+            this.btnHome.PressedColor = System.Drawing.Color.PeachPuff;
+            this.btnHome.PressedDepth = 0;
+            this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnHome.Size = new System.Drawing.Size(400, 62);
+            this.btnHome.TabIndex = 11;
+            this.btnHome.Text = "TRANG CHỦ";
+            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
             // guna2GradientPanel3
             // 
@@ -248,38 +281,6 @@
             this.guna2Panel16.Size = new System.Drawing.Size(400, 62);
             this.guna2Panel16.TabIndex = 0;
             // 
-            // dropDownMenu2
-            // 
-            this.dropDownMenu2.Controls.Add(this.guna2Panel1);
-            this.dropDownMenu2.Controls.Add(this.guna2Panel13);
-            this.dropDownMenu2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dropDownMenu2.Location = new System.Drawing.Point(10, 62);
-            this.dropDownMenu2.Margin = new System.Windows.Forms.Padding(0);
-            this.dropDownMenu2.MaximumSize = new System.Drawing.Size(400, 124);
-            this.dropDownMenu2.MinimumSize = new System.Drawing.Size(400, 62);
-            this.dropDownMenu2.Name = "dropDownMenu2";
-            this.dropDownMenu2.Size = new System.Drawing.Size(400, 62);
-            this.dropDownMenu2.TabIndex = 5;
-            // 
-            // guna2Panel1
-            // 
-            this.guna2Panel1.Controls.Add(this.btnImportProduct);
-            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
-            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel1.Name = "guna2Panel1";
-            this.guna2Panel1.Size = new System.Drawing.Size(400, 62);
-            this.guna2Panel1.TabIndex = 0;
-            // 
-            // guna2Panel13
-            // 
-            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
-            this.guna2Panel13.Location = new System.Drawing.Point(0, 62);
-            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(0);
-            this.guna2Panel13.Name = "guna2Panel13";
-            this.guna2Panel13.Size = new System.Drawing.Size(400, 62);
-            this.guna2Panel13.TabIndex = 1;
-            // 
             // btnLogout
             // 
             this.btnLogout.BackColor = System.Drawing.Color.Transparent;
@@ -313,6 +314,29 @@
             this.btnLogout.Text = "ĐĂNG XUẤT";
             this.btnLogout.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
+            // dropDownMenu2
+            // 
+            this.dropDownMenu2.Controls.Add(this.guna2Panel1);
+            this.dropDownMenu2.Controls.Add(this.guna2Panel13);
+            this.dropDownMenu2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dropDownMenu2.Location = new System.Drawing.Point(10, 62);
+            this.dropDownMenu2.Margin = new System.Windows.Forms.Padding(0);
+            this.dropDownMenu2.MaximumSize = new System.Drawing.Size(400, 124);
+            this.dropDownMenu2.MinimumSize = new System.Drawing.Size(400, 62);
+            this.dropDownMenu2.Name = "dropDownMenu2";
+            this.dropDownMenu2.Size = new System.Drawing.Size(400, 62);
+            this.dropDownMenu2.TabIndex = 5;
+            // 
+            // guna2Panel1
+            // 
+            this.guna2Panel1.Controls.Add(this.btnImportProduct);
+            this.guna2Panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel1.Location = new System.Drawing.Point(0, 0);
+            this.guna2Panel1.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel1.Name = "guna2Panel1";
+            this.guna2Panel1.Size = new System.Drawing.Size(400, 62);
+            this.guna2Panel1.TabIndex = 0;
+            // 
             // btnImportProduct
             // 
             this.btnImportProduct.BackColor = System.Drawing.Color.Transparent;
@@ -345,38 +369,14 @@
             this.btnImportProduct.Text = "NHẬP HÀNG";
             this.btnImportProduct.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             // 
-            // btnHome
+            // guna2Panel13
             // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnHome.BorderColor = System.Drawing.Color.Transparent;
-            this.btnHome.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btnHome.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btnHome.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btnHome.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnHome.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.HoverState.FillColor = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.HoverState.FillColor2 = System.Drawing.SystemColors.MenuHighlight;
-            this.btnHome.HoverState.Font = new System.Drawing.Font("Consolas", 14.25F, System.Drawing.FontStyle.Bold);
-            this.btnHome.HoverState.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = global::GUI.Properties.Resources.home_white;
-            this.btnHome.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btnHome.ImageOffset = new System.Drawing.Point(25, 0);
-            this.btnHome.ImageSize = new System.Drawing.Size(35, 35);
-            this.btnHome.Location = new System.Drawing.Point(0, 0);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(0);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.PressedColor = System.Drawing.Color.PeachPuff;
-            this.btnHome.PressedDepth = 0;
-            this.btnHome.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnHome.Size = new System.Drawing.Size(400, 62);
-            this.btnHome.TabIndex = 11;
-            this.btnHome.Text = "TRANG CHỦ";
-            this.btnHome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.guna2Panel13.Dock = System.Windows.Forms.DockStyle.Top;
+            this.guna2Panel13.Location = new System.Drawing.Point(0, 62);
+            this.guna2Panel13.Margin = new System.Windows.Forms.Padding(0);
+            this.guna2Panel13.Name = "guna2Panel13";
+            this.guna2Panel13.Size = new System.Drawing.Size(400, 62);
+            this.guna2Panel13.TabIndex = 1;
             // 
             // guna2PictureBox1
             // 

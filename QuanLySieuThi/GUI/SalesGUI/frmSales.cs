@@ -140,7 +140,6 @@ namespace GUI.SalesGUI
 
         private void TxtClientGive_TextChanged(object sender, EventArgs e)
         {
-            //exportBill(); 
             string money = txtClientGive.Text.Replace(",", "");
 
             decimal number;
@@ -148,11 +147,19 @@ namespace GUI.SalesGUI
             {
                 if (txtClientGive.Text == string.Empty)
                 {
-                    txtClientGive.Text = string.Empty;
+                    lbTienThoi.Text = "0 vnđ";
                 }
                 else
                 {
-                    lbTienThoi.Text = (number - decimal.Parse(lbTotal.Text.Replace(" vnđ", "").ToString().Replace(",", ""))).ToString("N0") + " vnđ";
+                    decimal temp = number - decimal.Parse(lbTotal.Text.Replace(" vnđ", "").ToString().Replace(",", ""));
+                    if(temp < 0)
+                    {
+                        lbTienThoi.Text = "Không đủ";
+                    }    
+                    else
+                    {
+                        lbTienThoi.Text = temp.ToString("N0") + " vnđ";
+                    }
                 }
 
                 txtClientGive.Text = number.ToString("N0");
@@ -177,70 +184,77 @@ namespace GUI.SalesGUI
                 {
                     if (txtClientGive.Text != string.Empty)
                     {
-                        hoadon_dto.mahd = createCodeBill();
-                        hoadon_dto.ngaylap = DateTime.Now;
-                        hoadon_dto.thanhtien = decimal.Parse(lbTotal.Text.Replace(" vnđ", "").ToString().Replace(",", ""));
-                        hoadon_dto.manv = cboStaffs.SelectedValue.ToString();
-
-                        if (txtPhone.Text != string.Empty)
+                        if(lbTienThoi.Text != "Không đủ")
                         {
-                            if (khachhang_bll.checkPhoneNum(txtPhone.Text))
+                            hoadon_dto.mahd = createCodeBill();
+                            hoadon_dto.ngaylap = DateTime.Now;
+                            hoadon_dto.thanhtien = decimal.Parse(lbTotal.Text.Replace(" vnđ", "").ToString().Replace(",", ""));
+                            hoadon_dto.manv = cboStaffs.SelectedValue.ToString();
+
+                            if (txtPhone.Text != string.Empty)
                             {
-                                hoadon_dto.makh = khachhang_bll.findCodeClient(txtPhone.Text);
+                                if (khachhang_bll.checkPhoneNum(txtPhone.Text))
+                                {
+                                    hoadon_dto.makh = khachhang_bll.findCodeClient(txtPhone.Text);
+                                }
+                                else
+                                {
+                                    hoadon_dto.makh = createCodeClient();
+
+                                    khachhang_dto.makh = createCodeClient();
+                                    khachhang_dto.hoten = string.Empty;
+                                    khachhang_dto.anhdaidien = string.Empty;
+                                    khachhang_dto.ngaysinh = DateTime.Now;
+                                    khachhang_dto.gioitinh = string.Empty;
+                                    khachhang_dto.diachi = string.Empty;
+                                    khachhang_dto.sodienthoai = txtPhone.Text;
+                                    khachhang_dto.matkhau = string.Empty;
+                                    khachhang_dto.email = string.Empty;
+                                    khachhang_dto.tinhthanh = string.Empty;
+                                    khachhang_dto.diemtichluy = 0;
+
+                                    khachhang_bll.addKH(khachhang_dto);
+                                }
+
+                                hoadon_dto.trangthai = true;
+
+                                hoadon_bll.addHD(hoadon_dto);
+
+                                foreach (DataGridViewRow item in guna2DataGridView1.Rows)
+                                {
+                                    string pMaSP = string.Empty;
+                                    pMaSP = sanpham_bll.getMaSanPham(item.Cells["TenSP"].Value.ToString());
+
+                                    chitiethoadon_dto.mahd = hoadon_dto.mahd;
+                                    chitiethoadon_dto.masp = pMaSP;
+                                    chitiethoadon_dto.soluong = int.Parse(item.Cells["SoLuong"].Value.ToString());
+                                    chitiethoadon_dto.tongtien = decimal.Parse(item.Cells["SoTien"].Value.ToString().Replace(" vnđ", "").ToString().Replace(",", ""));
+                                    chitiethoadon_bll.addHD(chitiethoadon_dto);
+                                    sanpham_bll.updateSoLuongTon(pMaSP, int.Parse(item.Cells["SoLuong"].Value.ToString()));
+                                }
+
+                                guna2DataGridView1.Rows.Clear();
+                                lbTotal.Text = lbTotalTemp.Text = "0 vnđ";
+
+                                _mahd = hoadon_dto.mahd;
+
+                                exportBill();
+
+                                MessageBox.Show("THANH TOÁN THÀNH CÔNG", "PANDA MARTKET");
+
+                                loadProductAllItems();
+
+                                resetInput();
                             }
                             else
                             {
-                                hoadon_dto.makh = createCodeClient();
-
-                                khachhang_dto.makh = createCodeClient();
-                                khachhang_dto.hoten = string.Empty;
-                                khachhang_dto.anhdaidien = string.Empty;
-                                khachhang_dto.ngaysinh = DateTime.Now;
-                                khachhang_dto.gioitinh = string.Empty;
-                                khachhang_dto.diachi = string.Empty;
-                                khachhang_dto.sodienthoai = txtPhone.Text;
-                                khachhang_dto.matkhau = string.Empty;
-                                khachhang_dto.email = string.Empty;
-                                khachhang_dto.tinhthanh = string.Empty;
-                                khachhang_dto.diemtichluy = 0;
-
-                                khachhang_bll.addKH(khachhang_dto);
+                                MessageBox.Show("VUI LÒNG NHẬP SỐ ĐIỆN THOẠI CỦA KHÁCH HÀNG", "PANDA MARTKET");
                             }
-
-                            hoadon_dto.trangthai = false;
-
-                            hoadon_bll.addHD(hoadon_dto);
-
-                            foreach (DataGridViewRow item in guna2DataGridView1.Rows)
-                            {
-                                string pMaSP = string.Empty;
-                                pMaSP = sanpham_bll.getMaSanPham(item.Cells["TenSP"].Value.ToString());
-
-                                chitiethoadon_dto.mahd = hoadon_dto.mahd;
-                                chitiethoadon_dto.masp = pMaSP;
-                                chitiethoadon_dto.soluong = int.Parse(item.Cells["SoLuong"].Value.ToString());
-                                chitiethoadon_dto.tongtien = decimal.Parse(item.Cells["SoTien"].Value.ToString().Replace(" vnđ", "").ToString().Replace(",", ""));
-                                chitiethoadon_bll.addHD(chitiethoadon_dto);
-                                sanpham_bll.updateSoLuongTon(pMaSP, int.Parse(item.Cells["SoLuong"].Value.ToString()));
-                            }
-
-                            guna2DataGridView1.Rows.Clear();
-                            lbTotal.Text = lbTotalTemp.Text = "0 vnđ";
-
-                            _mahd = hoadon_dto.mahd;
-
-                            exportBill();
-
-                            MessageBox.Show("THANH TOÁN THÀNH CÔNG", "PANDA MARTKET");
-
-                            loadProductAllItems();
-
-                            resetInput();
                         }
                         else
                         {
-                            MessageBox.Show("VUI LÒNG NHẬP SỐ ĐIỆN THOẠI CỦA KHÁCH HÀNG", "PANDA MARTKET");
-                        }                        
+                            MessageBox.Show("TIỀN CỦA KHÁCH ĐƯA KHÔNG ĐỦ ĐỂ THANH TOÁN", "PANDA MARTKET");
+                        }
                     }
                     else
                     {

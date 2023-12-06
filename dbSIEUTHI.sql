@@ -448,10 +448,4 @@ VALUES
 ('KM002', '2146970')
 
 
-SELECT * from hoadon where NGAYLAP = '30/11/2023'
-SELECT * from chitiethoadon 
-SELECT * from sanpham
-SELECT * from khachhang
 
-delete chitiethoadon
-delete hoadon where MAHD = '1002699740'

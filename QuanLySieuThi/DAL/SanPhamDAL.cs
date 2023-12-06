@@ -284,6 +284,23 @@ namespace DAL
             return (int)query.FirstOrDefault();
         }
 
+        //------------------ CẬP NHẬT SỐ LƯỢNG TỒN
+        public void updateSLT(string pMaHD, string pMaSP)
+        {            
+            var cthds = qlst.CHITIETHOADONs.SingleOrDefault(cthd => cthd.MAHD == pMaHD && cthd.MASP == pMaSP);
+
+            if (cthds != null)
+            {
+                SANPHAM sps = qlst.SANPHAMs.SingleOrDefault(sp => sp.MASP == pMaSP);
+
+                if (sps != null)
+                {
+                    sps.SLTON -= cthds.SOLUONG;
+                    qlst.SubmitChanges();
+                }
+            }
+        }
+
         //------------------ KIỂM TRA KHÓA CHÍNH
         public bool checkPK(string pCode)
         {

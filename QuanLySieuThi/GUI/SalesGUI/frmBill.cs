@@ -39,7 +39,7 @@ namespace GUI.SalesGUI
 
         private void loadDataBill()
         {
-            dgvBill.DataSource = hoadon_bll.getDataHoaDon();
+            dgvBill.DataSource = hoadon_bll.getDataHoaDonDaThanhToan();
 
             dgvBill.Columns[0].HeaderText = "MÃ HÓA ĐƠN";
             dgvBill.Columns[1].HeaderText = "MÃ NHÂN VIÊN";
